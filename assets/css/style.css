@@ -1,3 +1,22 @@
 * {
   font-size: 18px;
+  margin: 0;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  font-size: 16px;
+  font-family: 'Inter 18pt';
+}
+
+.test {
+  font-family: 'Inter 18pt';
+  font-size: 18px;
+  font-style: italic;
 }
