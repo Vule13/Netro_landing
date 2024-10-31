@@ -12,8 +12,7 @@
 </head>
 
 <body>
-  
-  <div class="main">    
+  <div class="main">
     <header class="header">
       <div class="container">
         <div class="d-flex flex-row justify-content-between header-box">
@@ -51,7 +50,7 @@
           </div>
           <ul class="nav justify-content-center header-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Features</a>
+              <a class="nav-link active" aria-current="page" href="#feature">Features</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">How it works</a>
@@ -85,52 +84,107 @@
         </div>
       </div>
     </header>
-    <section class="banner">
-      <div class="banner-top">
-        <div class="banner-content">
-          <div class="banner-content__subtitle">
-            <span data-text-fill="true" class="banner-content__span">Design & Layout</span>
+    <div class="banner-background">
+      <section class="banner">
+        <div class="banner-top">
+          <div class="banner-content">
+            <div class="banner-content__subtitle">
+              <span data-text-fill="true" class="banner-content__span">Design & Layout</span>
+            </div>
+            <div class="banner-content__title">
+              <h1>Design sites faster.</h1>
+            </div>
+            <div class="banner-content__description">
+              <p>Design your website on a familiar free-form canvas with powerful visual tools for full creative
+                control. Publish with a single click.</p>
+            </div>
           </div>
-          <div class="banner-content__title">
-            <h1>Design sites faster.</h1>
-          </div>
-          <div class="banner-content__description">
-            <p>Design your website on a familiar free-form canvas with powerful visual tools for full creative control. Publish with a single click.</p>
+          <div class="banner-button">
+            <a href="#" class="button sign-up">Sign up for free</a>
+            <a href="#" class="learn-more">
+              <p>Learn more</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
         </div>
-        <div class="banner-button">
-          <a href="#" class="button sign-up">Sign up for free</a>
-          <a href="#" class="learn-more">            
-            <p>Learn more</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
+        <div class="banner-bottom">
+          <div class="banner-bottom__background">
+            <img src="./assets/images/banner01.jpg" alt="banner01">
+          </div>
+          <div data-value="6" class="banner-bottom__image-center">
+            <img src="./assets/images/banner01.jpg" alt="banner01">
+          </div>
+          <div data-value="-2" class="banner-bottom__left banner-parallax">
+            <img src="./assets/images/banner02.jpg" alt="banner02">
+          </div>
+          <div data-value="6" class="banner-bottom__right banner-parallax">
+            <img src="./assets/images/banner03.jpg" alt="banner03">
+          </div>
+          <div data-value="4" class="banner-bottom__left-small banner-parallax">
+            <img src="./assets/images/banner04.jpg" alt="banner04">
+          </div>
+          <div data-value="-6" class="banner-bottom__right-small banner-parallax">
+            <img src="./assets/images/banner05.jpg" alt="banner05">
+          </div>
         </div>
+      </section>
+      <div class="background-video">
+        <video src="https://cdn.shopify.com/videos/c/o/v/d8ed7db872704e8a868a7b37cfab02f2.mp4" class="object-fit-cover"
+          loop autoplay preload="auto" muted></video>
       </div>
-      <div class="banner-bottom">
-        <div class="banner-bottom__background">
-          <img src="./assets/images/banner01.jpg" alt="banner01">
+    </div>
+    <section id="feature" class="feature" style="height: 8000px;">
+      <div class="container-md">
+        <div class="feature-box">
+          <div class="feature-content">
+            <div class="feature-content__subtitle">
+              <span data-text-fill="true" class="feature-content__span">Features</span>
+            </div>
+            <div class="feature-content__title">
+              <h1>A complete website builder with all the features you need.</h1>
+            </div>
+            <div class="feature-content__description">
+              <p>Design your website on a familiar free-form canvas with powerful visual tools for full creative
+                control. Publish with a single click.</p>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature-grid__top">
+              <div class="row g-2">
+                <div class="col-8 feature-col-8">
+                  <div class="feature-col-8__title">Design</div>
+                  <div class="feature-col-8__description">
+                    <span>Framer offers a design experience like Figma, complete with an infinite canvas and a full suite of layout, styling and text features. Beyond that, it supports web-specific capabilities that traditional design tools can’t support.</span>
+                  </div>
+                  <a href="#" class="feature-col-8__link">
+                    <p>Learn more</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-4 feature-col-4">col-4</div>
+              </div>
+            </div>
+            <div class="feature-grid__bottom">
+              <div class="row">
+                <div class="col-4">col-4</div>
+                <div class="col-8">col-8</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div data-value="6" class="banner-bottom__image-center">
-          <img src="./assets/images/banner01.jpg" alt="banner01">
-        </div>
-        <div  data-value="-2" class="banner-bottom__left banner-parallax">
-          <img  src="./assets/images/banner02.jpg" alt="banner02">
-        </div>
-        <div  data-value="6" class="banner-bottom__right banner-parallax">
-          <img  src="./assets/images/banner03.jpg" alt="banner03">
-        </div>
-        <div  data-value="4" class="banner-bottom__left-small banner-parallax">
-          <img  src="./assets/images/banner04.jpg" alt="banner04">
-        </div>
-        <div  data-value="-6" class="banner-bottom__right-small banner-parallax">
-          <img  src="./assets/images/banner05.jpg" alt="banner05">
-        </div>
+
       </div>
     </section>
-    <div class="background-video">
-      <video src="https://cdn.shopify.com/videos/c/o/v/d8ed7db872704e8a868a7b37cfab02f2.mp4" class="object-fit-cover" loop autoplay preload="auto" muted></video>
-    </div>
   </div>
+
   <script type="text/javascript" src="assets/js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="assets/js/parallax.js"></script>
 
