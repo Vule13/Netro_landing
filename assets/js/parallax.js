@@ -10,7 +10,7 @@ function parallax(e) {
 }
 
 
-
+// parallax banner
 
 let lastScrollPosition = 0;
 const currentOffsets = {
@@ -83,6 +83,8 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+// parallax feature
 
 let lastScrollPositionFeature = window.scrollY;
 let currentOffsetImage1 = 0;

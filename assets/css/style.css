@@ -739,77 +739,109 @@ p {
   color: #fff;
 }
 
-.feature-triangle::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
-  border-left: 100px solid #8e44ad;
-}
-
-.feature-col-4__box1 span {
+.feature-col-4__box1 {
   position: absolute;
   top: 40%;
   left: 40%;
   transform: translate(-50%, -50%);
+}
+
+.feature-col-4__box1 span {
   padding: 15px 35px;
   border-radius: 30px;
   overflow: hidden;
   background-color: #0080c4;
   font-weight: 600;
   font-size: 20px;
+  box-shadow: inset .5px .5px #fff3,0 10px 30px #0099ff40;
 }
 
 .feature-col-4__box2 {
   position: absolute;
   left: 18%;
   top: 26px;
+  filter: blur(1px);
+}
+
+.feature-col-4__box2 span {
   padding: 5px 15px;
   border-radius: 30px;
   overflow: hidden;
   background-color: #037896;
   font-weight: 600;
   font-size: 12px;
-  filter: blur(1px);
 }
 
 .feature-col-4__box3 {
   position: absolute;
   right: 20%;
   top: 12%;
+  filter: blur(1.2px);
+}
+
+.feature-col-4__box3 span {
   padding: 8px 15px;
   border-radius: 30px;
   overflow: hidden;
   background-color: #1c05a3;
   font-weight: 600;
   font-size: 10px;
-  filter: blur(1.2px);
 }
 
 .feature-col-4__box4 {
   position: absolute;
   left: 15%;
   bottom: 25%;
+  filter: blur(1px);
+}
+
+.feature-col-4__box4 span {
   padding: 5px 10px;
   border-radius: 30px;
   overflow: hidden;
   background-color: #110086;
   font-weight: 600;
   font-size: 12px;
-  filter: blur(1px);
 }
 
 .feature-col-4__box5 {
   position: absolute;
   right: 0;
-  bottom: 10%;
+  bottom: 0%;
+  filter: blur(2.5px);
+}
+
+.feature-col-4__box5 span {
   padding: 15px 30px;
   border-radius: 30px;
   overflow: hidden;
   background-color: #2d15c9;
   font-weight: 600;
   font-size: 16px;
-  filter: blur(2.5px);
+}
+
+
+.feature-triangle1 {
+  rotate: 70deg;
+  transform: translate(-30px, -15px);
+}
+
+.feature-triangle2 {
+  rotate: 70deg;
+  transform: translate(-20px, -10px);
+}
+
+.feature-triangle3 {
+  rotate: 70deg;
+  transform: translate(-20px, -12px);
+}
+
+.feature-triangle4 {
+  rotate: 70deg;
+  transform: translate(-15px, -10px);
+}
+
+.feature-triangle5 {
+  rotate: 70deg;
+  transform: translate(-30px, -15px);
 }
