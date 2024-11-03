@@ -92,8 +92,8 @@ let currentOffsetImage2 = 0;
 let isTicking = false;
 
 function handleFeatureParallax() {
-  const featureImage1 = document.querySelector('.feature-col-8__image1');
-  const featureImage2 = document.querySelector('.feature-col-8__image3');
+  const featureImage1 = document.querySelector('.feature-col-7__image1');
+  const featureImage2 = document.querySelector('.feature-col-7__image3');
   
   const currentScrollPosition = window.scrollY;
   const isScrollingDown = currentScrollPosition > lastScrollPositionFeature;
@@ -140,3 +140,44 @@ window.addEventListener('scroll', function() {
     isTicking = true;
   }
 });
+
+
+let lastScrollPositionFeature2 = window.scrollY;
+let currentOffsetImage3 = 0;
+let isTicking2 = false;
+
+function handleFeatureParallax2() {
+  const featureImage3 = document.querySelector('.feature-col-6__image-left');
+  
+  const currentScrollPosition = window.scrollY;
+  const isScrollingDown = currentScrollPosition > lastScrollPositionFeature2;
+  
+  // Tốc độ chuyển động của hiệu ứng
+  const scrollSpeed = 0.8;
+  const maxOffset = 25;
+
+  if (featureImage3) {
+    const rect1 = featureImage3.getBoundingClientRect();
+    const inView1 = rect1.top < window.innerHeight && rect1.bottom > 0;
+
+    if (inView1) {
+      currentOffsetImage3 += isScrollingDown ? -scrollSpeed : scrollSpeed;
+      currentOffsetImage3 = Math.max(-maxOffset, Math.min(maxOffset, currentOffsetImage3));
+      featureImage3.style.transform = `translateX(${currentOffsetImage3}px)`;
+    } else {
+      currentOffsetImage3 = 0;
+      featureImage3.style.transform = `translateX(${currentOffsetImage3}px)`;
+    }
+  }
+
+  lastScrollPositionFeature2 = currentScrollPosition;
+  isTicking2 = false; // Đặt lại isTicking2 sau khi hàm kết thúc
+}
+
+window.addEventListener('scroll', function() {
+  if (!isTicking2) {
+    requestAnimationFrame(handleFeatureParallax2);
+    isTicking2 = true;
+  }
+});
+
