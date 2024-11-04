@@ -181,3 +181,54 @@ window.addEventListener('scroll', function() {
   }
 });
 
+
+
+let lastScrollPositionGallery = window.scrollY;
+let isTickingGallery = false;
+
+function handleGalleryParallax() {
+  const gallerySection = document.querySelector('.gallery');
+  const galleryImages = document.querySelectorAll('.gallery-image__box');
+  
+  if (!gallerySection) return;
+
+  const currentScrollPosition = window.scrollY;
+  const rect = gallerySection.getBoundingClientRect();
+  const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (inView) {
+    galleryImages.forEach((image) => {
+      // Tính toán tỷ lệ phần trăm cuộn của gallerySection trong viewport
+      const scrollPercentage = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
+      
+      // Scale từ 1.8 xuống 1
+      const scale = 1.8 - scrollPercentage * 0.8;
+      // TranslateY từ 0 đến 750px
+      const translateY = scrollPercentage * 750;
+      // Opacity từ 0.4 đến 1
+      const opacity = 0.4 + scrollPercentage * 0.6;
+      // 3D rotation trên trục X và Y
+      const rotateX = (scrollPercentage - 0.5) * 20; // Xoay từ -10deg đến 10deg
+      const rotateY = (scrollPercentage - 0.5) * -20; // Xoay từ 10deg đến -10deg
+      
+      image.style.transform = `perspective(1000px) scale(${scale}) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      image.style.opacity = opacity;
+    });
+  } else {
+    // Đặt lại transform và opacity khi ra khỏi viewport
+    galleryImages.forEach((image) => {
+      image.style.transform = `perspective(1000px) scale(1) translateY(0px) rotateX(0deg) rotateY(0deg)`;
+      image.style.opacity = 0.4;
+    });
+  }
+
+  lastScrollPositionGallery = currentScrollPosition;
+  isTickingGallery = false;
+}
+
+window.addEventListener('scroll', function() {
+  if (!isTickingGallery) {
+    requestAnimationFrame(handleGalleryParallax);
+    isTickingGallery = true;
+  }
+});
