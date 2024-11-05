@@ -92,8 +92,8 @@ let currentOffsetImage2 = 0;
 let isTicking = false;
 
 function handleFeatureParallax() {
-  const featureImage1 = document.querySelector('.feature-col-7__image1');
-  const featureImage2 = document.querySelector('.feature-col-7__image3');
+  const featureImage1 = document.querySelector('.feature-row1-col7__image1');
+  const featureImage2 = document.querySelector('.feature-row1-col7__image3');
   
   const currentScrollPosition = window.scrollY;
   const isScrollingDown = currentScrollPosition > lastScrollPositionFeature;
@@ -147,7 +147,7 @@ let currentOffsetImage3 = 0;
 let isTicking2 = false;
 
 function handleFeatureParallax2() {
-  const featureImage3 = document.querySelector('.feature-col-6__image-left');
+  const featureImage3 = document.querySelector('.feature-row2-col6__image-left');
   
   const currentScrollPosition = window.scrollY;
   const isScrollingDown = currentScrollPosition > lastScrollPositionFeature2;
@@ -200,18 +200,16 @@ function handleGalleryParallax() {
     const scrollPercentage = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
 
     galleryImages.forEach((image) => {
-      const scale = 1.8 - scrollPercentage * 0.8; // Scale từ 1.8 xuống 1
+      const scale = 1.6 - scrollPercentage * 0.6; // Scale từ 1.8 xuống 1
       const translateY = scrollPercentage * 750; // TranslateY đến 750px
       const opacity = 0.4 + scrollPercentage * 0.6; // Opacity từ 0.4 đến 1
-      const rotateX = (scrollPercentage - 0.5) * 20; // RotateX từ -10deg đến 10deg
-      const rotateY = (scrollPercentage - 0.5) * -20; // RotateY từ 10deg đến -10deg
       
-      image.style.transform = `perspective(1000px) scale(${scale}) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      image.style.transform = `scale(${scale}) translateY(${translateY}px)`;
       image.style.opacity = opacity;
     });
   } else {
     galleryImages.forEach((image) => {
-      image.style.transform = `perspective(1000px) scale(1) translateY(0px) rotateX(0deg) rotateY(0deg)`;
+      image.style.transform = `scale(1) translateY(0px)`;
       image.style.opacity = 0.4;
     });
   }
