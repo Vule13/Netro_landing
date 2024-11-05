@@ -719,3 +719,6 @@
   width: 100%;
 }
 
+.feature-row1-col4__marquee marquee {
+  text-align: center;
+}
