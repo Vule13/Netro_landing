@@ -864,8 +864,6 @@
 }
 
 .countto {
-  height: 100px;
-  width: 100px;
   position: relative;
 }
 
@@ -1044,4 +1042,65 @@
     transform: rotate(255deg);
     z-index: 4;
   }
+}
+
+
+/* code new */
+
+.countto--130 {
+  height: 130px;
+  width: 130px;
+}
+
+.countto__inner {
+  width: 128px;
+  height: 128px;
+  margin: -65px 0 0 -65px;
+  background-color: transparent;
+}
+
+.countto__bar {
+  background-color: transparent;
+}
+
+
+/* 11/11 */
+
+.counto-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.counto-circle::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: radial-gradient(100% 100% at 50% 100%, #003621 0%, rgb(0, 0, 0) 100%);
+}
+
+.counto-circle::after {
+  content: "";
+  position: absolute;
+  width: 198px;
+  height: 198px;
+  border: 3px solid rgb(0, 255, 157);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  /* opacity: 0.5; */
+}
+
+.counto-circle__num {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  line-height: 1em;
+  font-size: 2em;
 }

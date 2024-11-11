@@ -243,7 +243,9 @@ p {
   height: min-content;
   justify-content: flex-start;
   overflow: hidden;
-  padding: 200px 40px 90px;
+  padding-top: 200px;
+  padding-left: 40px;
+  padding-right: 40px;
   position: relative;
   scroll-margin-top: 80px;
   width: 100%;
