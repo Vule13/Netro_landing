@@ -1,0 +1,142 @@
+.homepage-demo img {
+  display: block;
+  transition: object-position 2s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-position: top;
+  object-fit: cover;
+}
+
+.homepage-title {
+  padding: 150px 20px 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.homepage-title h2 {
+  font-size: 34px;
+  padding: 10px 0;
+}
+
+.homepage-title h5 {
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.homepage-title span {
+  font-size: 18px;
+  font-weight: 600;
+  color: red;
+}
+
+.homepage-title h1 {
+  font-size: 100px;
+  display: inline-block;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: max(0em, calc(calc(1.3em - var(--framer-blockquote-line-height, var(--framer-line-height, 1.3em))) / 2));
+  margin: min(0em, calc(calc(1.3em - var(--framer-blockquote-line-height, var(--framer-line-height, 1.3em))) / -2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(309deg, rgb(166, 221, 255) 2.25225%, rgb(51, 194, 255) 48.0785%, rgb(0, 119, 255) 100%);
+}
+
+.homepage-title__num {
+  flex: none;
+  height: auto;
+  position: relative;
+  width: auto;
+}
+
+.homepage-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 30px 200px 80px;
+}
+
+.homepage-tabs__item {
+  display: inline-flex;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  color: #9b9b9b;
+  font-size: 16px;
+  background: #000;
+  border-radius: 30px;
+  position: relative;
+  outline: none;
+  border: none;
+  transition: 0.5s ease-in-out;
+  white-space: nowrap;
+}
+
+
+
+.homepage-tabs__item::before {
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.12);
+  transition: 0.5s ease-in-out;
+
+}
+
+.homepage-tabs__item:hover::before {
+  background: linear-gradient(309deg, rgb(166, 221, 255) 2.25225%, rgb(51, 194, 255));
+}
+
+.homepage-demo {
+  transition: box-shadow .2s ease-out;
+  box-shadow: 0 3px 12px rgb(4 34 78 / 63%);
+  transition-duration: .5s;
+  transition-property: transform;
+  display: block;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.homepage-demo:hover img {
+  object-position: bottom;
+}
+
+.homepage-demo__img {
+  height: 100%;
+}
+
+.homepage-demo__title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.homepage-demo__title a {
+  color: #c9c9c9;
+  transition: .3s ease all;
+  font-weight: 500;
+}
+
+.homepage-demo__title a:hover {
+  color: #fff;
+}
