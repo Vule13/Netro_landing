@@ -99,6 +99,25 @@ p {
   z-index: 1111111;
 }
 
+.header-logo {
+  width: 20%;
+}
+
+.header-purchase {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-menu {
+  width: 60%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header .container-fluid {
   padding: 0 60px
 }
