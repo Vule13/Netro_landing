@@ -78,6 +78,31 @@ p {
     padding: 0 70px;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.button-primary {
+  color: #000;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-block;
+  transition: .3s linear all;
+}
+
+.button-primary:hover {
+  background: linear-gradient(309deg, rgb(166, 221, 255) 2.25225%, rgb(51, 194, 255) 48.0785%, rgb(0, 119, 255) 100%);
+  color: #fff;
+}
+
+
 /* header code */
 .header-nav, .header-price {
   align-items: center;

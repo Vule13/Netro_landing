@@ -237,3 +237,38 @@
 .modal-viewnow__button:hover {
   box-shadow: 0 3px 12px rgb(56 134 247 / 63%)
 }
+
+.homepage-demo__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-demo__new {
+  padding: 6px 10px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: rgb(67 142 68);
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.homepage-demo__hot {
+  padding: 6px 10px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: rgb(252 87 50);
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.homepage-demo__btn {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
