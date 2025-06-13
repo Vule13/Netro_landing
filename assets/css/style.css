@@ -33,10 +33,9 @@ p {
 .container,
 .container-sm,
 .container-md,
-.container-xl,
-.container-fluid {
-  padding: 0 15px;
-  max-width: 100%;
+.container-xl {
+  padding: 0 30px;
+  max-width: 1600px;
 }
 
 @media (min-width: 768px) {
@@ -46,10 +45,6 @@ p {
   .container-md {
     padding: 0 30px;
     max-width: 100%;
-  }
-
-  .container-xl {
-    padding: 0 50px;
   }
 
   .container-fluid {
@@ -73,10 +68,6 @@ p {
     max-width: 1200px;
     padding: 0 15px;
   }
-
-  .container-xl {
-    padding: 0 70px;
-  }
 }
 
 .hidden {
@@ -88,23 +79,139 @@ p {
 }
 
 .button-primary {
-  color: #000;
-  padding: 8px 12px;
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  display: inline-block;
-  transition: .3s linear all;
+  background-image: linear-gradient(90deg, #025cff 0%, #000000 51%, #2f89ff 100%);
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 30px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #000000;
 }
 
 .button-primary:hover {
-  background: linear-gradient(309deg, rgb(166, 221, 255) 2.25225%, rgb(51, 194, 255) 48.0785%, rgb(0, 119, 255) 100%);
+  background-position: right center;
   color: #fff;
+  text-decoration: none;
 }
 
+.button-secondary {
+  /* background: radial-gradient(35% 100% at 7.4% 44.1%, rgb(0, 119, 255)  0%, rgba(207, 207, 207, 0.2) 100%); */
+  border-radius: 999px;
+  opacity: 1;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: min-content;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1px;
+  position: relative;
+  text-decoration: none;
+  width: min-content;
+  will-change: var(--framer-will-change-override, transform);
+}
+
+.button-blue {
+  --x: 7.4%;
+  --y: 44.1%;
+  background: radial-gradient(35% 100% at var(--x) var(--y), rgb(0, 119, 255) 0%, rgba(207, 207, 207, 0.2) 100%);
+}
+
+.button-white {
+  --shadowX: -1; /* giá trị nội suy từ -1 đến 1 */
+  box-shadow: rgb(2 61 173) calc(var(--shadowX) * 7px) 0px 21px -3px, #1157a7 calc(var(--shadowX) * 12px) 0px 10px -5px;
+  will-change: var(--shadowX);
+  padding: unset;
+}
+
+.button-secondary__content {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: min-content;
+  justify-content: center;
+  overflow: visible;
+  padding: 12px 16px;
+  position: relative;
+  width: min-content;  
+  font-weight: 500;
+  /* background: radial-gradient(59% 170% at 1.2% 50%, rgb(0, 119, 255) 0%, rgb(0, 0, 0) 57%, rgb(0, 0, 0) 100%); */
+  --x2: 1.2%;
+  border-radius: 9999px;
+  opacity: 1;
+}
+
+.button-blue__content {
+  background: radial-gradient(59% 170% at var(--x2) 50%, rgb(0, 119, 255) 0%, rgb(0, 0, 0) 57%, rgb(0, 0, 0) 100%);
+}
+
+.button-white__content {
+  background: radial-gradient(59% 170% at var(--x2) 50%, rgb(255, 255, 255) 0%, rgb(208, 208, 208) 57%, rgb(208, 208, 208) 100%);
+  padding: 13px 17px;
+
+}
+/* .button-white__content {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: min-content;
+  justify-content: center;
+  overflow: visible;
+  padding: 12px 16px;
+  position: relative;
+  width: min-content;  
+  border-radius: 9999px;
+  opacity: 1;
+} */
+
+.button-secondary__content span, .button-white__content span {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  transform: none;
+  opacity: 1;
+  flex: none;
+  height: auto;
+  position: relative;
+  white-space: pre;
+  width: auto;
+  color: #fff;
+  line-height: 1.2em;
+}
+
+.button-white__content span {
+  color: #000;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
 
 /* header code */
-.header-nav, .header-price {
+.header-nav {
   align-items: center;
   padding: 8px 8px;
   overflow: visible;
@@ -151,10 +258,10 @@ p {
   align-items: center;
 }
 
-.header-price__link {
+/* .header-price__link {
   color: var(--color-text);
   transition: 0.3s ease all;
-}
+} */
 
 .header-nav .nav-link {
   padding: 0 16px;
@@ -176,37 +283,36 @@ p {
   background-color: rgba(46, 46, 46, 0.6);
 }
 
-.header-price {
+/* .header-price {
   transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-}
+} */
 
-.header-price:hover .header-price__link {
+/* .header-price:hover .header-price__link {
   color: var(--color-hover);
-}
+} */
 
 
 /* From Uiverse.io by Li-Deheng */ 
 
-.header-price {
-  padding: 16px 28px 16px 32px;
+/* .header-price {
+  padding: 15px 28px 15px 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.header-price:hover, .header-price:focus {
+/* .header-price:hover, .header-price:focus {
   transition: 0.5s;
   -webkit-animation: btn-content 1s;
   animation: btn-content 1s;
   outline: 0.1em solid transparent;
   outline-offset: 0.2em;
   box-shadow: 0 0 0.4em 0 rgb(38, 38, 38);
-}
+} */
 
 .header-price .icon-arrow {
   transition: 0.5s;
   margin-right: 0px;
-  transform: scale(0.6);
 }
 
 .header-price:hover .icon-arrow {
@@ -361,19 +467,6 @@ p {
   gap: 30px;
 }
 
-.sign-up {
-  background-color: rgb(0, 153, 255);
-  border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.25) 0.5px 0.5px 0px 0px inset, rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px;
-  opacity: 1;
-  padding: 10px 20px;
-  color: #fff;
-  transition: all .3s ease;
-}
-
-.sign-up:hover {
-  background-color: rgb(2, 120, 199);
-}
 .learn-more {
   display: flex;
   align-items: center;
@@ -382,6 +475,7 @@ p {
   color: var(--color-hover);
   transition: 0.3s ease all;
   gap: 12px;
+  border-radius: 30px;
   padding: 10px 20px;
 }
 
@@ -389,7 +483,6 @@ p {
   color: #fff;
   backdrop-filter: blur(10px);
   background-color: rgba(82, 81, 81, 0.6);
-  border-radius: 10px;
 }
 
 .learn-more svg {
@@ -578,7 +671,8 @@ p {
 
 .background-color1 {
   -webkit-mask: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 100%) add;
-  background: radial-gradient(62% 67.9245283018868% at 39% 41.5%, rgba(0, 81, 255, 0) 0%, rgba(0, 153, 255, 0) 36%, rgba(0, 153, 255, 0) 63%, rgba(0, 128, 255, .25) 83%, rgb(0, 51, 255) 100%);
+  /* background: radial-gradient(62% 67.9245283018868% at 39% 41.5%, rgba(0, 81, 255, 0) 0%, rgba(0, 153, 255, 0) 36%, rgba(0, 153, 255, 0) 63%, rgba(0, 128, 255, .25) 83%, rgb(0, 51, 255) 100%); */
+  background: radial-gradient(62% 67.9245283018868% at 39% 41.5%, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 0%) 36%, rgb(0 0 0 / 0%) 63%, rgb(0 0 0 / 25%) 83%, rgb(0 0 0) 100%);
   bottom: 0;
   flex: none;
   height: 498px;
@@ -605,7 +699,8 @@ p {
 }
 
 .background-color1_item1 {
-  background: radial-gradient(50% 32% at 50% 100%, #009dff 0%, rgba(0, 217, 255, .25) 53%, rgba(0, 119, 255, .15) 79%, rgba(0, 178, 255, 0) 100%);
+  /* background: radial-gradient(50% 32% at 50% 100%, #009dff 0%, rgba(0, 217, 255, .25) 53%, rgba(0, 119, 255, .15) 79%, rgba(0, 178, 255, 0) 100%); */
+  background: radial-gradient(50% 32% at 50% 100%, #000000 0%, rgb(0 0 0 / 25%) 53%, rgb(0 0 0 / 15%) 79%, rgb(0 0 0 / 0%) 100%);
   bottom: 0;
   flex: none;
   height: 290px;
@@ -618,7 +713,8 @@ p {
 
 .background-color1_item2 {
   -webkit-mask: radial-gradient(73% 93% at 48.5% 40.300000000000004%, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .3) 64%, rgba(0, 0, 0, 1) 100%) add;
-  background: linear-gradient(180deg, rgba(0, 153, 255, 0) 0%, rgb(0, 178, 255) 100%);
+  /* background: linear-gradient(180deg, rgba(0, 153, 255, 0) 0%, rgb(0, 178, 255) 100%); */
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0) 100%);
   flex: none;
   inset: 108px 0 0;
   mask: radial-gradient(73% 93% at 48.5% 40.300000000000004%, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .3) 64%, rgba(0, 0, 0, 1) 100%) add;
@@ -629,7 +725,8 @@ p {
 
 .background-color1_item3 {
   -webkit-mask: radial-gradient(50% 131% at 48.699999999999996% 31.8%, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .32556) 64%, rgba(0, 0, 0, 1) 100%) add;
-  background: linear-gradient(180deg, rgba(0, 85, 255, 0) 0%, rgba(8, 0, 255, .7) 100%);
+  /* background: linear-gradient(180deg, rgba(0, 85, 255, 0) 0%, rgba(8, 0, 255, .7) 100%); */
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 70%) 100%);
   flex: none;
   inset: 208px 0 0;
   mask: radial-gradient(50% 131% at 48.699999999999996% 31.8%, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .32556) 64%, rgba(0, 0, 0, 1) 100%) add;
@@ -637,3 +734,4 @@ p {
   position: absolute;
   z-index: 0;
 }
+
