@@ -115,13 +115,13 @@
   transition-property: transform;
   display: flex;
   flex-direction: column;
-  max-height: 510px;
+  /* max-height: 510px; */
   overflow: hidden;
   position: relative;
   height: 100%;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: #ffffff08;
+  background: #ffffff21;
+  padding: 1px;
 }
 
 .homepage-demo::after {
@@ -132,7 +132,7 @@
   height: 100%;
   bottom: -35px;
   z-index: -1;
-  transition: transform .4s ease-in-out;
+  transition: transform .6s ease-in-out;
   background: linear-gradient(to bottom, transparent 1%, rgba(27, 117, 253, 0.1) 40%,rgb(1, 108, 248) 60% , transparent 100%);
   opacity: 0;
 }
@@ -140,8 +140,11 @@
 .homepage-demo:hover::after {
   transform: translateY(-250px);
   opacity: 1;
-  /* bottom: unset;
-  top: 0; */
+}
+
+.homepage-demo__background {
+  background: #000000;
+  border-radius: 15px;
 }
 
 .homepage-demo__dots {
