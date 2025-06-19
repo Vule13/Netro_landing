@@ -15,6 +15,7 @@ body {
   font-size: 16px;
   font-family: 'Inter 18pt', sans-serif;
   color: rgba(255, 255, 255, .6);
+  --font-body: 16px;
 }
 
 .main {
