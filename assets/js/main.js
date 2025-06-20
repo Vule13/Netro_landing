@@ -133,3 +133,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
     button.addEventListener('mouseleave', () => animate(false));
   });
 })();
+
+function animateCounterOnScroll({ selector = "#counter", start = 5000, end = 10000, step = 20, duration = 2000 }) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+
+  let hasAnimated = false;
+
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !hasAnimated) {
+      hasAnimated = true;
+      animate();
+      observer.disconnect(); // chỉ chạy một lần
+    }
+  }, { threshold: 0.6 });
+
+  observer.observe(el);
+
+  function animate() {
+    const totalSteps = Math.ceil((end - start) / step);
+    const interval = duration / totalSteps;
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= end) {
+        current = end;
+        clearInterval(timer);
+      }
+      el.textContent = current.toLocaleString() + "+";
+    }, interval);
+  }
+}
+animateCounterOnScroll({});

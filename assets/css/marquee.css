@@ -72,7 +72,7 @@
   gap: 30px;
   justify-content: space-between;
   min-width: 100%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   padding-left: 0;
 }
 
@@ -85,7 +85,7 @@
   justify-content: space-between;
   min-width: 100%;
   padding-left: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .marquee__text,
@@ -284,4 +284,110 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.testimonial-trusted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 30px;
+}
+
+.testimonial-trusted__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-trusted__image-box {
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  margin-left: -6px;
+}
+
+.testimonial-trusted__text span {
+  color: var(--color-foreground);
+}
+
+/* review */
+
+.testimonial-review__left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+.testimonial-review__left-text {
+  font-style: italic;
+  text-align: center;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-review__left-line {
+  background: linear-gradient(90deg, rgba(84, 84, 84, 0) 0%,  rgb(255, 255, 255) 100%);
+  flex: none;
+  height: 1px;
+  opacity: .5;
+  overflow: hidden;
+  position: relative;
+  width: 69px;
+}
+
+.testimonial-review__left-line:last-child {
+  rotate: 180deg;
+}
+
+.testimonial-review__left-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.testimonial-review__left-image img {
+  width: 100%;
+}
+
+.testimonial-review__left-image::after {
+  position: absolute;
+  content: "";
+  border: 5px solid rgba(255, 255, 255, .07);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  inset: 0;
+  border-radius: 14px;
+}
+
+.testimonial-review__right {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.testimonial-review__right-title {
+  color: var(--color-foreground);
+  padding-top: 20px;
+  font-size: 44px;
+}
+
+.testimonial-review__right-title span {
+  font-style: italic;
+}
+
+.testimonial-review__right-desc {
+  max-width: 75%;
+  padding-bottom: 30px;
+}
+
+.testimonial-review {
+  padding-bottom: 60px;
 }
