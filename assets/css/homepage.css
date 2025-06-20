@@ -132,8 +132,14 @@
   height: 100%;
   bottom: -35px;
   z-index: -1;
-  transition: transform .6s ease-in-out;
-  background: linear-gradient(to bottom, transparent 1%, rgba(27, 117, 253, 0.1) 40%,rgb(1, 108, 248) 60% , transparent 100%);
+  transition: transform 0.6s ease-in-out;
+  background: linear-gradient(
+    to bottom,
+    transparent 1%,
+    rgba(27, 117, 253, 0.1) 40%,
+    rgb(1, 108, 248) 60%,
+    transparent 100%
+  );
   opacity: 0;
 }
 
@@ -214,6 +220,9 @@
 
 .modal-viewnow .modal-body {
   padding: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-viewnow__title {
