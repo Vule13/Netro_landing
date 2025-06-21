@@ -166,3 +166,70 @@ function animateCounterOnScroll({ selector = "#counter", start = 5000, end = 100
   }
 }
 animateCounterOnScroll({});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const marqueeTracks = document.querySelectorAll('.marquee-track');
+
+  marqueeTracks.forEach(track => {
+    // Kiểm tra nếu chưa được nhân đôi
+    if (track.dataset.cloned !== 'true') {
+      track.innerHTML += track.innerHTML;
+      track.dataset.cloned = 'true'; // tránh nhân đôi lần nữa nếu DOM thay đổi
+    }
+  });
+});
+
+// animation section scroll
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        } else {
+          entry.target.classList.remove("active"); // cho phép reset khi scroll lên
+        }
+      });
+    },
+    {
+      threshold: 0.1, // 10% vào view thì kích hoạt
+    }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+});
+
+
+
+// tab
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper = document.querySelector(".homepage-demo-wrapper");
+  const tabs = wrapper.querySelectorAll(".homepage-tabs__item");
+  const items = wrapper.querySelectorAll(".homepage-item");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const selected = this.textContent.trim();
+
+      tabs.forEach(t => t.classList.remove("active"));
+      this.classList.add("active");
+
+      items.forEach(item => {
+        const category = item.getAttribute("data-category") || "";
+        const status = item.getAttribute("data-status") || "";
+
+        const show =
+          selected === "All" ||
+          selected === category ||
+          (selected === "New" && status.toLowerCase() === "new") ||
+          (selected === "Hot" && status.toLowerCase() === "hot");
+
+        item.style.display = show ? "block" : "none";
+      });
+    });
+  });
+});
