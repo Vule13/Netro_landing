@@ -17,6 +17,7 @@ body {
   color: rgba(255, 255, 255, .6);
   --font-body: 16px;
   --color-foreground: #fff;
+  --color-star: #f1b823;
 }
 
 .main {
@@ -507,7 +508,8 @@ p {
   user-select: none;
   width: 260px;
   z-index: 2;
-  transition: all 0.3s ease-in-out;
+  will-change: transform;
+  transition: transform 0.3s linear
 }
 
 .banner-bottom__right {
@@ -534,7 +536,8 @@ p {
   user-select: none;
   width: 260px;
   z-index: 2;
-  transition: all 0.3s ease-in-out;
+  will-change: transform;
+  transition: transform 0.3s linear
 }
 
 .banner-bottom__left-small {
@@ -563,7 +566,8 @@ p {
   top: -135px;
   width: 150px;
   z-index: 3;
-  transition: all 0.3s ease-in-out;
+  will-change: transform;
+  transition: transform 0.3s linear
 }
 
 .banner-bottom__image-center {
@@ -598,7 +602,8 @@ p {
   right: -52px;
   width: 260px;
   z-index: 2;
-  transition: all 0.3s ease-in-out;
+  will-change: transform;
+  transition: transform 0.3s linear
 }
 
 .banner-bottom__background {
