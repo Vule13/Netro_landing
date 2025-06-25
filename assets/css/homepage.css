@@ -243,6 +243,7 @@
 .homepage-demo__background {
   background: #000000;
   border-radius: 15px;
+  height: 100%;
 }
 
 .homepage-demo__dots {
