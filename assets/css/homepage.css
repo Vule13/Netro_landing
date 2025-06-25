@@ -166,6 +166,8 @@
     background: linear-gradient(to left, #045cdd 1%, rgb(15 75 165) 40%, rgb(1, 108, 248) 60%, rgb(0, 119, 255) 100%);
     transform: translateX(0%);
     opacity: 1;
+    overflow: hidden;
+    border-radius: 30px;
   }
 }
 
@@ -207,6 +209,36 @@
   transform: translateY(-250px);
   opacity: 1;
 }
+
+.homepage-item {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  position: absolute;
+  transition: none;
+  will-change: transform
+}
+
+.homepage-item.show {
+  position: static; /* hoặc relative nếu bạn dùng flex/grid */
+  visibility: visible;
+}
+
+.homepage-item.fadeup {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .homepage-demo__background {
   background: #000000;

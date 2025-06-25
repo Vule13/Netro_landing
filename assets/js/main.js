@@ -1,4 +1,4 @@
-
+// circle countto feature
 document.addEventListener("DOMContentLoaded", function(event) {
   const circles = document.querySelectorAll('.countto-circle');
 
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   circles.forEach((circle) => observer.observe(circle));
 });
 
+// hover button blue
 (function () {
   const buttons = document.querySelectorAll('.button-secondary');
 
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 })();
 
+// hover button white box shadow
 (function () {
   const buttons = document.querySelectorAll('.button-white');
 
@@ -134,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 })();
 
+// testimonial countto 5000 -> 10000
 function animateCounterOnScroll({ selector = "#counter", start = 5000, end = 10000, step = 20, duration = 2000 }) {
   const el = document.querySelector(selector);
   if (!el) return;
@@ -167,7 +170,7 @@ function animateCounterOnScroll({ selector = "#counter", start = 5000, end = 100
 }
 animateCounterOnScroll({});
 
-
+// marquee
 document.addEventListener('DOMContentLoaded', () => {
   const marqueeTracks = document.querySelectorAll('.marquee-track');
 
@@ -202,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 // tab
 document.addEventListener("DOMContentLoaded", function () {
   const wrapper = document.querySelector(".homepage-demo-wrapper");
@@ -214,9 +216,10 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       const selected = this.textContent.trim();
-
       tabs.forEach(t => t.classList.remove("active"));
       this.classList.add("active");
+
+      let delayIndex = 0;
 
       items.forEach(item => {
         const category = item.getAttribute("data-category") || "";
@@ -228,7 +231,22 @@ document.addEventListener("DOMContentLoaded", function () {
           (selected === "New" && status.toLowerCase() === "new") ||
           (selected === "Hot" && status.toLowerCase() === "hot");
 
-        item.style.display = show ? "block" : "none";
+        if (show) {
+          item.classList.add("show");
+          item.style.animationDelay = `${delayIndex * 0.1}s`;
+          item.classList.remove("fadeup");
+
+          // Bắt buộc phải reflow lại để trigger animation
+          requestAnimationFrame(() => {
+            item.classList.add("fadeup");
+          });
+
+          delayIndex++;
+        } else {
+          item.classList.remove("fadeup");
+          item.classList.remove("show");
+          item.style.animationDelay = "0s";
+        }
       });
     });
   });

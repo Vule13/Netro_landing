@@ -18,6 +18,12 @@ body {
   --font-body: 16px;
   --color-foreground: #fff;
   --color-star: #f1b823;
+  --background-gradient: linear-gradient(
+    309deg,
+    #4a8ced 2.25225%,
+    rgb(56 145 245) 48.0785%,
+    rgb(0, 119, 255) 100%
+  );
 }
 
 .main {
