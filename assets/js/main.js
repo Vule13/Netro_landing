@@ -250,4 +250,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+   //  Active tab "All" when page loads
+   const defaultTab = wrapper.querySelector('.homepage-tabs__item');
+   if (defaultTab) defaultTab.click();
+});
+
+
+// view more
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector(".feature-saveup__show-more button");
+  const tableTop = document.querySelector(".feature-saveup__table-top");
+  const tableBottom = document.querySelector(".feature-saveup__table-bottom");
+
+  if (button && tableTop && tableBottom) {
+    button.addEventListener("click", function () {
+      tableTop.style.height = "100%";
+      tableBottom.classList.add("view-more-hidden");
+    });
+  }
 });

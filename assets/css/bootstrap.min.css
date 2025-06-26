@@ -88,7 +88,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: rgba(255, 255, 255, .6);
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #0d0d0d;
+  --bs-body-bg: transparent;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -136,9 +136,9 @@
   color-scheme: dark;
   --bs-body-color: #dee2e6;
   --bs-body-color-rgb: 222, 226, 230;
-  --bs-body-bg: #212529;
+  --bs-body-bg: transparent
   --bs-body-bg-rgb: 33, 37, 41;
-  --bs-emphasis-color: #fff;
+  --bs-emphasis-color: rgba(255, 255, 255, .6);
   --bs-emphasis-color-rgb: 255, 255, 255;
   --bs-secondary-color: rgba(222, 226, 230, 0.75);
   --bs-secondary-color-rgb: 222, 226, 230;
@@ -1783,12 +1783,11 @@ progress {
   --bs-table-hover-color: var(--bs-emphasis-color);
   --bs-table-hover-bg: rgba(var(--bs-emphasis-color-rgb), 0.075);
   width: 100%;
-  margin-bottom: 1rem;
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
 .table > :not(caption) > * > * {
-  padding: 0.5rem 0.5rem;
+  padding: 1rem 1rem;
   color: var(
     --bs-table-color-state,
     var(--bs-table-color-type, var(--bs-table-color))
@@ -1933,7 +1932,7 @@ progress {
   border-color: var(--bs-table-border-color);
 }
 .table-dark {
-  --bs-table-color: #fff;
+  --bs-table-color: rgba(255, 255, 255, .6);
   --bs-table-bg: #212529;
   --bs-table-border-color: #4d5154;
   --bs-table-striped-bg: #2c3034;

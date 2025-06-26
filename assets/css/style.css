@@ -209,7 +209,7 @@ p {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgb(38, 38, 38);
+  border: 1px solid rgba(38, 38, 38, .2);
   background-color: rgba(23, 23, 23, .6);
   gap: 5px;
 }
@@ -247,11 +247,6 @@ p {
   align-items: center;
 }
 
-/* .header-price__link {
-  color: var(--color-text);
-  transition: 0.3s ease all;
-} */
-
 .header-nav .nav-link {
   padding: 0 16px;
 }
@@ -271,33 +266,6 @@ p {
   backdrop-filter: blur(10px);
   background-color: rgba(46, 46, 46, 0.6);
 }
-
-/* .header-price {
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-} */
-
-/* .header-price:hover .header-price__link {
-  color: var(--color-hover);
-} */
-
-
-/* From Uiverse.io by Li-Deheng */ 
-
-/* .header-price {
-  padding: 15px 28px 15px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .header-price:hover, .header-price:focus {
-  transition: 0.5s;
-  -webkit-animation: btn-content 1s;
-  animation: btn-content 1s;
-  outline: 0.1em solid transparent;
-  outline-offset: 0.2em;
-  box-shadow: 0 0 0.4em 0 rgb(38, 38, 38);
-} */
 
 .header-price .icon-arrow {
   transition: 0.5s;
