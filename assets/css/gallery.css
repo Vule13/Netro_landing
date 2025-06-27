@@ -12,10 +12,17 @@
   width: 100%;
   z-index: 5;
   color: #fff;
+  @media(max-width: 767px) {
+    display: unset;
+  }
 }
 
 .gallery-content h3 {
   font-size: 110px;
+  @media(max-width: 991px) {
+    font-size: 60px;
+    text-align: center;
+  }
 }
 
 .gallery {
@@ -145,12 +152,20 @@
   bottom: 0;
   max-width: 1200px;
   width: 100%;
+  padding: 0 15px;
+  gap: 20px;
+  @media(max-width: 767px) {
+    flex-direction: column;
+  }
 }
 
 .gallery-bottom__left {
   display: flex;
   gap: 20px;
   align-items: center;
+  @media(max-width: 767px) {
+    flex-direction: column;
+  }
 }
 
 .gallery-bottom__text {

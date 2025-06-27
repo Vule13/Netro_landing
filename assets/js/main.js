@@ -269,3 +269,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".header-nav .nav-item");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      navLinks.forEach(l => l.classList.remove("active")); // Xoá class active khỏi tất cả
+      this.classList.add("active"); // Thêm class active vào link được click
+    });
+  });
+});

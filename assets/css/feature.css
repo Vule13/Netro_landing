@@ -1201,6 +1201,8 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(23, 23, 23, .6);
 }
 
 .feature-row6__img img{
