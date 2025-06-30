@@ -416,6 +416,9 @@ p {
   position: relative;
   scroll-margin-top: 80px;
   width: 100%;
+  @media(max-width: 767px) {
+    padding: 100px 15px 0 15px;
+  }
 }
 
 .banner-top {

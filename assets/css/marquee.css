@@ -281,10 +281,9 @@
   opacity: 0.9;
 }
 
-.testimonial-marquee__nickname {
-  color: var(--color-foreground);
-  opacity: 0.9;
-  font-size: 14px;
+.testimonial-marquee__nickname img {
+  width: 32px;
+  height: 32px;
 }
 
 .testimonial-marquee__box {

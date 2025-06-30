@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
+// header
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".header-nav .nav-item");
 
@@ -281,3 +281,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// modal lấy link tương ứng
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Lắng nghe tất cả các click vào .homepage-demo__image-box hoặc .homepage-demo__title
+  document.querySelectorAll(".homepage-demo__image-box, .homepage-demo__title").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      // Tìm .homepage-demo cha gần nhất
+      const demo = el.closest(".homepage-demo");
+      if (!demo) return;
+
+      // Lấy link từ data-link
+      const link = demo.getAttribute("data-link");
+
+      // Gán link vào thẻ <a> trong modal
+      const modalLink = document.querySelector("#viewnowModal a.button-secondary");
+      if (modalLink && link) {
+        modalLink.setAttribute("href", link);
+      }
+    });
+  });
+});
+
