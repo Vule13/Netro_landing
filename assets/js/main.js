@@ -304,3 +304,47 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+// line banner
+
+window.addEventListener('DOMContentLoaded', () => {
+  const blurContainer = document.getElementById('blur-container');
+  const rayCount = 20;
+
+  for (let i = 0; i < rayCount; i++) {
+    const ray = document.createElement('div');
+    ray.className = 'ray';
+
+    const left = 35 + (i / (rayCount - 1)) * 30; // Spread from 35% to 65%
+    const angle = 25 - (i / (rayCount - 1)) * 50; // From +25° to -25°
+    const scale = 0.8 + Math.random() * 0.3;
+    const maxOpacity = i % 3 === 0 ? 0.3 : (i % 3 === 1 ? 0.2 : 0.1);
+    const width = 20 + Math.random() * 20;
+
+    ray.style.left = `${left}%`;
+    ray.style.width = `${width}px`;
+    ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${scale})`;
+    ray.style.opacity = 0;
+    blurContainer.appendChild(ray);
+
+    const phase = Math.random() * Math.PI * 2;
+
+    const animate = () => {
+      const time = Date.now() * 0.001;
+      const speed = 2 * Math.PI / 6;
+      const dynamicOpacity = maxOpacity * (0.5 + 0.5 * Math.sin(time * speed + phase));
+      const dynamicScale = scale * (0.985 + 0.015 * Math.sin(time * speed + phase));
+      ray.style.opacity = dynamicOpacity;
+      ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${dynamicScale})`;
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  }
+
+  // Light glow in the center
+  const glow = document.createElement('div');
+  glow.className = 'light-source';
+  blurContainer.appendChild(glow);
+});

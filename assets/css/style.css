@@ -228,7 +228,7 @@ p {
 .header {
   position: sticky;
   top: 48px;
-  z-index: 1111111;
+  z-index: 100;
   @media(max-width: 1199px) {
     position: relative;
     top: 10px;
@@ -774,3 +774,47 @@ p {
   opacity: 1;
   transform: translateY(0);
 } */
+
+
+/* banner */
+
+.blur-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(15px); /* Mistier effect */
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.ray {
+  position: absolute;
+  top: 0;
+  height: 800px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 102, 255, 0.6) 0%, /* Blue start */
+    rgba(0, 102, 255, 0.3) 50%, /* Blue mid */
+    rgba(0, 102, 255, 0) 100% /* Transparent end */
+  );
+  transform-origin: top center;
+  opacity: 0;
+  box-shadow: 0 0 6px rgba(0, 102, 255, 0.3); /* Blue glow */
+}
+
+.light-source {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 102, 255, 0.8) 0%, /* Blue light source */
+    rgba(0, 102, 255, 0) 70%
+  );
+  transform: translateX(-50%);
+}

@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="./assets/css/feature.css">
   <link rel="stylesheet" href="./assets/css/homepage.css">
   <link rel="stylesheet" href="./assets/css/marquee.css">
+  <link rel="stylesheet" href="./assets/css/animate.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/shop-feature.css">
   <title>Netro</title>
 </head>
 
@@ -95,15 +97,18 @@
                 </div>
               </a>
             </div>
-            <div class="icon-menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <div class="icon-menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions">
               <span></span>
               <span></span>
               <span></span>
             </div>
-            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark">
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+              aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">MENU</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <ul class="nav header-nav">
@@ -127,8 +132,8 @@
                       <div class="button-secondary__content button-white__content">
                         <span>Buy Now $56</span>
                         <span class="icon-arrow">
-                          <svg width="15px" height="15px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <svg width="15px" height="15px" viewBox="0 0 66 43" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                               <path id="arrow-icon-one"
                                 d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
@@ -154,6 +159,7 @@
     </header>
     <div class="banner-background">
       <section class="banner">
+        <div class="blur-container" id="blur-container"></div>
         <div class="banner-top">
           <div class="banner-content">
             <div class="banner-content__subtitle">
@@ -281,8 +287,11 @@
       <div class="container-xl reveal homepage-demo-wrapper">
         <div class="homepage-tabs">
           <div class="homepage-tabs__top">
-            <a href="#" class="homepage-tabs__item homepage-tabs__item--top"><span data-text-fill="true">All Demos</span></a>
-            <a href="#" class="homepage-tabs__item homepage-tabs__item--green"><span data-text-fill="true">New</span></a>
+            <a href="#" class="homepage-tabs__item homepage-tabs__item--top">
+              <span data-text-fill="true">All Demos</span>
+            </a>
+            <a href="#" class="homepage-tabs__item homepage-tabs__item--green"><span
+                data-text-fill="true">New</span></a>
             <a href="#" class="homepage-tabs__item homepage-tabs__item--hot"><span data-text-fill="true">Hot</span></a>
           </div>
           <div class="homepage-tabs__bottom">
@@ -313,7 +322,6 @@
                   <div class="homepage-demo__img">
                     <img src="./assets/images/demo40.jpg" alt="demo40">
                   </div>
-
                 </div>
                 <div class="homepage-demo__content">
                   <div class="homepage-demo__title" data-bs-toggle="modal" data-bs-target="#viewnowModal">
@@ -345,7 +353,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Home & Garden" data-status="hot" >
+          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Home & Garden" data-status="hot">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
                 <div class="homepage-demo__dots mb-10 d-flex">
@@ -405,13 +413,13 @@
                 </div>
                 <div class="homepage-demo__content">
                   <div class="homepage-demo__title" data-bs-toggle="modal" data-bs-target="#viewnowModal">
-                    Seasonal Vegetable	
+                    Seasonal Vegetable
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Furniture" >
+          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Furniture">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
                 <div class="homepage-demo__dots mb-10 d-flex">
@@ -478,7 +486,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Food & Drink" >
+          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Food & Drink">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
                 <div class="homepage-demo__dots mb-10 d-flex">
@@ -545,7 +553,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Health & Beauty" >
+          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Health & Beauty">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
                 <div class="homepage-demo__dots mb-10 d-flex">
@@ -612,7 +620,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Pet Supplies" >
+          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Pet Supplies">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
                 <div class="homepage-demo__dots mb-10 d-flex">
@@ -700,7 +708,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Health & Beauty" >
+          <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Health & Beauty">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
                 <div class="homepage-demo__dots mb-10 d-flex">
@@ -918,7 +926,7 @@
                 </div>
                 <div class="homepage-demo__content">
                   <div class="homepage-demo__title" data-bs-toggle="modal" data-bs-target="#viewnowModal">
-                    Living Nest	
+                    Living Nest
                   </div>
                   <span class="homepage-demo__hot">Hot</span>
                 </div>
@@ -1060,7 +1068,7 @@
                 </div>
               </div>
             </div>
-          </div>   
+          </div>
           <div class="col-6 col-sm-6 col-lg-4 homepage-item" data-category="Clothing & Fashion" data-status="hot">
             <div class="homepage-demo" data-link="https://maxout-store-newdemo.myshopify.com/?pb=0">
               <div class="homepage-demo__background p-20">
@@ -1198,16 +1206,9 @@
             </div>
           </div>
         </div>
-        <!-- <div class="homepage-demo__btn">
-          <a href="#" class="button-secondary button-blue">
-            <div class="button-secondary__content button-blue__content">
-              <span>View all demos</span>
-            </div>
-          </a> 
-        </div> -->
       </div>
     </section>
-    <section class="gallery">
+     <section class="gallery">
       <div class="gallery-content">
         <h3>Made in Netro</h3>
       </div>
@@ -1395,6 +1396,95 @@
           </a>
         </div>
       </div>
+    </section>
+    <section class="shop-feature">
+      <div class="container">
+        <h2 class="shop-feature__title">Our theme comes with a lot <br> of options for your shop's layout.<br> ...</h2>
+        <div class="shop-feature__box">
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_1.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Left Sidebar</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_2.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Filter hidden</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_3.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">List View</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_4.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Collection List</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_5.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Drawer Sidebar</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_6.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Dropdown Sidebar</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_7.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Toggle Sidebar</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_8.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Best Seller</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank">
+              <img src="assets/images/shop_layout_9.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text">
+              <a href="" target="_blank">Image banner</a>
+            </h4>
+          </div>
+          <div class="shop-feature__item">
+            <a href="" target="_blank" data-bs-toggle="modal" data-bs-target="#viewnowModal_shopfeature">
+              <img src="assets/images/shop_layout_10.png" alt="">
+            </a>
+            <h4 class="shop-feature__item-text" data-bs-toggle="modal" data-bs-target="#viewnowModal_shopfeature">
+              <a href="javascript:void(0)">Product styles</a>
+            </h4>
+          </div>
+        </div>        
+      </div>
+      <div class="marquee-feature__background"></div>
+      <div class="marquee-feature__border"></div>
     </section>
     <section id="feature" class="feature ">
       <div class="container-xl">
@@ -1701,7 +1791,7 @@
                       <div class="feature-row1-col4__description">
                         <span>Diverse Layout Options: Choose from multiple product layouts to showcase your products and
                           enhance the shopping experience.</span>
-                      </div>                      
+                      </div>
                     </div>
                     <div class="feature-row1-col4__marquee">
                       <div class="marquee-image-container">
@@ -2048,7 +2138,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Color scheme</div>
                       <div class="feature-row1-col4__description">
-                        <span>Create and apply custom color schemes across your store to keep your design consistent and eye-catching.</span>
+                        <span>Create and apply custom color schemes across your store to keep your design consistent and
+                          eye-catching.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2065,7 +2156,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Product recently viewed</div>
                       <div class="feature-row1-col4__description">
-                        <span>Help customers quickly revisit their favorite items with a list of recently viewed products, making it easy to pick up where they left off.</span>
+                        <span>Help customers quickly revisit their favorite items with a list of recently viewed
+                          products, making it easy to pick up where they left off.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2078,7 +2170,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Multi-Language Support</div>
                       <div class="feature-row1-col4__description">
-                        <span>Reach global customers with built-in multi-language and currency support, offering a seamless shopping experience in over 90 languages.</span>
+                        <span>Reach global customers with built-in multi-language and currency support, offering a
+                          seamless shopping experience in over 90 languages.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2095,7 +2188,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Live Search</div>
                       <div class="feature-row1-col4__description">
-                        <span>Find products instantly with real-time search suggestions that appear as you type no waiting, no page reloads.</span>
+                        <span>Find products instantly with real-time search suggestions that appear as you type no
+                          waiting, no page reloads.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2108,7 +2202,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Cart Upsell Products</div>
                       <div class="feature-row1-col4__description">
-                        <span>Encourage higher order values by suggesting relevant add-on products directly in the cart, boost sales while enhancing the shopping experience.</span>
+                        <span>Encourage higher order values by suggesting relevant add-on products directly in the cart,
+                          boost sales while enhancing the shopping experience.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2125,7 +2220,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Product AR/3D</div>
                       <div class="feature-row1-col4__description">
-                        <span>Bring your products to life with 3D models, AR, offering an immersive shopping experience that builds trust and boosts sales.</span>
+                        <span>Bring your products to life with 3D models, AR, offering an immersive shopping experience
+                          that builds trust and boosts sales.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2138,7 +2234,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">360 product</div>
                       <div class="feature-row1-col4__description">
-                        <span>Let customers view your products from every angle with interactive 360° images, building confidence and driving purchase decisions.</span>
+                        <span>Let customers view your products from every angle with interactive 360° images, building
+                          confidence and driving purchase decisions.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2155,7 +2252,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Sticky add to cart</div>
                       <div class="feature-row1-col4__description">
-                        <span>Keep the Add to Cart button visible as customers scroll for quicker, easier purchases.</span>
+                        <span>Keep the Add to Cart button visible as customers scroll for quicker, easier
+                          purchases.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2168,7 +2266,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Pickup Availability</div>
                       <div class="feature-row1-col4__description">
-                        <span>Make shopping easier by showing pickup availability at the nearest store location for each product.</span>
+                        <span>Make shopping easier by showing pickup availability at the nearest store location for each
+                          product.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2198,7 +2297,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Product complementary</div>
                       <div class="feature-row1-col4__description">
-                        <span>Suggest complementary products that pair well with what customers are viewing to increase order value and enhance the shopping experience.</span>
+                        <span>Suggest complementary products that pair well with what customers are viewing to increase
+                          order value and enhance the shopping experience.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2211,7 +2311,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Pickup Availability</div>
                       <div class="feature-row1-col4__description">
-                        <span>Make shopping easier by showing pickup availability at the nearest store location for each product.</span>
+                        <span>Make shopping easier by showing pickup availability at the nearest store location for each
+                          product.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2228,7 +2329,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Media carousel</div>
                       <div class="feature-row1-col4__description">
-                        <span>Showcase multiple product images and videos in an interactive carousel for a richer viewing experience.</span>
+                        <span>Showcase multiple product images and videos in an interactive carousel for a richer
+                          viewing experience.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2241,7 +2343,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Media video</div>
                       <div class="feature-row1-col4__description">
-                        <span>Enhance product pages with embedded videos to showcase features, usage, or brand stories.</span>
+                        <span>Enhance product pages with embedded videos to showcase features, usage, or brand
+                          stories.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2258,7 +2361,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Digital products</div>
                       <div class="feature-row1-col4__description">
-                        <span>Offer gift cards as a flexible gifting option that lets customers share your store with others.</span>
+                        <span>Offer gift cards as a flexible gifting option that lets customers share your store with
+                          others.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2271,7 +2375,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Countdown Timer</div>
                       <div class="feature-row1-col4__description">
-                        <span>Inspire shoppers with beautiful shoppable image galleries. Perfect for showcasing curated collections and the latest trends.</span>
+                        <span>Inspire shoppers with beautiful shoppable image galleries. Perfect for showcasing curated
+                          collections and the latest trends.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2284,7 +2389,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Sale badge</div>
                       <div class="feature-row1-col4__description">
-                        <span>Highlight discounted products with eye-catching sale badges to grab attention and boost conversions.</span>
+                        <span>Highlight discounted products with eye-catching sale badges to grab attention and boost
+                          conversions.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2314,7 +2420,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Newsletter popup</div>
                       <div class="feature-row1-col4__description">
-                        <span>Grow your mailing list and stay connected with customers using a clean, effective newsletter popup.</span>
+                        <span>Grow your mailing list and stay connected with customers using a clean, effective
+                          newsletter popup.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2331,7 +2438,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Quick View</div>
                       <div class="feature-row1-col4__description">
-                        <span>Let customers preview product details in a pop-up without leaving the collection page, complete with essential info and an “Add to Cart” button.</span>
+                        <span>Let customers preview product details in a pop-up without leaving the collection page,
+                          complete with essential info and an “Add to Cart” button.</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2344,7 +2452,8 @@
                     <div class="feature-col-content">
                       <div class="feature-row1-col4__title feature-col-title">Lookbook</div>
                       <div class="feature-row1-col4__description">
-                        <span>Inspire shoppers with beautiful, shoppable image galleries, perfect for showcasing curated collections and the latest trends</span>
+                        <span>Inspire shoppers with beautiful, shoppable image galleries, perfect for showcasing curated
+                          collections and the latest trends</span>
                       </div>
                     </div>
                     <div class="feature-row6__img">
@@ -2876,7 +2985,8 @@
             <ul class="marquee-content-reverse2">
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -2910,7 +3020,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -2945,7 +3056,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -2980,7 +3092,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3016,7 +3129,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3050,7 +3164,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3086,7 +3201,8 @@
             <ul class="marquee-content-reverse2">
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3117,7 +3233,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3150,8 +3267,9 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
-                    <div class="testimonial-marquee__star">
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
+                  <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
                         d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
@@ -3181,7 +3299,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3213,7 +3332,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3245,7 +3365,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3281,7 +3402,8 @@
             <ul class="marquee-content-reverse">
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3313,7 +3435,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3345,7 +3468,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3377,7 +3501,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3409,7 +3534,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3441,7 +3567,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3475,7 +3602,8 @@
             <ul class="marquee-content-reverse">
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3507,7 +3635,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3539,7 +3668,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3571,7 +3701,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3603,7 +3734,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3635,7 +3767,8 @@
               </li>
               <li class="testimonial-marquee__item">
                 <div class="testimonial-marquee__top">
-                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png" alt="double-quotes"></div>
+                  <div class="testimonial-marquee__nickname"><img src="./assets/images/double-quotes.png"
+                      alt="double-quotes"></div>
                   <div class="testimonial-marquee__star">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                       <path fill="var(--color-star)"
@@ -3683,14 +3816,17 @@
       <div class="marquee-feature__border"></div>
     </section>
     <section class="feature-saveup">
-      <marquee class="feature-saveup__marquee-text" behavior="scroll" direction="left">Save money Save money Save money Save money Save money Save money</marquee>
-      <div class="container">        
+      <marquee class="feature-saveup__marquee-text" behavior="scroll" direction="left">Save money Save money Save money
+        Save money Save money Save money</marquee>
+      <div class="container">
         <div class="row" data-bs-theme="dark">
           <div class="col-xs-12 col-xxl-5">
             <div class="feature-saveup__content">
               <h2 class="feature-saveup__title">Save up to $1892 a Year</h2>
               <div class="feature-saveup__desc">
-                We are understand the pain of having to pay too much on monthly Shopify App Fees, sometimes even a small feature can cost upto $15 a month. That's why this theme was born, this theme can save $1892 a year.</div>
+                We are understand the pain of having to pay too much on monthly Shopify App Fees, sometimes even a small
+                feature can cost upto $15 a month. That's why this theme was born, this theme can save $1892 a year.
+              </div>
             </div>
           </div>
           <div class="col-xs-12 col-xxl-7">
@@ -3701,7 +3837,7 @@
                     <tr>
                       <th scope="col">Features</th>
                       <th scope="col">Shopify app sub</th>
-                      <th scope="col">Conversion rate	</th>
+                      <th scope="col">Conversion rate </th>
                       <th scope="col">Our theme </th>
                     </tr>
                   </thead>
@@ -3710,103 +3846,120 @@
                       <td>Advanced filters</td>
                       <td>$360.00</td>
                       <td>10%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Cart drawer</td>
                       <td>$108.00</td>
                       <td>+</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Countdown timer</td>
                       <td>$84.00</td>
                       <td>40%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Free shipping goal</td>
                       <td>$144.00</td>
                       <td>+</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>In-cart recommendation</td>
                       <td>$144.00</td>
                       <td>12%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Mega menu</td>
                       <td>$60.00</td>
                       <td>+</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Pop-up</td>
                       <td>$180.00</td>
                       <td>50%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Product quick view</td>
                       <td>$79.00</td>
                       <td>+</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Volume discount</td>
                       <td>$180.00</td>
                       <td>20%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Recently viewed products</td>
                       <td>$36.00</td>
                       <td>20%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Size chart</td>
                       <td>$79.00</td>
                       <td>22%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Smart search</td>
                       <td>$144.00</td>
                       <td>+100%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Sticky add-to-cart</td>
                       <td>$60.00</td>
                       <td>8%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
-                      <td>Stock countdown	</td>
+                      <td>Stock countdown </td>
                       <td>$36.00</td>
                       <td>400%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Wishlist</td>
                       <td>$60.00</td>
                       <td>+</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
                       <td>Store location page</td>
                       <td>$59.00</td>
                       <td>12%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                     <tr>
-                      <td>Multiple currencies & languages	</td>
+                      <td>Multiple currencies & languages </td>
                       <td>$79.00</td>
                       <td>41%</td>
-                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png" alt="free"><span>Free</span></td>
+                      <td class="feature-saveup__table-image"><img src="./assets/images/check.png"
+                          alt="free"><span>Free</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -3816,9 +3969,10 @@
                   <button class="button-secondary">
                     <div class="button-secondary__content button-white__content">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" viewBox="0 0 16 16">
-                        <path fill="#000" d="M2.5 2.53125C4.02083 1.01042 5.85417.25 8 .25c2.1458 0 3.9688.76042 5.4688 2.28125C14.9896 4.03125 15.75 5.85417 15.75 8c0 2.1458-.7604 3.9792-2.2812 5.5-1.5 1.5-3.323 2.25-5.4688 2.25-2.14583 0-3.97917-.75-5.5-2.25C1 11.9792.25 10.1458.25 8c0-2.14583.75-3.96875 2.25-5.46875zm1.0625 9.90625C4.79167 13.6458 6.27083 14.25 8 14.25c1.72917 0 3.1979-.6042 4.4062-1.8125C13.6354 11.2083 14.25 9.72917 14.25 8c0-1.72917-.6146-3.19792-1.8438-4.40625C11.1979 2.36458 9.72917 1.75 8 1.75c-1.72917 0-3.20833.61458-4.4375 1.84375C2.35417 4.80208 1.75 6.27083 1.75 8c0 1.72917.60417 3.2083 1.8125 4.4375zm8.5-4.625c.1667.16667.1667.34375 0 .53125L8.25 12.125c-.16667.1875-.33333.1875-.5 0L3.9375 8.34375c-.16667-.1875-.16667-.36458 0-.53125l.625-.625c.16667-.16667.34375-.16667.53125 0L7.1875 9.40625V4.375c0-.25.125-.375.375-.375h.875c.25 0 .375.125.375.375v5.03125l2.0937-2.21875c.1876-.16667.3646-.16667.5313 0l.625.625z">
+                        <path fill="#000"
+                          d="M2.5 2.53125C4.02083 1.01042 5.85417.25 8 .25c2.1458 0 3.9688.76042 5.4688 2.28125C14.9896 4.03125 15.75 5.85417 15.75 8c0 2.1458-.7604 3.9792-2.2812 5.5-1.5 1.5-3.323 2.25-5.4688 2.25-2.14583 0-3.97917-.75-5.5-2.25C1 11.9792.25 10.1458.25 8c0-2.14583.75-3.96875 2.25-5.46875zm1.0625 9.90625C4.79167 13.6458 6.27083 14.25 8 14.25c1.72917 0 3.1979-.6042 4.4062-1.8125C13.6354 11.2083 14.25 9.72917 14.25 8c0-1.72917-.6146-3.19792-1.8438-4.40625C11.1979 2.36458 9.72917 1.75 8 1.75c-1.72917 0-3.20833.61458-4.4375 1.84375C2.35417 4.80208 1.75 6.27083 1.75 8c0 1.72917.60417 3.2083 1.8125 4.4375zm8.5-4.625c.1667.16667.1667.34375 0 .53125L8.25 12.125c-.16667.1875-.33333.1875-.5 0L3.9375 8.34375c-.16667-.1875-.16667-.36458 0-.53125l.625-.625c.16667-.16667.34375-.16667.53125 0L7.1875 9.40625V4.375c0-.25.125-.375.375-.375h.875c.25 0 .375.125.375.375v5.03125l2.0937-2.21875c.1876-.16667.3646-.16667.5313 0l.625.625z">
                         </path>
-                    </svg>
+                      </svg>
                       <span>View More</span>
                     </div>
                   </button>
@@ -3862,6 +4016,114 @@
                 <span>View Now</span>
               </div>
             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="viewnowModal_shopfeature" tabindex="-1" aria-labelledby="viewnowModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="justify-content: center;">
+        <div class=" modal-content modal-shop-feature">
+          <div class="modal-viewnow__close" data-bs-dismiss="modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+              fill="#fff">
+              <path
+                d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z">
+              </path>
+            </svg>
+          </div>
+          <div class="modal-shop-feature__body">
+            <div class="row">
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_11.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 1</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_10.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 2</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_12.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 3</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_13.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 4</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_14.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 5</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_15.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 6</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_16.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 7</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_17.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 8</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="modal-shop-feature__body-item">
+                  <a href="" target="_blank">
+                    <img src="assets/images/shop_layout_18.png" alt="">
+                  </a>
+                  <h4 class="shop-feature__item-text">
+                      <a href="" target="_blank">Product style 9</a>
+                  </h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
