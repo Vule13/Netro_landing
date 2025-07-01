@@ -164,6 +164,10 @@
   }
 }
 
+.marquee__dot svg {
+  scale: 1.4;
+}
+
 /* marquee feature */
 
 .marquee-feature__item {

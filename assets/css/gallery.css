@@ -19,6 +19,7 @@
 
 .gallery-content h3 {
   font-size: 110px;
+  font-weight: 600;
   @media(max-width: 991px) {
     font-size: 60px;
     text-align: center;
@@ -86,7 +87,7 @@
   overflow: visible;
   padding: 0;
   position: relative;
-  width: 394px;
+  width: 18%;
 }
 
 .gallery-image__col2 {
@@ -101,7 +102,7 @@
   overflow: visible;
   padding: 0;
   position: relative;
-  width: 190px;
+  width: 8%;
 }
 
 .gallery-image__col1-1 {

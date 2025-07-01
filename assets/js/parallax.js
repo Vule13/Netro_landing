@@ -182,46 +182,28 @@ window.addEventListener('scroll', function() {
 });
 
 
+// gallery
+let lastScroll = 0, ticking = false;
 
-let lastScrollPositionGallery = window.scrollY;
-let isTickingGallery = false;
+function parallax() {
+  const gallery = document.querySelector('.gallery');
+  if (!gallery) return;
 
-function handleGalleryParallax() {
-  const gallerySection = document.querySelector('.gallery');
-  const galleryImages = document.querySelectorAll('.gallery-image__box');
+  const { top, height } = gallery.getBoundingClientRect();
+  const inView = top < window.innerHeight && top + height > 0;
+  const progress = inView ? Math.min(1, Math.max(0, (window.innerHeight - top) / (window.innerHeight + height))) : 0;
 
-  if (!gallerySection) return;
+  document.querySelectorAll('.gallery-image__box').forEach(img => {
+    const scale = 1.6 - progress * 0.6;
+    const opacity = 0.4 + progress * 0.6;
+    const translateY = inView ? -300 + progress * 1000 : (window.scrollY > lastScroll ? -700 : 700);
 
-  const currentScrollPosition = window.scrollY;
-  const rect = gallerySection.getBoundingClientRect();
-  const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    img.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    img.style.opacity = opacity;
+  });
 
-  if (inView) {
-    const scrollPercentage = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
-
-    galleryImages.forEach((image) => {
-      const scale = 1.6 - scrollPercentage * 0.6; // Scale từ 1.8 xuống 1
-      const translateY = scrollPercentage * 750; // TranslateY đến 750px
-      const opacity = 0.4 + scrollPercentage * 0.6; // Opacity từ 0.4 đến 1
-      
-      image.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-      image.style.opacity = opacity;
-    });
-  } else {
-    galleryImages.forEach((image) => {
-      image.style.transform = `scale(1) translateY(0px)`;
-      image.style.opacity = 0.4;
-    });
-  }
-
-  lastScrollPositionGallery = currentScrollPosition;
-  isTickingGallery = false;
+  lastScroll = window.scrollY;
+  ticking = false;
 }
 
-window.addEventListener('scroll', function() {
-  if (!isTickingGallery) {
-    requestAnimationFrame(handleGalleryParallax);
-    isTickingGallery = true;
-  }
-});
-
+window.addEventListener('scroll', () => !ticking && (requestAnimationFrame(parallax), ticking = true));

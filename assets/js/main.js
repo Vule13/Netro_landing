@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const status = item.getAttribute("data-status") || "";
 
         const show =
-          selected === "All" ||
+          selected === "All Demos" ||
           selected === category ||
           (selected === "New" && status.toLowerCase() === "new") ||
           (selected === "Hot" && status.toLowerCase() === "hot");

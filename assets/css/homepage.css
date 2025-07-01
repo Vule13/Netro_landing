@@ -174,33 +174,33 @@
   transition: all .3s ease;
 }
 
-.homepage-tabs__item--top span:hover, .homepage-tabs__item--top.active span {
-  background: linear-gradient(270deg, rgb(112, 186, 233) 30.25225%, rgb(0 85 183) 80.0785%, rgb(4 87 183) 100%);
+.homepage-tabs__item--top span {
+  background: linear-gradient(270deg, rgb(0 114 187) 30.25225%, rgb(0 85 183) 80.0785%, rgb(4 87 183) 100%);
 }
 
-.homepage-tabs__item--green span:hover, .homepage-tabs__item--green.active span {
+.homepage-tabs__item--green span {
   background: linear-gradient(270deg, #0bff8e 30.25225%, #014224 80.0785%, #007640 100%);
 }
 
-.homepage-tabs__item--hot span:hover, .homepage-tabs__item--hot.active span {
+.homepage-tabs__item--hot span {
   background: linear-gradient(270deg, #fb7659 30.25225%, #cb2702 80.0785%, #951d02 100%);
 }
 
-.homepage-tabs__item--green span[data-text-fill]:hover, .homepage-tabs__item--green.active span[data-text-fill] {
+.homepage-tabs__item--green span[data-text-fill] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.homepage-tabs__item--hot span[data-text-fill]:hover, .homepage-tabs__item--hot.active span[data-text-fill] {
+.homepage-tabs__item--hot span[data-text-fill] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.homepage-tabs__item--top span[data-text-fill]:hover, .homepage-tabs__item--top.active span[data-text-fill] {
+.homepage-tabs__item--top span[data-text-fill] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -431,24 +431,22 @@
 }
 
 .homepage-demo__new {
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 30px;
   color: #052a03;
   background-color: rgb(67 142 68);
   line-height: 1;
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
   box-shadow: 0px 1px 5px 0 #198754;
 }
 
 .homepage-demo__hot {
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 30px;
-  color: #4e0000;
+  color: #7e0202;
   background-color: rgb(252 87 50);
   line-height: 1;
-  text-transform: uppercase;
   font-size: 12px;
   box-shadow: 0px 1px 5px 0 #dc3545;
   font-weight: 500;
