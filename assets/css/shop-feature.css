@@ -26,6 +26,7 @@
   padding-top: 200px;
   padding-bottom: 100px;
   position: relative;
+  overflow: hidden;
   @media(max-width: 767px) {
     padding: 100px 0;
   }
@@ -34,7 +35,7 @@
 .shop-feature__title {
   text-align: center;
   color: var(--color-foreground);
-  font-size: 48px;
+  font-size: 34px;
   max-width: 800px;
   padding: 0 15px;
   margin: 0 auto;
@@ -84,3 +85,124 @@
 .modal-shop-feature__body-item img {
   width: 100%;
 }
+
+
+
+/* css layout-theme */
+
+.layout-theme {
+  overflow: hidden;
+  position: relative;
+  padding: 100px 0;
+}
+
+.layout-theme__track {
+  display: flex;
+  will-change: transform;
+  transition: transform 0.4s ease;
+}
+
+.layout-theme__slide {
+  flex: 0 0 calc(100% / 3);
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+}
+
+.layout-theme__slide-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.layout-theme__slide-img {
+  box-shadow: 0px 0px 20px 0 rgb(50 50 50 / 20%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.layout-theme__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffff;
+  color: #000;
+  border: none;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 5px 15px 0 rgb(50 50 50 / 20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.layout-theme__button--prev { left: 0; }
+.layout-theme__button--next { right: 0; }
+
+.layout-theme__pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.layout-theme__pagination span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.layout-theme__pagination .active {
+  background: #333;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .layout-theme__slide {
+    flex: 0 0 calc(100% / 2);
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-theme__slide {
+    flex: 0 0 100%;
+    font-size: 1.2rem;
+  }
+}
+
+.layout-theme__slide-text {
+  font-size: 16px;
+  color: var(--color-foreground);
+  padding-top: 25px;
+}
+
+.layout-theme__pagination {
+  display: none;
+  @media(max-width: 767px) {
+    display: block;
+  }
+}
+
+.layout-theme__viewport {
+  overflow: hidden;
+  position: relative;
+  padding-top: 30px;
+}
+
+
+

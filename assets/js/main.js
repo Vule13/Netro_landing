@@ -308,43 +308,194 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // line banner
 
-window.addEventListener('DOMContentLoaded', () => {
-  const blurContainer = document.getElementById('blur-container');
-  const rayCount = 20;
+// window.addEventListener('DOMContentLoaded', () => {
+//   const blurContainer = document.getElementById('blur-container');
+//   const rayCount = 20;
 
-  for (let i = 0; i < rayCount; i++) {
-    const ray = document.createElement('div');
-    ray.className = 'ray';
+//   for (let i = 0; i < rayCount; i++) {
+//     const ray = document.createElement('div');
+//     ray.className = 'ray';
 
-    const left = 35 + (i / (rayCount - 1)) * 30; // Spread from 35% to 65%
-    const angle = 25 - (i / (rayCount - 1)) * 50; // From +25° to -25°
-    const scale = 0.8 + Math.random() * 0.3;
-    const maxOpacity = i % 3 === 0 ? 0.3 : (i % 3 === 1 ? 0.2 : 0.1);
-    const width = 20 + Math.random() * 20;
+//     const left = 35 + (i / (rayCount - 1)) * 30; // Spread from 35% to 65%
+//     const angle = 25 - (i / (rayCount - 1)) * 50; // From +25° to -25°
+//     const scale = 0.8 + Math.random() * 0.3;
+//     const maxOpacity = i % 3 === 0 ? 0.3 : (i % 3 === 1 ? 0.2 : 0.1);
+//     const width = 20 + Math.random() * 20;
 
-    ray.style.left = `${left}%`;
-    ray.style.width = `${width}px`;
-    ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${scale})`;
-    ray.style.opacity = 0;
-    blurContainer.appendChild(ray);
+//     ray.style.left = `${left}%`;
+//     ray.style.width = `${width}px`;
+//     ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${scale})`;
+//     ray.style.opacity = 0;
+//     blurContainer.appendChild(ray);
 
-    const phase = Math.random() * Math.PI * 2;
+//     const phase = Math.random() * Math.PI * 2;
 
-    const animate = () => {
-      const time = Date.now() * 0.001;
-      const speed = 2 * Math.PI / 6;
-      const dynamicOpacity = maxOpacity * (0.5 + 0.5 * Math.sin(time * speed + phase));
-      const dynamicScale = scale * (0.985 + 0.015 * Math.sin(time * speed + phase));
-      ray.style.opacity = dynamicOpacity;
-      ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${dynamicScale})`;
-      requestAnimationFrame(animate);
-    };
+//     const animate = () => {
+//       const time = Date.now() * 0.001;
+//       const speed = 2 * Math.PI / 6;
+//       const dynamicOpacity = maxOpacity * (0.5 + 0.5 * Math.sin(time * speed + phase));
+//       const dynamicScale = scale * (0.985 + 0.015 * Math.sin(time * speed + phase));
+//       ray.style.opacity = dynamicOpacity;
+//       ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${dynamicScale})`;
+//       requestAnimationFrame(animate);
+//     };
 
-    animate();
+//     animate();
+//   }
+
+//   // Light glow in the center
+//   const glow = document.createElement('div');
+//   glow.className = 'light-source';
+//   blurContainer.appendChild(glow);
+// });
+
+
+// carousel 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slidesPerView = 3;
+  const track = document.getElementById('carousel-track');
+  const pagination = document.querySelector('.layout-theme__pagination');
+  const originalSlides = Array.from(track.children);
+  const totalSlides = originalSlides.length;
+  let currentIndex = slidesPerView;
+
+  const clonesBefore = originalSlides.slice(-slidesPerView).map(s => s.cloneNode(true));
+  const clonesAfter = originalSlides.slice(0, slidesPerView).map(s => s.cloneNode(true));
+  clonesBefore.forEach(c => track.insertBefore(c, track.firstChild));
+  clonesAfter.forEach(c => track.appendChild(c));
+  const allSlides = Array.from(track.children);
+
+  function slideWidth() {
+    return allSlides[0].offsetWidth;
   }
 
-  // Light glow in the center
-  const glow = document.createElement('div');
-  glow.className = 'light-source';
-  blurContainer.appendChild(glow);
+  function setTransform(index, animate = true) {
+    track.style.transition = animate ? 'transform 0.4s ease' : 'none';
+    track.style.transform = `translate3d(-${slideWidth() * index}px, 0, 0)`;
+  }
+
+  function updatePagination() {
+    const dots = pagination.querySelectorAll('span');
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[(currentIndex - slidesPerView + totalSlides) % totalSlides].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    setTransform(currentIndex);
+    updatePagination();
+    if (currentIndex === totalSlides + slidesPerView) {
+      setTimeout(() => {
+        currentIndex = slidesPerView;
+        setTransform(currentIndex, false);
+        updatePagination();
+      }, 400);
+    }
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    setTransform(currentIndex);
+    updatePagination();
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        currentIndex = totalSlides;
+        setTransform(currentIndex, false);
+        updatePagination();
+      }, 400);
+    }
+  }
+
+  document.querySelector('.layout-theme__button--next').addEventListener('click', nextSlide);
+  document.querySelector('.layout-theme__button--prev').addEventListener('click', prevSlide);
+
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    pagination.appendChild(dot);
+  }
+
+  pagination.addEventListener('click', (e) => {
+    if (e.target.tagName === 'SPAN') {
+      const index = [...pagination.children].indexOf(e.target);
+      currentIndex = index + slidesPerView;
+      setTransform(currentIndex);
+      updatePagination();
+    }
+  });
+
+  let auto = setInterval(nextSlide, 4000);
+  const container = document.querySelector('.layout-theme');
+  container.addEventListener('mouseenter', () => clearInterval(auto));
+  container.addEventListener('mouseleave', () => auto = setInterval(nextSlide, 4000));
+
+  // Swipe logic with window-level listeners
+  let isDragging = false;
+  let startX = 0;
+  let currentX = 0;
+  let deltaX = 0;
+
+  function onStart(e) {
+    isDragging = true;
+    startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    track.style.transition = 'none';
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onEnd);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('touchend', onEnd);
+  }
+
+  function onMove(e) {
+    if (!isDragging) return;
+    currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    deltaX = currentX - startX;
+    track.style.transform = `translate3d(${ -slideWidth() * currentIndex + deltaX }px, 0, 0)`;
+    if (e.cancelable) e.preventDefault();
+  }
+
+  function onEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    const threshold = slideWidth() / 4;
+    track.style.transition = 'transform 0.4s ease';
+
+    if (deltaX < -threshold) {
+      nextSlide();
+    } else if (deltaX > threshold) {
+      prevSlide();
+    } else {
+      setTransform(currentIndex);
+    }
+
+    deltaX = 0;
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onEnd);
+    window.removeEventListener('touchmove', onMove);
+    window.removeEventListener('touchend', onEnd);
+  }
+
+  track.addEventListener('mousedown', onStart);
+  track.addEventListener('touchstart', onStart, { passive: true });
+
+  setTransform(currentIndex, false);
+  updatePagination();
+});
+
+
+// back to top
+document.addEventListener('DOMContentLoaded', function () {
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
