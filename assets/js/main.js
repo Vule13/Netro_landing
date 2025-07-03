@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 // animation section scroll
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -348,6 +349,27 @@ document.addEventListener("DOMContentLoaded", function () {
 //   glow.className = 'light-source';
 //   blurContainer.appendChild(glow);
 // });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rays = document.querySelectorAll('.blur-container__ray');
+  const baseRotations = [5, 14, 9, -11, -18, 18, 18, 7, -15, -18, -18, -5]; // Smaller angles
+
+  function animate() {
+    rays.forEach((ray, index) => {
+      const time = Date.now() * 0.001 + index * 0.2; // Staggered timing
+      const baseOpacity = index === 0 || index === 11 ? 0.4 : (index < 3 || index > 8 ? 0.5 : 0.4); // Central denser, outer fainter
+      const scale = 0.6 + 0.4 * (Math.sin(time) + 1) / 2; // 0.6 to 1
+      const opacity = baseOpacity * (Math.sin(time * 2 + index) + 1) / 2; // 0 to baseOpacity
+      const rotate = baseRotations[index] || 0; // ray1 at 0deg
+      ray.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+      ray.style.opacity = opacity; // Allows opacity to reach 0
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
 
 
 // carousel 

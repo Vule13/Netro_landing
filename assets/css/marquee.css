@@ -62,6 +62,7 @@
   min-width: 100%;
   animation: scroll 20s infinite linear;
   gap: 50px;
+  justify-content: space-around;
 }
 
 .marquee-content-reverse {
