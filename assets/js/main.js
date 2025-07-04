@@ -1,6 +1,6 @@
 // circle countto feature
-document.addEventListener("DOMContentLoaded", function(event) {
-  const circles = document.querySelectorAll('.countto-circle');
+document.addEventListener("DOMContentLoaded", function (event) {
+  const circles = document.querySelectorAll(".countto-circle");
 
   // Function to start the animation
   const startCounter = (progress) => {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (entry.isIntersecting) {
           startCounter(entry.target); // Start the animation when visible
         } else {
-          entry.target.querySelector(".countto-circle__num").innerHTML = '0'; // Reset number on exit if desired
+          entry.target.querySelector(".countto-circle__num").innerHTML = "0"; // Reset number on exit if desired
         }
       });
     },
@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // hover button blue
 (function () {
-  const buttons = document.querySelectorAll('.button-secondary');
+  const buttons = document.querySelectorAll(".button-secondary");
 
-  buttons.forEach(button => {
-    const content = button.querySelector('.button-secondary__content');
+  buttons.forEach((button) => {
+    const content = button.querySelector(".button-secondary__content");
     if (!content) return;
 
     const settings = {
@@ -70,15 +70,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
 
         const outer = forward
-          ? settings.outerStart + (settings.outerEnd - settings.outerStart) * eased
-          : settings.outerEnd - (settings.outerEnd - settings.outerStart) * eased;
+          ? settings.outerStart +
+            (settings.outerEnd - settings.outerStart) * eased
+          : settings.outerEnd -
+            (settings.outerEnd - settings.outerStart) * eased;
 
         const inner = forward
-          ? settings.innerStart + (settings.innerEnd - settings.innerStart) * eased
-          : settings.innerEnd - (settings.innerEnd - settings.innerStart) * eased;
+          ? settings.innerStart +
+            (settings.innerEnd - settings.innerStart) * eased
+          : settings.innerEnd -
+            (settings.innerEnd - settings.innerStart) * eased;
 
-        button.style.setProperty('--x', `${outer}%`);
-        content.style.setProperty('--x2', `${inner}%`);
+        button.style.setProperty("--x", `${outer}%`);
+        content.style.setProperty("--x2", `${inner}%`);
 
         if (progress < 1) {
           animationFrame = requestAnimationFrame(step);
@@ -88,16 +92,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       animationFrame = requestAnimationFrame(step);
     }
 
-    button.addEventListener('mouseenter', () => animateGradient(true));
-    button.addEventListener('mouseleave', () => animateGradient(false));
+    button.addEventListener("mouseenter", () => animateGradient(true));
+    button.addEventListener("mouseleave", () => animateGradient(false));
   });
 })();
 
 // hover button white box shadow
 (function () {
-  const buttons = document.querySelectorAll('.button-white');
+  const buttons = document.querySelectorAll(".button-white");
 
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     let animationFrame;
     let startTime;
 
@@ -121,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           ? settings.from + (settings.to - settings.from) * eased
           : settings.to - (settings.to - settings.from) * eased;
 
-        button.style.setProperty('--shadowX', value.toFixed(3));
+        button.style.setProperty("--shadowX", value.toFixed(3));
 
         if (progress < 1) {
           animationFrame = requestAnimationFrame(step);
@@ -131,25 +135,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
       animationFrame = requestAnimationFrame(step);
     }
 
-    button.addEventListener('mouseenter', () => animate(true));
-    button.addEventListener('mouseleave', () => animate(false));
+    button.addEventListener("mouseenter", () => animate(true));
+    button.addEventListener("mouseleave", () => animate(false));
   });
 })();
 
 // testimonial countto 5000 -> 10000
-function animateCounterOnScroll({ selector = "#counter", start = 5000, end = 10000, step = 20, duration = 2000 }) {
+function animateCounterOnScroll({
+  selector = "#counter",
+  start = 5000,
+  end = 10000,
+  step = 20,
+  duration = 2000,
+}) {
   const el = document.querySelector(selector);
   if (!el) return;
 
   let hasAnimated = false;
 
-  const observer = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting && !hasAnimated) {
-      hasAnimated = true;
-      animate();
-      observer.disconnect(); // chỉ chạy một lần
-    }
-  }, { threshold: 0.6 });
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        animate();
+        observer.disconnect(); // chỉ chạy một lần
+      }
+    },
+    { threshold: 0.6 }
+  );
 
   observer.observe(el);
 
@@ -171,18 +184,17 @@ function animateCounterOnScroll({ selector = "#counter", start = 5000, end = 100
 animateCounterOnScroll({});
 
 // marquee
-document.addEventListener('DOMContentLoaded', () => {
-  const marqueeTracks = document.querySelectorAll('.marquee-track');
+document.addEventListener("DOMContentLoaded", () => {
+  const marqueeTracks = document.querySelectorAll(".marquee-track");
 
-  marqueeTracks.forEach(track => {
+  marqueeTracks.forEach((track) => {
     // Kiểm tra nếu chưa được nhân đôi
-    if (track.dataset.cloned !== 'true') {
+    if (track.dataset.cloned !== "true") {
       track.innerHTML += track.innerHTML;
-      track.dataset.cloned = 'true'; // tránh nhân đôi lần nữa nếu DOM thay đổi
+      track.dataset.cloned = "true"; // tránh nhân đôi lần nữa nếu DOM thay đổi
     }
   });
 });
-
 
 // animation section scroll
 
@@ -205,32 +217,31 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 });
 
-
 // tab
 document.addEventListener("DOMContentLoaded", function () {
   const wrapper = document.querySelector(".homepage-demo-wrapper");
   const tabs = wrapper.querySelectorAll(".homepage-tabs__item");
   const items = wrapper.querySelectorAll(".homepage-item");
 
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     tab.addEventListener("click", function (e) {
       e.preventDefault();
 
       const selected = this.textContent.trim();
-      tabs.forEach(t => t.classList.remove("active"));
+      tabs.forEach((t) => t.classList.remove("active"));
       this.classList.add("active");
 
       let delayIndex = 0;
 
-      items.forEach(item => {
+      items.forEach((item) => {
         const category = item.getAttribute("data-category") || "";
         const status = item.getAttribute("data-status") || "";
 
         const show =
           selected === "All Demos" ||
           selected === category ||
-          (selected === "New" && status.toLowerCase() === "new") ||
-          (selected === "Hot" && status.toLowerCase() === "hot");
+          (selected === "New Demos" && status.toLowerCase() === "new") ||
+          (selected === "Popular" && status.toLowerCase() === "popular");
 
         if (show) {
           item.classList.add("show");
@@ -251,11 +262,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-   //  Active tab "All" when page loads
-   const defaultTab = wrapper.querySelector('.homepage-tabs__item');
-   if (defaultTab) defaultTab.click();
+  //  Active tab "All" when page loads
+  const defaultTab = wrapper.querySelector(".homepage-tabs__item");
+  if (defaultTab) defaultTab.click();
 });
-
 
 // view more
 document.addEventListener("DOMContentLoaded", function () {
@@ -275,9 +285,9 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".header-nav .nav-item");
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     link.addEventListener("click", function () {
-      navLinks.forEach(l => l.classList.remove("active")); // Xoá class active khỏi tất cả
+      navLinks.forEach((l) => l.classList.remove("active")); // Xoá class active khỏi tất cả
       this.classList.add("active"); // Thêm class active vào link được click
     });
   });
@@ -287,79 +297,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Lắng nghe tất cả các click vào .homepage-demo__image-box hoặc .homepage-demo__title
-  document.querySelectorAll(".homepage-demo__image-box, .homepage-demo__title").forEach(function (el) {
-    el.addEventListener("click", function (e) {
-      // Tìm .homepage-demo cha gần nhất
-      const demo = el.closest(".homepage-demo");
-      if (!demo) return;
+  document
+    .querySelectorAll(".homepage-demo__image-box, .homepage-demo__title")
+    .forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        // Tìm .homepage-demo cha gần nhất
+        const demo = el.closest(".homepage-demo");
+        if (!demo) return;
 
-      // Lấy link từ data-link
-      const link = demo.getAttribute("data-link");
+        // Lấy link từ data-link
+        const link = demo.getAttribute("data-link");
 
-      // Gán link vào thẻ <a> trong modal
-      const modalLink = document.querySelector("#viewnowModal a.button-secondary");
-      if (modalLink && link) {
-        modalLink.setAttribute("href", link);
-      }
+        // Gán link vào thẻ <a> trong modal
+        const modalLink = document.querySelector(
+          "#viewnowModal a.button-secondary"
+        );
+        if (modalLink && link) {
+          modalLink.setAttribute("href", link);
+        }
+      });
     });
-  });
 });
 
+// light blur banner
 
-
-// line banner
-
-// window.addEventListener('DOMContentLoaded', () => {
-//   const blurContainer = document.getElementById('blur-container');
-//   const rayCount = 20;
-
-//   for (let i = 0; i < rayCount; i++) {
-//     const ray = document.createElement('div');
-//     ray.className = 'ray';
-
-//     const left = 35 + (i / (rayCount - 1)) * 30; // Spread from 35% to 65%
-//     const angle = 25 - (i / (rayCount - 1)) * 50; // From +25° to -25°
-//     const scale = 0.8 + Math.random() * 0.3;
-//     const maxOpacity = i % 3 === 0 ? 0.3 : (i % 3 === 1 ? 0.2 : 0.1);
-//     const width = 20 + Math.random() * 20;
-
-//     ray.style.left = `${left}%`;
-//     ray.style.width = `${width}px`;
-//     ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${scale})`;
-//     ray.style.opacity = 0;
-//     blurContainer.appendChild(ray);
-
-//     const phase = Math.random() * Math.PI * 2;
-
-//     const animate = () => {
-//       const time = Date.now() * 0.001;
-//       const speed = 2 * Math.PI / 6;
-//       const dynamicOpacity = maxOpacity * (0.5 + 0.5 * Math.sin(time * speed + phase));
-//       const dynamicScale = scale * (0.985 + 0.015 * Math.sin(time * speed + phase));
-//       ray.style.opacity = dynamicOpacity;
-//       ray.style.transform = `translateX(-50%) rotate(${angle}deg) scale(${dynamicScale})`;
-//       requestAnimationFrame(animate);
-//     };
-
-//     animate();
-//   }
-
-//   // Light glow in the center
-//   const glow = document.createElement('div');
-//   glow.className = 'light-source';
-//   blurContainer.appendChild(glow);
-// });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const rays = document.querySelectorAll('.blur-container__ray');
+document.addEventListener("DOMContentLoaded", () => {
+  const rays = document.querySelectorAll(".blur-container__ray");
   const baseRotations = [5, 14, 9, -11, -18, 18, 18, 7, -15, -18, -18, -5]; // Smaller angles
 
   function animate() {
     rays.forEach((ray, index) => {
       const time = Date.now() * 0.001 + index * 0.2; // Staggered timing
-      const baseOpacity = index === 0 || index === 11 ? 0.4 : (index < 3 || index > 8 ? 0.5 : 0.4); // Central denser, outer fainter
-      const scale = 0.6 + 0.4 * (Math.sin(time) + 1) / 2; // 0.6 to 1
-      const opacity = baseOpacity * (Math.sin(time * 2 + index) + 1) / 2; // 0 to baseOpacity
+      const baseOpacity =
+        index === 0 || index === 11 ? 0.4 : index < 3 || index > 8 ? 0.5 : 0.4; // Central denser, outer fainter
+      const scale = 0.6 + (0.4 * (Math.sin(time) + 1)) / 2; // 0.6 to 1
+      const opacity = (baseOpacity * (Math.sin(time * 2 + index) + 1)) / 2; // 0 to baseOpacity
       const rotate = baseRotations[index] || 0; // ray1 at 0deg
       ray.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
       ray.style.opacity = opacity; // Allows opacity to reach 0
@@ -372,20 +344,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// carousel 
 
-document.addEventListener('DOMContentLoaded', () => {
+// carousel
+
+document.addEventListener("DOMContentLoaded", () => {
   const slidesPerView = 3;
-  const track = document.getElementById('carousel-track');
-  const pagination = document.querySelector('.layout-theme__pagination');
+  const track = document.getElementById("carousel-track");
+  const pagination = document.querySelector(".layout-theme__pagination");
   const originalSlides = Array.from(track.children);
   const totalSlides = originalSlides.length;
   let currentIndex = slidesPerView;
 
-  const clonesBefore = originalSlides.slice(-slidesPerView).map(s => s.cloneNode(true));
-  const clonesAfter = originalSlides.slice(0, slidesPerView).map(s => s.cloneNode(true));
-  clonesBefore.forEach(c => track.insertBefore(c, track.firstChild));
-  clonesAfter.forEach(c => track.appendChild(c));
+  const clonesBefore = originalSlides
+    .slice(-slidesPerView)
+    .map((s) => s.cloneNode(true));
+  const clonesAfter = originalSlides
+    .slice(0, slidesPerView)
+    .map((s) => s.cloneNode(true));
+  clonesBefore.forEach((c) => track.insertBefore(c, track.firstChild));
+  clonesAfter.forEach((c) => track.appendChild(c));
   const allSlides = Array.from(track.children);
 
   function slideWidth() {
@@ -393,14 +370,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setTransform(index, animate = true) {
-    track.style.transition = animate ? 'transform 0.4s ease' : 'none';
+    track.style.transition = animate ? "transform 0.4s ease" : "none";
     track.style.transform = `translate3d(-${slideWidth() * index}px, 0, 0)`;
   }
 
   function updatePagination() {
-    const dots = pagination.querySelectorAll('span');
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[(currentIndex - slidesPerView + totalSlides) % totalSlides].classList.add('active');
+    const dots = pagination.querySelectorAll("span");
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[
+      (currentIndex - slidesPerView + totalSlides) % totalSlides
+    ].classList.add("active");
   }
 
   function nextSlide() {
@@ -429,17 +408,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  document.querySelector('.layout-theme__button--next').addEventListener('click', nextSlide);
-  document.querySelector('.layout-theme__button--prev').addEventListener('click', prevSlide);
+  document
+    .querySelector(".layout-theme__button--next")
+    .addEventListener("click", nextSlide);
+  document
+    .querySelector(".layout-theme__button--prev")
+    .addEventListener("click", prevSlide);
 
   for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
     pagination.appendChild(dot);
   }
 
-  pagination.addEventListener('click', (e) => {
-    if (e.target.tagName === 'SPAN') {
+  pagination.addEventListener("click", (e) => {
+    if (e.target.tagName === "SPAN") {
       const index = [...pagination.children].indexOf(e.target);
       currentIndex = index + slidesPerView;
       setTransform(currentIndex);
@@ -447,10 +430,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // auto play
   let auto = setInterval(nextSlide, 4000);
-  const container = document.querySelector('.layout-theme');
-  container.addEventListener('mouseenter', () => clearInterval(auto));
-  container.addEventListener('mouseleave', () => auto = setInterval(nextSlide, 4000));
+  const container = document.querySelector(".layout-theme");
+  container.addEventListener("mouseenter", () => clearInterval(auto));
+  container.addEventListener(
+    "mouseleave",
+    () => (auto = setInterval(nextSlide, 4000))
+  );
 
   // Swipe logic with window-level listeners
   let isDragging = false;
@@ -460,19 +447,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function onStart(e) {
     isDragging = true;
-    startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-    track.style.transition = 'none';
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mouseup', onEnd);
-    window.addEventListener('touchmove', onMove, { passive: false });
-    window.addEventListener('touchend', onEnd);
+    startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+    track.style.transition = "none";
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onEnd);
+    window.addEventListener("touchmove", onMove, { passive: false });
+    window.addEventListener("touchend", onEnd);
   }
 
   function onMove(e) {
     if (!isDragging) return;
-    currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
     deltaX = currentX - startX;
-    track.style.transform = `translate3d(${ -slideWidth() * currentIndex + deltaX }px, 0, 0)`;
+    track.style.transform = `translate3d(${
+      -slideWidth() * currentIndex + deltaX
+    }px, 0, 0)`;
     if (e.cancelable) e.preventDefault();
   }
 
@@ -480,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isDragging) return;
     isDragging = false;
     const threshold = slideWidth() / 4;
-    track.style.transition = 'transform 0.4s ease';
+    track.style.transition = "transform 0.4s ease";
 
     if (deltaX < -threshold) {
       nextSlide();
@@ -491,33 +480,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     deltaX = 0;
-    window.removeEventListener('mousemove', onMove);
-    window.removeEventListener('mouseup', onEnd);
-    window.removeEventListener('touchmove', onMove);
-    window.removeEventListener('touchend', onEnd);
+    window.removeEventListener("mousemove", onMove);
+    window.removeEventListener("mouseup", onEnd);
+    window.removeEventListener("touchmove", onMove);
+    window.removeEventListener("touchend", onEnd);
   }
 
-  track.addEventListener('mousedown', onStart);
-  track.addEventListener('touchstart', onStart, { passive: true });
+  track.addEventListener("mousedown", onStart);
+  track.addEventListener("touchstart", onStart, { passive: true });
 
   setTransform(currentIndex, false);
   updatePagination();
 });
 
 
-// back to top
-document.addEventListener('DOMContentLoaded', function () {
-  const backToTop = document.getElementById('backToTop');
 
-  window.addEventListener('scroll', function () {
+// back to top
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
-      backToTop.classList.add('show');
+      backToTop.classList.add("show");
     } else {
-      backToTop.classList.remove('show');
+      backToTop.classList.remove("show");
     }
   });
 
-  backToTop.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });

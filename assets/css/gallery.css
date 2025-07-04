@@ -4,7 +4,7 @@
   height: 90vh;
   justify-content: center;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 700px;
   overflow: hidden;
   padding: 30px;
   pointer-events: none;
@@ -21,7 +21,7 @@
 }
 
 .gallery-content h3 {
-  font-size: 34px;
+  font-size: 50px;
   font-weight: 600;
   @media(max-width: 991px) {
     text-align: center;

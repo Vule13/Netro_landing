@@ -526,7 +526,7 @@ p {
 .banner-content__title h1 {
   color: #fff;
   font-size: 55px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   @media (max-width: 991px) {
     font-size: 32px;

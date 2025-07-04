@@ -235,6 +235,14 @@
   transform: rotate(-13deg);
 }
 
+.marquee-feature__background--style2 {
+  transform: unset;
+  height: 550px;
+  width: 100%;
+  bottom: 15%;
+  left: 0;
+}
+
 .marquee-feature__border {
   background: radial-gradient(
     50% 50% at 50% 50%,
@@ -248,6 +256,11 @@
   position: absolute;
   right: 0;
   z-index: 4;
+}
+
+.marquee-feature__border--style2 {
+  bottom: 46%;
+  z-index: -1;
 }
 
 /* testimonial */
