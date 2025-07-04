@@ -343,18 +343,18 @@ document.addEventListener("DOMContentLoaded", () => {
   animate();
 });
 
-
-
 // carousel
 
 document.addEventListener("DOMContentLoaded", () => {
-  const slidesPerView = 3;
+  const slidesPerView =
+    window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
   const track = document.getElementById("carousel-track");
   const pagination = document.querySelector(".layout-theme__pagination");
   const originalSlides = Array.from(track.children);
   const totalSlides = originalSlides.length;
   let currentIndex = slidesPerView;
 
+  // Clone slide
   const clonesBefore = originalSlides
     .slice(-slidesPerView)
     .map((s) => s.cloneNode(true));
@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const allSlides = Array.from(track.children);
 
   function slideWidth() {
-    return allSlides[0].offsetWidth;
+    return allSlides[0].getBoundingClientRect().width;
   }
 
   function setTransform(index, animate = true) {
@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
     () => (auto = setInterval(nextSlide, 4000))
   );
 
-  // Swipe logic with window-level listeners
+  // Swipe
   let isDragging = false;
   let startX = 0;
   let currentX = 0;
@@ -470,7 +470,6 @@ document.addEventListener("DOMContentLoaded", () => {
     isDragging = false;
     const threshold = slideWidth() / 4;
     track.style.transition = "transform 0.4s ease";
-
     if (deltaX < -threshold) {
       nextSlide();
     } else if (deltaX > threshold) {
@@ -478,7 +477,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       setTransform(currentIndex);
     }
-
     deltaX = 0;
     window.removeEventListener("mousemove", onMove);
     window.removeEventListener("mouseup", onEnd);
@@ -492,8 +490,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setTransform(currentIndex, false);
   updatePagination();
 });
-
-
 
 // back to top
 document.addEventListener("DOMContentLoaded", function () {

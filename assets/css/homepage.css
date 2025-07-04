@@ -172,6 +172,7 @@
   border: 1px solid #222222;
   background-color: #000;
   transition: all .3s ease;
+  font-weight: 600;
 }
 
 .homepage-tabs__item--top span {
