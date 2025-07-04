@@ -17,6 +17,7 @@
   color: #fff;
   @media(max-width: 767px) {
     display: unset;
+    padding: 50px 10px 0 10px;
   }
 }
 
@@ -25,6 +26,7 @@
   font-weight: 600;
   @media(max-width: 991px) {
     text-align: center;
+    font-size: 30px;
   }
 }
 
@@ -136,6 +138,9 @@
   opacity: 0.6;
   transition: all .3s ease;
   display: block;
+  @media (max-width: 767px) {
+    border-radius: 4px;
+  }
 }
 
 .gallery-img img {
@@ -188,5 +193,8 @@
 .gallery-bottom__text {
   max-width: 250px;
   font-size: 13px;
+  @media(max-width: 767px) {
+    text-align: center;
+  }
 }
 
