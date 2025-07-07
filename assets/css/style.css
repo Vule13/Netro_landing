@@ -120,7 +120,8 @@ p {
 }
 
 .button-blue {
-  --x: 7.4%;
+  /* --x: 7.4%; */
+  --x: -34%;
   --y: 44.1%;
   background: radial-gradient(
     35% 100% at var(--x) var(--y),
@@ -153,6 +154,7 @@ p {
   width: min-content;
   font-weight: 500;
   --x2: 1.2%;
+  --x2: -34%;
   border-radius: 9999px;
   opacity: 1;
 }
@@ -560,14 +562,12 @@ p {
 }
 
 .banner-bottom__left {
-  position: absolute;
-  will-change: transform;
-  opacity: 1;
   transform: perspective(1200px) translateY(-14.661px) rotateX(3deg)
     rotateY(10deg);
   align-items: center;
-  background-color: #111;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
   bottom: -258px;
   box-shadow: 0 10px 30px #0006;
   display: flex;
@@ -578,25 +578,22 @@ p {
   justify-content: flex-start;
   left: -300px;
   overflow: hidden;
-  padding: 0 15px;
   pointer-events: auto;
   position: absolute;
   top: -110px;
   user-select: none;
-  width: 260px;
   z-index: 2;
   will-change: transform;
   transition: transform 0.3s linear;
 }
 
 .banner-bottom__right {
-  will-change: transform;
-  opacity: 1;
   transform: perspective(1200px) rotateX(3deg) rotateY(-10deg);
-  position: absolute;
   align-items: center;
-  background-color: #111;
-  border-radius: 8px;
+  /* background: radial-gradient(117.63% 154.08% at -5.51% -4.72%, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 100%); */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
   bottom: -258px;
   display: flex;
   flex: none;
@@ -605,28 +602,24 @@ p {
   gap: 0px;
   justify-content: flex-start;
   overflow: hidden;
-  padding: 0 15px;
   pointer-events: auto;
   position: absolute;
   right: -300px;
   top: -110px;
   user-select: none;
-  width: 260px;
   z-index: 2;
   will-change: transform;
   transition: transform 0.3s linear;
 }
 
 .banner-bottom__left-small {
-  will-change: transform;
-  opacity: 1;
   transform: perspective(1200px) rotateX(11deg) rotateY(15deg);
   user-select: none;
   touch-action: none;
   align-items: flex-start;
   backdrop-filter: blur(7px);
-  background-color: #2b2b2be6;
-  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
   box-shadow: -20px 10px 20px #0000008c;
   cursor: grab;
   display: flex;
@@ -640,7 +633,6 @@ p {
   overflow: hidden;
   position: absolute;
   top: -135px;
-  width: 150px;
   z-index: 3;
   will-change: transform;
   transition: transform 0.3s linear;
@@ -652,8 +644,6 @@ p {
 }
 
 .banner-bottom__right-small {
-  will-change: transform;
-  opacity: 1;
   transform: perspective(1200px) translateY(-32.5424px) rotate(2deg)
     rotateX(8deg) rotateY(-11deg);
   user-select: none;
@@ -661,8 +651,8 @@ p {
   cursor: grab;
   align-items: center;
   backdrop-filter: blur(5px);
-  background-color: #111111e6;
   border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   bottom: -140px;
   box-shadow: 30px 10px 30px #000000bf;
   cursor: grab;
@@ -677,7 +667,6 @@ p {
   padding: 0;
   position: absolute;
   right: -52px;
-  width: 260px;
   z-index: 2;
   will-change: transform;
   transition: transform 0.3s linear;
@@ -701,7 +690,11 @@ p {
   flex-wrap: nowrap;
   gap: 10px;
   justify-content: center;
-  inset: -207px -148px;
+  scale: 1.2;
+  top: -150px;
+  bottom: -250px;
+  left: -148px;
+  right: -148px;
   mask: radial-gradient(
       50% 50% at 50% 50%,
       #000000 39.29124436936937%,

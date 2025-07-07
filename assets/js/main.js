@@ -49,9 +49,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (!content) return;
 
     const settings = {
-      outerStart: 7.4,
+      outerStart: -34,
+      // outerStart: 7.4,
       outerEnd: 91,
-      innerStart: 1.2,
+      innerStart: -34,
+      // innerStart: 1.2,
       innerEnd: 98,
       duration: 1000,
     };
