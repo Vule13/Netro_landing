@@ -135,7 +135,7 @@
   position: relative;
   text-decoration: none;
   width: 100%;
-  opacity: 0.6;
+  opacity: 0.4;
   transition: all .3s ease;
   display: block;
   @media (max-width: 767px) {

@@ -3,6 +3,7 @@ body {
   font-size: 16px;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: rgba(255, 255, 255, 0.6);
+  line-height: var(--bs-body-line-height);
   --font-body: 16px;
   --color-foreground: #fff;
   --color-star: #f1b823;
@@ -337,7 +338,7 @@ p {
 
 .header-price .icon-arrow {
   transition: 0.5s;
-  margin-right: 0px;
+  margin: 0px;
 }
 
 .header-price:hover .icon-arrow {
@@ -378,6 +379,18 @@ p {
   @media (max-width: 575px) {
     display: flex;
   }
+}
+
+.icon-logo img {
+  width: 26px;
+}
+
+.icon-logo-click img {
+  width: 21px;
+}
+
+.icon-logo-store img {
+  width: 19px;
 }
 
 /* SVG */

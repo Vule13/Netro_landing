@@ -143,8 +143,8 @@
   z-index: 10;
   border-radius: 50%;
   overflow: hidden;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   box-shadow: 0px 5px 15px 0 rgb(50 50 50 / 20%);
   display: flex;
   align-items: center;
