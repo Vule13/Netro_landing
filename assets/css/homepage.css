@@ -350,7 +350,9 @@
 /* modal view now */
 
 .modal-viewnow {
-  background-color: #fff;
+  background-color: rgba(23, 23, 23, 0.6);
+  border: 1px solid rgb(179 179 179 / 20%);
+  backdrop-filter: blur(10px);
   padding: 50px 44px 38px;
   color: #000;
   border-radius: 10px;
@@ -371,8 +373,8 @@
 }
 
 .modal-viewnow__title {
-  color: #000;
-  font-size: 30px;
+  color: #fff;
+  font-size: 25px;
   font-weight: 500;
   padding-bottom: 15px;
   line-height: 1.5;
@@ -420,11 +422,8 @@
 .modal-viewnow__description {
   font-style: italic;
   padding-bottom: 25px;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-viewnow__button:hover {
-  box-shadow: 0 3px 12px rgb(56 134 247 / 63%);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .homepage-demo__content {

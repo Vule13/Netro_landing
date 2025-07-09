@@ -217,14 +217,9 @@
 }
 
 .marquee-feature__background {
-  /* background: radial-gradient(
+  background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(255, 255, 255, 0.6) 0%,
-    rgb(0, 0, 0)
-  ); */
-  background: radial-gradient(
-    80% 40% at 50% 50%,
-    rgba(255, 255, 255, 0.6) 10%,
     rgb(0, 0, 0)
   );
   border-radius: 10px;
@@ -241,6 +236,11 @@
 }
 
 .marquee-feature__background--style2 {
+  background: radial-gradient(
+    80% 40% at 50% 50%,
+    rgba(255, 255, 255, 0.6) 10%,
+    rgb(0, 0, 0)
+  );
   transform: unset;
   height: 550px;
   width: 100%;
