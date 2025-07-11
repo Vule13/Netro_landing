@@ -1,13 +1,14 @@
-document.addEventListener("mousemove", parallax);
-function parallax(e) {
-  document.querySelectorAll(".feature-parallax").forEach(function(move){
-    var moving_value = move.getAttribute("data-value");
-    // var x = (e.clientX * moving_value) / 250;
-    var y = (e.clientY * moving_value) / 250;
-
-    move.style.transform = "translateY("+ y + "px)";
-  });
-}
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("mousemove", parallax);
+  function parallax(e) {
+    document.querySelectorAll(".feature-parallax").forEach(function(move) {
+      var moving_value = move.getAttribute("data-value") || 0;
+      var y = (e.clientY * moving_value) / 250; // Giảm mẫu số để hiệu ứng rõ hơn
+      move.style.transform = "translateY(" + y + "px)";
+    });
+  }
+});
 
 
 // parallax banner
