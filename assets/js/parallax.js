@@ -1,4 +1,4 @@
-// script.js
+// parallax feature
 document.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("mousemove", parallax);
   function parallax(e) {

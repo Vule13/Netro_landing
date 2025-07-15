@@ -4,6 +4,7 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: rgba(255, 255, 255, 0.6);
   line-height: var(--bs-body-line-height);
+  margin: 0 auto;
   --font-body: 16px;
   --color-foreground: #fff;
   --color-star: #f1b823;
@@ -566,6 +567,10 @@ p {
   align-items: center;
   justify-content: center;
   gap: 30px;
+  @media(max-width: 767px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 /* banner-bottom */
