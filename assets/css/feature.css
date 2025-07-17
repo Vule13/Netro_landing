@@ -198,16 +198,13 @@
 
 .feature-row1-col7__image {
   overflow: visible;
-  position: absolute;
+  position: relative;
   width: 100%;
   z-index: 0;
   max-width: 620px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 40%;
 }
 
 .feature-row1-col7__image1 {
