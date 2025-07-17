@@ -194,6 +194,7 @@
 .feature-col-title {
   color: #fff;
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 .feature-row1-col7__image {

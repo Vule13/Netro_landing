@@ -1401,11 +1401,11 @@ progress {
   }
   .g-lg-3,
   .gx-lg-3 {
-    --bs-gutter-x: 1rem;
+    --bs-gutter-x: 1.5rem;
   }
   .g-lg-3,
   .gy-lg-3 {
-    --bs-gutter-y: 1rem;
+    --bs-gutter-y: 1.5rem;
   }
   .g-lg-4,
   .gx-lg-4 {

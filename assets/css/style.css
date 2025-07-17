@@ -132,6 +132,10 @@ p {
   );
 }
 
+.button-blue--blur {
+  backdrop-filter: blur(5px);
+}
+
 .button-white {
   --shadowX: -1; /* giá trị nội suy từ -1 đến 1 */
   box-shadow: rgb(2 61 173) calc(var(--shadowX) * 7px) 0px 21px -3px,
@@ -168,6 +172,10 @@ p {
     rgb(0, 0, 0) 57%,
     rgb(0, 0, 0) 100%
   );
+}
+
+.button-blue--blur .button-blue__content {
+  background: radial-gradient(59% 170% at var(--x2) 50%, rgba(0, 119, 255) 0%, rgba(0, 0, 0, .6) 57%, rgba(0, 0, 0, .6) 100%);
 }
 
 .button-white__content {
@@ -383,7 +391,7 @@ p {
 }
 
 .icon-logo img {
-  width: 26px;
+  width: 24px;
 }
 
 .icon-logo-click img {
@@ -422,11 +430,13 @@ p {
 /* SVG animations */
 @keyframes color_anim {
   0% {
-    fill: var(--color-hover);
+    fill: rgb(255, 255, 255);
+    opacity: 0;
   }
 
   50% {
-    fill: rgb(38, 38, 38);
+    fill: rgb(255, 255, 255);
+    opacity: 0.4;
   }
 
   100% {

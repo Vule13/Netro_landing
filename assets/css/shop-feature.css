@@ -2,21 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 30px;
   padding-top: 40px;
   @media( max-width: 767px) {
     gap: 20px;
-  }
-}
-
-.shop-feature__item {
-  width: calc(20% - 30px);
-  @media( max-width: 991px) {
-    width: calc(33% - 30px);
-  };
-  @media( max-width: 767px) {
-    width: calc(50% - 20px);
   }
 }
 
@@ -200,6 +190,7 @@
   font-size: 16px;
   color: var(--color-foreground);
   padding-top: 25px;
+  font-weight: 600;
 }
 
 .layout-theme__pagination {
@@ -210,6 +201,7 @@
   overflow: hidden;
   position: relative;
   padding-top: 30px;
+  margin: 0 -15px;
 }
 
 
