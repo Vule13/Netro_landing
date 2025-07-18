@@ -91,6 +91,13 @@
   will-change: transform;
 }
 
+.marquee-content-reverse2--delay {
+  animation-duration: 60s;
+}
+
+.marquee-content-reverse--delay {
+  animation-duration: 50s;
+}
 .marquee__text,
 .marquee__dot {
   padding-left: 20px;
@@ -199,6 +206,7 @@
 
 .marquee-feature__title {
   font-size: var(--font-body);
+  text-transform: capitalize;
 }
 
 .marquee-feature__box {

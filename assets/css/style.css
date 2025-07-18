@@ -324,7 +324,7 @@ p {
 }
 
 .header-nav .nav-item {
-  transition: 0.3s ease-in-out all;
+  transition: 0.1s ease-in-out all;
   padding: 8px 0;
   border-radius: 50px;
   overflow: hidden;

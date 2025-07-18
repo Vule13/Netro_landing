@@ -42,6 +42,10 @@
   };
 }
 
+.shop-feature__title--pb {
+  padding-bottom: 40px;
+}
+
 .shop-feature__item-text {
   text-align: center;
   padding-top: 25px;
@@ -52,6 +56,7 @@
   font-size: 16px;
   color: var(--color-foreground);
   transition: .3s ease all;
+  text-transform: capitalize;
 }
 
 .shop-feature__item-text a:hover {
@@ -191,6 +196,7 @@
   color: var(--color-foreground);
   padding-top: 25px;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .layout-theme__pagination {
