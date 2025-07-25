@@ -91,11 +91,7 @@
 }
 
 .feature-col7 {
-  background: radial-gradient(
-    97% 98% at 1.5% 99.1%,
-    #3952d1 0%,
-    rgb(0, 3, 15) 100%
-  );
+  background: radial-gradient(97% 98% at 1.5% 99.1%, #60d30a 0%, rgb(0 0 0) 100%);
   border-radius: 16px;
   flex: none;
   inset: 0;
@@ -227,6 +223,7 @@
   width: 255px;
   z-index: 0;
   transform: perspective(1200px) translateX(15px);
+  backdrop-filter: blur(4px);
 }
 
 .feature-row1-col7__image2 {
@@ -240,6 +237,7 @@
   overflow: visible;
   position: absolute;
   top: 40px;
+  backdrop-filter: blur(4px);
   width: 234px;
 }
 
@@ -254,6 +252,7 @@
   top: 80px;
   width: 234px;
   transform: perspective(1200px) translateX(-15px);
+  backdrop-filter: blur(4px);
 }
 
 .feature-row1-col7__image img {
