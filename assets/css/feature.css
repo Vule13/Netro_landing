@@ -663,10 +663,6 @@
   }
 }
 
-.shoppable-video__image video {
-  aspect-ratio: 3/4;
-}
-
 .shoppable-video__box-item--opacity {
   opacity: 1;
 }
@@ -1049,4 +1045,19 @@
 
 .feature-row__description--mw {
   max-width: 585px;
+}
+
+.feature-row__item--video {
+  height: 100%;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex  ;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.feature-row__item--video .feature-row__content {
+  position: relative;
 }
