@@ -1046,3 +1046,7 @@
   height: 100%;
   width: 100%;
 }
+
+.feature-row__description--mw {
+  max-width: 585px;
+}
