@@ -513,13 +513,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // không inspect vào ảnh trực tiếp được
-// document.addEventListener('DOMContentLoaded', function () {
-//   const elements = document.querySelectorAll('img, video');
+document.addEventListener('DOMContentLoaded', function () {
+  const elements = document.querySelectorAll('img, video');
 
-//   elements.forEach(function (el) {
-//     el.addEventListener('contextmenu', function (e) {
-//       e.preventDefault();
-//     });
-//   });
-// });
+  elements.forEach(function (el) {
+    el.addEventListener('contextmenu', function (e) {
+      e.preventDefault(); // chặn chuột phải
+    });
+
+    el.addEventListener('dragstart', function (e) {
+      e.preventDefault(); // chặn kéo ảnh
+    });
+  });
+});
+
 

@@ -18,6 +18,7 @@ body {
 
 .main {
   position: relative;
+  overflow: hidden;
 }
 
 .banner-background {
