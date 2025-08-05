@@ -1061,3 +1061,65 @@ p {
   left: 52%;
   width: 40px;
 }
+
+.menu-bottom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 4px;
+  background-color: rgba(23, 23, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  left: 50%;
+  transform: translate(-50%, -30%);
+  border-radius: 30px;
+  width: fit-content;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-bottom.hidden {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-bottom__text {
+  padding-left: 20px;
+  color: var(--color-foreground);
+  padding-right: 75px;
+}
+
+.menu-bottom__text span {
+  color: #2178ff;
+  font-weight: 600;
+}
+
+.menu-bottom__button {
+  position: absolute;
+  right: 4px;
+}
+
+.menu-bottom__button .menu-bottom__button-text {
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out, max-width 0.4s ease-in-out;
+}
+
+.menu-bottom__button:hover .menu-bottom__button-text {
+  opacity: 1;
+  max-width: 100px; /* đủ rộng để chứa dòng text mở rộng */
+}
+
+.menu-bottom__button .button-secondary__content {
+  width: 44px;
+  transition: all .6s ease-in-out;
+  height: 44px;
+  padding: 12px 20px;
+}
+
+.menu-bottom__button:hover .button-secondary__content {
+  width: unset;
+}

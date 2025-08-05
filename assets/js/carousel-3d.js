@@ -12,10 +12,6 @@
       'https://framerusercontent.com/images/y6nsXyFCXVHybL6AG2drPt8Xug.png',
       'https://framerusercontent.com/images/VmCsluO8XGEoJuDxdWFRW9bTY4.png',
       'https://framerusercontent.com/images/qqgMFFhBjbmzllL7E6Dml51Gw.png',
-      'https://framerusercontent.com/images/vhHIJv4PmmgQ1TXOzia8Qs7b5g.png',
-      'https://framerusercontent.com/images/EXBKz5HVEFx00O24ZCR2veKrNY.png',
-      'https://framerusercontent.com/images/vrjpq3t35s6ZnmUqIxrOIevTsU.png',
-      'https://framerusercontent.com/images/qqgMFFhBjbmzllL7E6Dml51Gw.png',
       'https://framerusercontent.com/images/vhHIJv4PmmgQ1TXOzia8Qs7b5g.png'
     ];
 
@@ -24,7 +20,7 @@
 
     const itemCount = imageUrls.length;
     const angle = 360 / itemCount;
-    const radius = 900;
+    const radius = 650;
 
     imageUrls.forEach((url, i) => {
       const item = document.createElement('div');

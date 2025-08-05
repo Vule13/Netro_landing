@@ -1,6 +1,5 @@
 .carousel-3d {
   width: 100vw;
-  padding-bottom: clamp(50px, 10vw, 300px);
   display: flex;
   position: relative;
   align-items: center;
@@ -12,7 +11,7 @@
 }
 
 .carousel-3d__img {
-  perspective: 700px;
+  perspective: 880px;
   @media (max-width: 567px) {
     perspective: 300px;
   }
@@ -34,9 +33,9 @@
   top: 50%;
   left: 50%;
   width: 300px;
-  height: 500px;
+  height: 450px;
   margin-left: -150px;
-  margin-top: -210px;
+  margin-top: -250px;
   background-size: cover;
   background-position: center;
   border-radius: 20px;

@@ -528,3 +528,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.querySelector('.menu-bottom');
+    if (!menu) return;
+
+    let lastScrollY = window.scrollY;
+
+    function handleScroll() {
+      const currentScroll = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.body.scrollHeight;
+
+      const isScrollingDown = currentScroll > lastScrollY;
+      const isNearBottom = currentScroll + windowHeight >= fullHeight - 100;
+
+      if (isNearBottom) {
+        menu.classList.remove('hidden');
+      } else if (isScrollingDown) {
+        menu.classList.add('hidden');
+      } else {
+        menu.classList.remove('hidden');
+      }
+
+      lastScrollY = currentScroll;
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  });
+})();
