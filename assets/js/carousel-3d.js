@@ -1,18 +1,18 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     const imageUrls = [
-      'https://framerusercontent.com/images/F9LoqzZkQUYA0UTzwbeKgrHtxU.png',
-      'https://framerusercontent.com/images/y6nsXyFCXVHybL6AG2drPt8Xug.png',
-      'https://framerusercontent.com/images/VmCsluO8XGEoJuDxdWFRW9bTY4.png',
-      'https://framerusercontent.com/images/qqgMFFhBjbmzllL7E6Dml51Gw.png',
-      'https://framerusercontent.com/images/vhHIJv4PmmgQ1TXOzia8Qs7b5g.png',
-      'https://framerusercontent.com/images/EXBKz5HVEFx00O24ZCR2veKrNY.png',
-      'https://framerusercontent.com/images/vrjpq3t35s6ZnmUqIxrOIevTsU.png',
-      'https://framerusercontent.com/images/F9LoqzZkQUYA0UTzwbeKgrHtxU.png',
-      'https://framerusercontent.com/images/y6nsXyFCXVHybL6AG2drPt8Xug.png',
-      'https://framerusercontent.com/images/VmCsluO8XGEoJuDxdWFRW9bTY4.png',
-      'https://framerusercontent.com/images/qqgMFFhBjbmzllL7E6Dml51Gw.png',
-      'https://framerusercontent.com/images/vhHIJv4PmmgQ1TXOzia8Qs7b5g.png'
+      'assets/images/carousel3d-01.jpg',
+      'assets/images/carousel3d-02.jpg',
+      'assets/images/carousel3d-03.jpg',
+      'assets/images/carousel3d-04.jpg',
+      'assets/images/carousel3d-05.jpg',
+      'assets/images/carousel3d-06.jpg',
+      'assets/images/carousel3d-07.jpg',
+      'assets/images/carousel3d-08.jpg',
+      'assets/images/carousel3d-09.jpg',
+      'assets/images/carousel3d-10.jpg',
+      'assets/images/carousel3d-11.jpg',
+      'assets/images/carousel3d-12.jpg'
     ];
 
     const carousel = document.getElementById('carousel3d');

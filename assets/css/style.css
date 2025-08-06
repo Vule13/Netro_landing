@@ -362,7 +362,6 @@ p {
   width: 20px;
   margin-left: 10px;
   position: relative;
-  top: 6%;
 }
 
 .icon-menu {
@@ -1069,7 +1068,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 4px;
+  padding: 13px 4px;
   background-color: rgba(23, 23, 23, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
@@ -1091,9 +1090,10 @@ p {
 }
 
 .menu-bottom__text {
-  padding-left: 20px;
+  padding-left: 30px;
   color: var(--color-foreground);
-  padding-right: 75px;
+  font-size: 15px;
+  padding-right: 86px;
   @media(max-width: 567px) {
     padding-right: 46px;
     padding-left: 20px;
@@ -1109,29 +1109,44 @@ p {
 .menu-bottom__button {
   position: absolute;
   right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+  transition: width 0.3s ease-in-out;
+  height: 40px;
+  background-color: rgba(23, 23, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  margin: 0;
+  overflow: hidden;
 }
 
-.menu-bottom__button .menu-bottom__button-text {
-  display: inline-block;
+.menu-bottom__button-text {
+  display: block;
   opacity: 0;
   max-width: 0;
   overflow: hidden;
   white-space: nowrap;
-  transition: opacity 0.3s ease-in-out, max-width 0.4s ease-in-out;
+  font-size: 15px;
+  color: var(--color-foreground);
+  transition: opacity 0.3s ease-in-out, max-width 0.3s ease-in-out;
 }
 
 .menu-bottom__button:hover .menu-bottom__button-text {
   opacity: 1;
-  max-width: 100px; /* đủ rộng để chứa dòng text mở rộng */
+  padding-left: 25px;
+  max-width: 110px; 
 }
 
-.menu-bottom__button .button-secondary__content {
-  width: 44px;
-  transition: all .6s ease-in-out;
-  height: 44px;
-  padding: 12px 20px;
+.menu-bottom__button:hover{
+  width: 155px;
+  background-color: #0874ffab;
 }
 
-.menu-bottom__button:hover .button-secondary__content {
-  width: unset;
+.icon-arrow--style2 {
+  width: 21px;
+  display: flex ;
+  align-items: center
 }
