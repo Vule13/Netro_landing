@@ -558,3 +558,40 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll, { passive: true });
   });
 })();
+
+
+// mobile video
+
+(function () {
+  const videos = document.querySelectorAll('.mobile-screen__box video');
+
+  function playActiveVideo(target) {
+    videos.forEach(video => {
+      video.pause();
+      video.currentTime = 0;
+      video.classList.remove('active');
+
+      // Reset về thumbnail
+      if (video.poster) {
+        video.load(); // Gọi load() sẽ khiến video hiển thị lại thumbnail
+      }
+    });
+
+    target.classList.add('active');
+    target.play().catch(error => console.log("Autoplay failed:", error));
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const activeVideo = document.querySelector('.mobile-screen__box video.active');
+    if (activeVideo) {
+      activeVideo.play().catch(error => console.log("Autoplay failed:", error));
+    }
+
+    videos.forEach(video => {
+      video.addEventListener('click', () => {
+        playActiveVideo(video);
+      });
+    });
+  });
+})();
+

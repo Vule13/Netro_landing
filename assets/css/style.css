@@ -406,28 +406,32 @@ p {
 }
 
 /* SVG */
+
 #arrow-icon-one {
   transition: 0.4s;
-  transform: translateX(-60%);
 }
 
-#arrow-icon-two {
+#arrow-icon-two, #arrow-icon-three {
   transition: 0.5s;
-  transform: translateX(-30%);
+  display: none;
 }
 
 .header-price:hover #arrow-icon-three {
   animation: color_anim 1s infinite 0.2s;
+  display: block;
 }
 
 .header-price:hover #arrow-icon-one {
-  transform: translateX(0%);
   animation: color_anim 1s infinite 0.6s;
 }
 
 .header-price:hover #arrow-icon-two {
-  transform: translateX(0%);
+  display: block;
   animation: color_anim 1s infinite 0.4s;
+}
+
+.icon-arrow--style2 svg {
+  transform: translateX(-10px);
 }
 
 /* SVG animations */
@@ -1117,7 +1121,7 @@ p {
   height: 40px;
   background-color: rgba(23, 23, 23, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
   border-radius: 30px;
   margin: 0;
   overflow: hidden;
