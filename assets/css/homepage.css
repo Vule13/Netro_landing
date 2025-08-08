@@ -280,18 +280,6 @@
   animation: fadeUp 0.5s ease forwards;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
 .homepage-demo__background {
   background: #000000;
   border-radius: 15px;

@@ -224,7 +224,7 @@ p {
 }
 
 /* back to top */
-#backToTop {
+.backtotop {
   position: fixed;
   bottom: 40px;
   right: 30px;
@@ -241,7 +241,9 @@ p {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   display: flex  ;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   @media (max-width: 767px) {
     width: 40px;
     height: 40px;
@@ -249,6 +251,24 @@ p {
       width: 10px;
     }
   }
+}
+
+.backtotop-arrow1 {
+  transform: translateY(9px);
+  transition: .3s ease all;
+}
+
+.backtotop-arrow2 {
+  transition: .3s ease all;
+  transform: translateY(30px);
+}
+
+.backtotop:hover .backtotop-arrow2 {
+  transform: translateY(-9px);
+}
+
+.backtotop:hover .backtotop-arrow1 {
+  transform: translateY(-30px);
 }
 
 #backToTop.show {
@@ -434,37 +454,6 @@ p {
   transform: translateX(-10px);
 }
 
-/* SVG animations */
-@keyframes color_anim {
-  0% {
-    fill: rgb(255, 255, 255);
-    opacity: 0;
-  }
-
-  50% {
-    fill: rgb(255, 255, 255);
-    opacity: 0.4;
-  }
-
-  100% {
-    fill: white;
-  }
-}
-
-/* Button animations */
-@-webkit-keyframes btn-content {
-  0% {
-    outline: 0.2em solid rgb(38, 38, 38);
-    outline-offset: 0;
-  }
-}
-
-@keyframes btn-content {
-  0% {
-    outline: 0.2em solid rgb(38, 38, 38);
-    outline-offset: 0;
-  }
-}
 
 /* code banner */
 
@@ -1079,7 +1068,8 @@ p {
   left: 50%;
   transform: translate(-50%, -30%);
   border-radius: 30px;
-  width: fit-content;
+  max-width: 664px;
+  width: 96%;
   transition: transform 0.3s ease, opacity 0.3s ease;
   @media(max-width: 567px) {
     padding: 8px 4px;

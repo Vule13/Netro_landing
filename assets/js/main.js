@@ -562,36 +562,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // mobile video
 
-(function () {
-  const videos = document.querySelectorAll('.mobile-screen__box video');
+document.addEventListener('DOMContentLoaded', function () {
+  const videos = document.querySelectorAll('.mobile-screen__box-item video');
+
+  function resetVideo(video) {
+    video.pause();
+    video.currentTime = 0;
+
+    // Reset lại src để buộc load lại và hiển thị poster
+    const src = video.dataset.src;
+    const type = video.querySelector('source').type;
+
+    // Xoá source hiện tại
+    video.innerHTML = '';
+
+    // Tạo lại source
+    const source = document.createElement('source');
+    source.src = src;
+    source.type = type;
+    video.appendChild(source);
+
+    // Load lại video để hiển thị poster
+    video.load();
+  }
 
   function playActiveVideo(target) {
     videos.forEach(video => {
-      video.pause();
-      video.currentTime = 0;
       video.classList.remove('active');
-
-      // Reset về thumbnail
-      if (video.poster) {
-        video.load(); // Gọi load() sẽ khiến video hiển thị lại thumbnail
-      }
+      resetVideo(video);
     });
 
     target.classList.add('active');
     target.play().catch(error => console.log("Autoplay failed:", error));
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const activeVideo = document.querySelector('.mobile-screen__box video.active');
-    if (activeVideo) {
-      activeVideo.play().catch(error => console.log("Autoplay failed:", error));
-    }
+  // Tự phát video đang active mặc định
+  const defaultActive = document.querySelector('.mobile-screen__box-item video.active');
+  if (defaultActive) {
+    defaultActive.play().catch(error => console.log("Autoplay failed:", error));
+  }
 
-    videos.forEach(video => {
-      video.addEventListener('click', () => {
-        playActiveVideo(video);
-      });
+  // Sự kiện click vào video
+  videos.forEach(video => {
+    video.addEventListener('click', () => {
+      playActiveVideo(video);
     });
   });
-})();
-
+});

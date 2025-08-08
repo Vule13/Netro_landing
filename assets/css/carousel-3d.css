@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 48px;
-  padding: 200px 0;
+  padding: 250px 0;
 }
 
 .carousel-3d__img {
@@ -44,15 +44,6 @@
   @media (max-width: 567px) {
     width: 300px;
     height: 400px;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(-360deg);
   }
 }
 
