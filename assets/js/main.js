@@ -609,3 +609,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+// year copyright
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("year").textContent = new Date().getFullYear();
+});

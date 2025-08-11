@@ -10,6 +10,24 @@
   padding: 250px 0;
 }
 
+.carousel-3d__title {
+  font-size: 48px;
+  color: var(--color-foreground);
+  padding-bottom: 10px;
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+.carousel-3d__title strong {
+  background-image: linear-gradient(309deg, #7cdc31 2.25225%, #4ea23b 40.0785%, #297246 100%);
+  padding-bottom: 5px;
+  display: inline-block;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .carousel-3d__img {
   perspective: 880px;
   @media (max-width: 567px) {
