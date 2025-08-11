@@ -720,6 +720,8 @@
   background-image: linear-gradient(309deg, rgb(120 172 255) 2.25225%, rgb(29 129 255) 48.0785%
   48.0785%, rgb(1 120 255) 100%);
   padding-bottom: 10px;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 
 .mobile-screen__subtitle[data-text-fill] {
@@ -807,8 +809,8 @@
 .mobile-screen__product-title {
   text-align: center;
   color: #fff;
-  margin-top: 10px;
   transition: transform 0.5s ease;
+  padding-top: 25px;
 }
 
 .feature-gap {

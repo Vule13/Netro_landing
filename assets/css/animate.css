@@ -101,3 +101,10 @@
     outline-offset: 0;
   }
 }
+
+
+/* rotate */
+@keyframes spin360 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

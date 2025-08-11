@@ -72,6 +72,17 @@ p {
   }
 }
 
+.svg-templates {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 0;
+  contain: strict;
+}
+
 .hidden {
   display: none;
 }
