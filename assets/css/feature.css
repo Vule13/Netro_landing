@@ -717,12 +717,8 @@
 }
 
 .mobile-screen__subtitle {
-  background-image: linear-gradient(
-    309deg,
-    rgb(98, 190, 247) 2.25225%,
-    rgb(51, 194, 255) 48.0785%,
-    rgb(0, 119, 255) 100%
-  );
+  background-image: linear-gradient(309deg, rgb(120 172 255) 2.25225%, rgb(29 129 255) 48.0785%
+  48.0785%, rgb(1 120 255) 100%);
   padding-bottom: 10px;
 }
 

@@ -163,6 +163,10 @@
   }
 }
 
+.layout-theme__button:hover {
+  background-color: #0874ffab;
+}
+
 .layout-theme__button--prev { left: -20px; }
 .layout-theme__button--next { right: -20px; }
 
@@ -225,12 +229,12 @@
 }
 
 .button-prev:hover .button-prev__arrow1 {
-  transform: translateX(-30px);
+  transform: translateX(-50px);
 }
 
 .button-prev__arrow2 {
   transition: .3s ease all;
-  transform: translateX(30px);
+  transform: translateX(50px);
 }
 
 .button-prev:hover .button-prev__arrow2 {
@@ -238,17 +242,17 @@
 }
 
 .button-next__arrow1 {
-  transition: .3s ease all;
+  transition: .4s ease all;
   transform: translateX(5px);
 }
 
 .button-next:hover .button-next__arrow1 {
-  transform: translateX(30px);
+  transform: translateX(50px);
 }
 
 .button-next__arrow2 {
-  transition: .3s ease all;
-  transform: translateX(-30px);
+  transition: .4s ease all;
+  transform: translateX(-50px);
 }
 
 .button-next:hover .button-next__arrow2 {
