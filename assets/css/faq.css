@@ -3,6 +3,9 @@
   font-size: 64px;
   font-weight: 600;
   margin: 0;
+  @media(max-width: 767px) {
+    font-size: 40px;
+  }
 }
 
 .faq__title-box, .faq__connect {

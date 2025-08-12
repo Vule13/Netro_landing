@@ -73,7 +73,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.feature-content__title h1 {
+.feature-content__title h2 {
   color: #fff;
   font-size: 48px;
   @media(max-width: 767px) {

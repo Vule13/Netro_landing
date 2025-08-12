@@ -198,26 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// animation section scroll
-
-document.addEventListener("DOMContentLoaded", function () {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        } else {
-          entry.target.classList.remove("active"); // cho phép reset khi scroll lên
-        }
-      });
-    },
-    {
-      threshold: 0.1, // 10% vào view thì kích hoạt
-    }
-  );
-
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-});
 
 // tab
 document.addEventListener("DOMContentLoaded", function () {

@@ -394,10 +394,6 @@
   font-size: 44px;
 }
 
-.testimonial-review__right-title span {
-  font-style: italic;
-}
-
 .testimonial-review__right-desc {
   max-width: 75%;
   padding-bottom: 30px;

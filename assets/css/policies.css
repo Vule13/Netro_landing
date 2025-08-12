@@ -6,6 +6,10 @@
   text-align: center;
   width: calc(100% / 3);
   padding: 40px;
+  @media(max-width: 991px) {
+    width: 100%;
+    padding: 40px 0px;
+  }
 }
 
 .policies__title {
@@ -20,10 +24,12 @@
 
 .policies__box {
   display: flex;
+  @media(max-width: 991px) {
+    flex-direction: column;
+  }
 }
 
 .policies__link {
-  padding-bottom: 5px;
   font-weight: 500;
   display: inline-block;
   position: relative;
@@ -35,19 +41,13 @@
   font-size: 14px;
 }
 
-.policies__link:focus:after,
-.policies__link:hover:after {
-  width: 100%;
-  left: 0%;
-}
-
 .policies__link:after {
   content: "";
   pointer-events: none;
   bottom: -2px;
-  left: 50%;
+  left: 0;
   position: absolute;
-  width: 0%;
+  width: 100%;
   height: 1px;
   background-color: var(--color-foreground);
   opacity: 0.8;

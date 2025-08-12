@@ -142,6 +142,7 @@ p {
     rgb(0, 119, 255) 0%,
     rgba(207, 207, 207, 0.2) 100%
   );
+  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .button-blue--blur {
@@ -880,16 +881,6 @@ p {
   z-index: 0;
 }
 
-/* .reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-} */
 
 /* banner */
 

@@ -108,3 +108,33 @@
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+
+/* animation text */
+
+.reveal-word span {
+  display: inline-block;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(20px);
+  will-change: transform, opacity, filter;
+  transition: opacity 0.7s ease, filter 0.7s ease, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal-word span.visible {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* fade up section */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
