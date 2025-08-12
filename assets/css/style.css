@@ -797,6 +797,7 @@ p {
   pointer-events: none;
   position: absolute;
   right: 0;
+  margin-bottom: -2px;
   z-index: 2;
 }
 
@@ -811,6 +812,7 @@ p {
   position: absolute;
   right: 0;
   z-index: 1;
+  margin-bottom: -2px;
 }
 
 .background-color1_item1 {

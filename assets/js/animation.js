@@ -144,3 +144,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+function initSmoothScroll(options = {}) {
+  const container = document.querySelector(options.container || ".scroll-container");
+  if (!container) return;
+
+  let currentScroll = 0;
+  let delayedScroll = 0;
+  let targetScroll = 0;
+
+  const delayEase = options.delayEase ?? 0.12;   // độ bắt kịp
+  const inertiaEase = options.inertiaEase ?? 0.1; // độ trượt
+
+  // Cập nhật chiều cao ảo của body
+  function setBodyHeight() {
+    const height = container.scrollHeight;
+    document.body.style.height = height + "px";
+  }
+
+  // Quan sát nội dung thay đổi để cập nhật height
+  const observer = new ResizeObserver(setBodyHeight);
+  observer.observe(container);
+
+  // Chạy loop render
+  function smoothScroll() {
+    targetScroll = window.scrollY;
+    delayedScroll += (targetScroll - delayedScroll) * delayEase;
+    currentScroll += (delayedScroll - currentScroll) * inertiaEase;
+
+    container.style.transform = `translate3d(0, -${currentScroll}px, 0)`;
+    requestAnimationFrame(smoothScroll);
+  }
+
+  setBodyHeight();
+  smoothScroll();
+}

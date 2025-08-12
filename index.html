@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <div class="main">
+  <div class="main scroll-container">
     <header class="header">
       <div class="container">
         <div class="d-flex flex-row justify-content-between header-box">
@@ -3473,7 +3473,7 @@
         </div>
       </div>
     </section>
-    <section class="mobile-screen reveal">
+    <section class="mobile-screen">
       <div class="container-xl">
         <div class="mobile-screen__content">
           <div class="mobile-screen__subtitle" data-text-fill="true">Mobile Ready Now</div>
@@ -3930,6 +3930,12 @@
   <script type="text/javascript" src="assets/js/animation.js"></script>
   <script type="text/javascript" src="assets/js/carousel-3d.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
+  <script>
+    initSmoothScroll({
+      delayEase: 0.15,  // chỉnh để delay nhiều/ít hơn
+      inertiaEase: 0.08 // chỉnh để trượt nhiều/ít hơn
+    });
+  </script>
 </body>
 
 </html>

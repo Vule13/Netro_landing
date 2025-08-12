@@ -167,8 +167,18 @@
   background-color: #0874ffab;
 }
 
-.layout-theme__button--prev { left: -20px; }
-.layout-theme__button--next { right: -20px; }
+.layout-theme__button--prev { 
+  left: -20px; 
+  @media(max-width: 767px) {
+    left: 0;
+  }
+}
+.layout-theme__button--next { 
+  right: -20px; 
+  @media(max-width: 767px) {
+    right: 0;
+  }
+}
 
 .layout-theme__pagination {
   text-align: center;

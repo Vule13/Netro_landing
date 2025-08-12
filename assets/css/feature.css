@@ -885,13 +885,12 @@
 }
 
 .feature-saveup__title {
-  font-size: 90px;
+  font-size: clamp(60px, 8vw, 90px);
   color: var(--color-foreground);
   padding-bottom: 50px;
   font-weight: 600;
   @media (max-width: 991px) {
     padding-bottom: 20px;
-    font-size: 50px;
   }
 }
 
