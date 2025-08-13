@@ -741,7 +741,7 @@
   font-size: 48px;
   color: var(--color-foreground);
   padding-bottom: 10px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
@@ -885,7 +885,7 @@
 }
 
 .feature-saveup__title {
-  font-size: clamp(60px, 8vw, 90px);
+  font-size: 48px;
   color: var(--color-foreground);
   padding-bottom: 50px;
   font-weight: 600;

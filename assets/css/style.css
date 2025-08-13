@@ -181,11 +181,11 @@ p {
     rgb(0, 0, 0) 57%,
     rgb(0, 0, 0) 100%
   ); */
-  background: radial-gradient(59% 170% at var(--x2) 50%, rgb(0 33 131) 0%, #045cdd 57%, #045cdd 100%);
+  background: radial-gradient(59% 170% at var(--x2) 50%, #0d64e4 0%, #045cdd 57%, #045cdd 100%);
 }
 
 .button-blue--blur .button-blue__content {
-  background: radial-gradient(59% 170% at var(--x2) 50%, rgb(0 33 131) 0%, #045cdd 57%, #045cdd 100%);
+  background: radial-gradient(59% 170% at var(--x2) 50%, #0d64e4 0%, #045cdd 57%, #045cdd 100%);
 }
 
 .button-white__content {
@@ -264,6 +264,7 @@ p {
 
 .backtotop:hover {
   background-color: #0874ffab;
+  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .backtotop-arrow1 {
@@ -438,6 +439,10 @@ p {
 
 .icon-logo-click img {
   width: 21px;
+}
+
+.gallery-bottom__right .icon-logo-click img {
+  filter: invert(1);
 }
 
 .icon-logo-store img {

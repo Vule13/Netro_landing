@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // testimonial countto 5000 -> 10000
 function animateCounterOnScroll({
   selector = "#counter",
-  start = 5000,
-  end = 10000,
+  start = 10000,
+  end = 18000,
   step = 20,
   duration = 2000,
 }) {
@@ -136,7 +136,7 @@ function animateCounterOnScroll({
         current = end;
         clearInterval(timer);
       }
-      el.textContent = current.toLocaleString() + "+";
+      el.textContent = current.toLocaleString() + "⁺";
     }, interval);
   }
 }

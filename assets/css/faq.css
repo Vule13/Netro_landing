@@ -18,12 +18,21 @@
 
 .faq__connect a  {
   color: var(--color-foreground);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
+  width: fit-content;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #fff;
+  transition: all .3s ease;
+}
+
+.faq__connect a:hover {
+  border-bottom: 1px solid #045cdd;
+  color: #045cdd;
 }
 
 .faq__connect span:first-child {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .faq__collapse-title {
@@ -32,11 +41,13 @@
   justify-content: space-between;
   font-size: 18px;
   cursor: pointer;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
 .faq__collapse-title svg {
   transition: .3s ease all;
+  width: 20px;
+  height: 20px;
 }
 
 .faq__collapse-title[aria-expanded="true"] svg{
