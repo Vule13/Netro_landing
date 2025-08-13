@@ -19,6 +19,7 @@
 .faq__connect a  {
   color: var(--color-foreground);
   font-size: 24px;
+  font-weight: 600;
 }
 
 .faq__connect span:first-child {

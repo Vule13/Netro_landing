@@ -130,6 +130,7 @@ p {
   position: relative;
   text-decoration: none;
   width: min-content;
+  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
   will-change: var(--framer-will-change-override, transform);
 }
 
@@ -142,7 +143,6 @@ p {
     rgb(0, 119, 255) 0%,
     rgba(207, 207, 207, 0.2) 100%
   );
-  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .button-blue--blur {
@@ -150,10 +150,6 @@ p {
 }
 
 .button-white {
-  --shadowX: -1; /* giá trị nội suy từ -1 đến 1 */
-  box-shadow: rgb(2 61 173) calc(var(--shadowX) * 7px) 0px 21px -3px,
-    #1157a7 calc(var(--shadowX) * 12px) 0px 10px -5px;
-  will-change: var(--shadowX);
   padding: unset;
 }
 
@@ -179,16 +175,17 @@ p {
 }
 
 .button-blue__content {
-  background: radial-gradient(
+  /* background: radial-gradient(
     59% 170% at var(--x2) 50%,
     rgb(0, 119, 255) 0%,
     rgb(0, 0, 0) 57%,
     rgb(0, 0, 0) 100%
-  );
+  ); */
+  background: radial-gradient(59% 170% at var(--x2) 50%, rgb(0 33 131) 0%, #045cdd 57%, #045cdd 100%);
 }
 
 .button-blue--blur .button-blue__content {
-  background: radial-gradient(59% 170% at var(--x2) 50%, rgba(0, 119, 255) 0%, rgba(0, 0, 0, .6) 57%, rgba(0, 0, 0, .6) 100%);
+  background: radial-gradient(59% 170% at var(--x2) 50%, rgb(0 33 131) 0%, #045cdd 57%, #045cdd 100%);
 }
 
 .button-white__content {
@@ -272,6 +269,9 @@ p {
 .backtotop-arrow1 {
   transform: translateY(9px);
   transition: .3s ease all;
+  @media(max-width: 767px) {
+    transform: translateY(5px);
+  }
 }
 
 .backtotop-arrow2 {
@@ -281,6 +281,9 @@ p {
 
 .backtotop:hover .backtotop-arrow2 {
   transform: translateY(-9px);
+  @media(max-width: 767px) {
+    transform: translateY(-5px);
+  }
 }
 
 .backtotop:hover .backtotop-arrow1 {

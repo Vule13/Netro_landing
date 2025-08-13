@@ -39,7 +39,7 @@
   font-size: 10px;
   font-weight: 500;
   padding: 4px 8px;
-  background: #2178ff;
+  background: rgb(203, 39, 2);
   border-radius: 10px;
   line-height: 1;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
 }
 
 .footer__subtitle-text {
-  color: #2178ff;
+  color: rgb(203, 39, 2);
   font-size: 15px;
   text-transform: capitalize;
 }

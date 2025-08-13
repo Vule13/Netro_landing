@@ -99,49 +99,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 })();
 
-// hover button white box shadow
-(function () {
-  const buttons = document.querySelectorAll(".button-white");
-
-  buttons.forEach((button) => {
-    let animationFrame;
-    let startTime;
-
-    const settings = {
-      from: -1,
-      to: 1,
-      duration: 800,
-    };
-
-    function animate(forward = true) {
-      cancelAnimationFrame(animationFrame);
-      startTime = null;
-
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / settings.duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-
-        const value = forward
-          ? settings.from + (settings.to - settings.from) * eased
-          : settings.to - (settings.to - settings.from) * eased;
-
-        button.style.setProperty("--shadowX", value.toFixed(3));
-
-        if (progress < 1) {
-          animationFrame = requestAnimationFrame(step);
-        }
-      }
-
-      animationFrame = requestAnimationFrame(step);
-    }
-
-    button.addEventListener("mouseenter", () => animate(true));
-    button.addEventListener("mouseleave", () => animate(false));
-  });
-})();
-
 // testimonial countto 5000 -> 10000
 function animateCounterOnScroll({
   selector = "#counter",

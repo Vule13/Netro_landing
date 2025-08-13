@@ -143,6 +143,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// animation page
+
+let smoothScrollActive = false;
 
 function initSmoothScroll(options = {}) {
   const container = document.querySelector(options.container || ".scroll-container");
@@ -178,3 +181,55 @@ function initSmoothScroll(options = {}) {
   setBodyHeight();
   smoothScroll();
 }
+
+// Bật smooth scroll nếu màn hình đủ lớn
+function startSmoothScroll() {
+  if (!smoothScrollActive) {
+    initSmoothScroll({
+      delayEase: 1,
+      inertiaEase: 0.06
+    });
+    smoothScrollActive = true;
+  }
+}
+
+// Tắt smooth scroll (reload trang để trả lại scroll bình thường)
+function stopSmoothScroll() {
+  if (smoothScrollActive) {
+    location.reload();
+  }
+}
+
+// Tự động bật/tắt theo kích thước màn hình
+function handleSmoothScrollToggle() {
+  if (window.innerWidth >= 768) {
+    startSmoothScroll();
+  } else {
+    stopSmoothScroll();
+  }
+}
+
+window.addEventListener('resize', handleSmoothScrollToggle);
+window.addEventListener('load', handleSmoothScrollToggle);
+
+// --- FIX anchor link jump khi smoothScroll bật ---
+const HEADER_OFFSET = 0; // chỉnh nếu có header cố định
+
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="#"]:not([href="#"])');
+  if (!link) return;
+
+  const id = decodeURIComponent(link.getAttribute('href').slice(1));
+  if (!id) return;
+
+  if (smoothScrollActive) {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      const y = window.scrollY + target.getBoundingClientRect().top - HEADER_OFFSET;
+      window.scrollTo(0, y); // vòng smoothScroll sẽ đọc và dịch container
+      history.pushState(null, '', '#' + id); // cập nhật URL hash
+    }
+  }
+});
+

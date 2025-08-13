@@ -8,6 +8,10 @@
   justify-content: space-around;
   gap: 48px;
   padding: 250px 0;
+
+  @media(max-width: 767px) {
+    padding: 150px 0;
+  }
 }
 
 .carousel-3d__title {
@@ -48,6 +52,7 @@
   perspective: 880px;
   @media (max-width: 567px) {
     perspective: 300px;
+    padding-top: 100px;
   }
 }
 
