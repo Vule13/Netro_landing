@@ -61,3 +61,29 @@
 .faq__collapse-text {
   padding: 0px 40px 20px 20px;
 }
+
+.faq__collapse-ul {
+  padding-top: 15px;
+  padding-left: 0;
+}
+
+.faq__collapse-ul li {
+  list-style: none;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq__link-detail {
+  width: fit-content;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--color-text);
+  transition: all .3s ease;
+  color: var(--color-text);
+}
+
+.faq__link-detail:hover {
+  border-bottom: 1px solid #045cdd;
+  color: #045cdd;
+}

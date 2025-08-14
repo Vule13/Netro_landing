@@ -44,12 +44,14 @@
   line-height: 1;
   text-transform: uppercase;
   color: #fff;
+  box-shadow: rgb(255 0 0 / 35%) 0px 3px 8px 2px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .footer__subtitle-text {
   color: rgb(203, 39, 2);
   font-size: 15px;
   text-transform: capitalize;
+  text-shadow: 2px 3px 5px rgb(255 92 92 / 40%);
 }
 
 .footer__button {

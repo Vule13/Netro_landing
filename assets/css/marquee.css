@@ -100,6 +100,7 @@
     rgb(56 145 245) 48.0785%,
     rgb(0, 119, 255) 100%
   );
+  text-shadow: 2px 3px 5px rgb(88 154 253 / 40%);
 }
 
 .marquee__text span[data-text-fill] {

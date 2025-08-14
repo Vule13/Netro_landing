@@ -180,14 +180,17 @@
 
 .homepage-tabs__item--top span {
   background: linear-gradient(270deg, rgb(0 114 187) 30.25225%, rgb(0 85 183) 80.0785%, rgb(4 87 183) 100%);
+  text-shadow: 2px 2px 6px rgb(88 154 253 / 40%);
 }
 
 .homepage-tabs__item--green span {
   background: linear-gradient(270deg, #09b967 10.25225%, #026a3a 60.0785%, #004425 100%);
+  text-shadow: 2px 2px 5px rgb(98 253 88 / 40%);
 }
 
 .homepage-tabs__item--hot span {
   background: linear-gradient(270deg, #fb7659 30.25225%, #cb2702 80.0785%, #951d02 100%);
+  text-shadow: 2px 2px 5px rgba(247, 68, 68, 0.4);
 }
 
 .homepage-tabs__item--green span[data-text-fill] {

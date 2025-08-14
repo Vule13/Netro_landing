@@ -33,12 +33,8 @@
   font-weight: 500;
   display: inline-block;
   position: relative;
-  color: var(--color-foreground);
-  opacity: 0.6;
   font-size: 14px;
   overflow: hidden;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--color-foreground);
   height: 30px;
   width: 90px;
 }
@@ -47,7 +43,7 @@
   content: attr(data-text);
   transition: all .3s ease;
   position: absolute;
-  color: #fff;
+  color: var(--color-text);
   width: 100%;
   transform: translate(-50%, 100%);
   left: 50%;
@@ -58,23 +54,34 @@
 .policies__link::before {
   content:  attr(data-text) ;
   transition: all .3s ease;
+  color: var(--color-text);
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
   width: 100%;
-  bottom: 2px;
-}
-
-.policies__link:hover {
-  opacity: 0.8;
+  bottom: 4px;
 }
 
 .policies__link:hover:after {
   transform: translate(-50%, 0);
-  bottom: 2px;
+  bottom: 4px;
+  color: var(--color-foreground);
 }
 
 .policies__link:hover::before {
   transform: translate(-50%, -50%);
   bottom: 30px;
+}
+
+.policies__link span {
+  width: 70%;
+  border-bottom: 1px solid var(--color-text);
+  margin: 0 auto;
+  height: 100%;
+  display: block;
+}
+
+.policies__link:hover span {
+  border-bottom: 1px solid var(--color-foreground);
+  
 }
