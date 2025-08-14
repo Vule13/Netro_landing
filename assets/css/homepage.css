@@ -441,22 +441,22 @@
 .homepage-demo__new {
   padding: 6px 12px;
   border-radius: 30px;
-  color: #052a03;
-  background-color: rgb(67 142 68);
+  color: #2a8b25;
+  background-color: rgb(71 185 40);
   line-height: 1;
   font-size: 12px;
   font-weight: 500;
-  box-shadow: 0px 1px 5px 0 #198754;
+  box-shadow: 0px 1px 5px 0 #49b328;
 }
 
 .homepage-demo__hot {
   padding: 6px 12px;
   border-radius: 30px;
-  color: #7e0202;
+  color: #bd2424;
   background-color: rgb(252 87 50);
   line-height: 1;
   font-size: 12px;
-  box-shadow: 0px 1px 5px 0 #dc3545;
+  box-shadow: 0px 1px 10px 0 #dc3545;
   font-weight: 500;
 }
 

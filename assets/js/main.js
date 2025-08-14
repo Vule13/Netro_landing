@@ -499,28 +499,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // mobile video
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const videos = document.querySelectorAll('.mobile-screen__box-item video');
+
+//   function resetVideo(video) {
+//     video.pause();
+//     video.currentTime = 0;
+
+//     // Reset lại src để buộc load lại và hiển thị poster
+//     const src = video.dataset.src;
+//     const type = video.querySelector('source').type;
+
+//     // Xoá source hiện tại
+//     video.innerHTML = '';
+
+//     // Tạo lại source
+//     const source = document.createElement('source');
+//     source.src = src;
+//     source.type = type;
+//     video.appendChild(source);
+
+//     // Load lại video để hiển thị poster
+//     video.load();
+//   }
+
+//   function playActiveVideo(target) {
+//     videos.forEach(video => {
+//       video.classList.remove('active');
+//       resetVideo(video);
+//     });
+
+//     target.classList.add('active');
+//     target.play().catch(error => console.log("Autoplay failed:", error));
+//   }
+
+//   // Tự phát video đang active mặc định
+//   const defaultActive = document.querySelector('.mobile-screen__box-item video.active');
+//   if (defaultActive) {
+//     defaultActive.play().catch(error => console.log("Autoplay failed:", error));
+//   }
+
+//   // Sự kiện click vào video
+//   videos.forEach(video => {
+//     video.addEventListener('click', () => {
+//       playActiveVideo(video);
+//     });
+//   });
+// });
+
 document.addEventListener('DOMContentLoaded', function () {
   const videos = document.querySelectorAll('.mobile-screen__box-item video');
 
   function resetVideo(video) {
     video.pause();
     video.currentTime = 0;
-
-    // Reset lại src để buộc load lại và hiển thị poster
-    const src = video.dataset.src;
-    const type = video.querySelector('source').type;
-
-    // Xoá source hiện tại
-    video.innerHTML = '';
-
-    // Tạo lại source
-    const source = document.createElement('source');
-    source.src = src;
-    source.type = type;
-    video.appendChild(source);
-
-    // Load lại video để hiển thị poster
-    video.load();
+    video.load(); // Hiển thị lại poster
   }
 
   function playActiveVideo(target) {
@@ -528,7 +561,6 @@ document.addEventListener('DOMContentLoaded', function () {
       video.classList.remove('active');
       resetVideo(video);
     });
-
     target.classList.add('active');
     target.play().catch(error => console.log("Autoplay failed:", error));
   }
