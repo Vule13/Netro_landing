@@ -10,6 +10,13 @@
 
 .shop-feature__item img {
   width: 100%;
+  transition: all .3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.shop-feature__item img:hover {
+  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .shop-feature__title {
@@ -53,7 +60,7 @@
 
 .modal-shop-feature {
   padding: 50px 44px 38px;
-  color: #fff;
+  color: var(--color-foreground);
   border-radius: 10px;
   overflow: hidden;
   max-width: 1000px;
@@ -70,8 +77,14 @@
 
 .modal-shop-feature__body-item img {
   width: 100%;
+  transition: all .3s ease;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
+.modal-shop-feature__body-item img:hover {
+  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
+}
 
 
 /* css layout-theme */

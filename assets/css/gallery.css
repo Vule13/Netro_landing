@@ -13,7 +13,7 @@
   top: 0;
   width: 100%;
   z-index: 5;
-  color: #fff;
+  color: var(--color-foreground);
   @media(max-width: 767px) {
     display: unset;
     padding: 50px 10px 0 10px;

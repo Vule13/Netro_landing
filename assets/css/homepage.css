@@ -22,7 +22,7 @@
 
 .homepage-title h2 {
   font-size: 50px;
-  color: #fff;
+  color: var(--color-foreground);
   padding: 10px 0;
   @media (max-width: 991px) {
     font-size: 30px;
@@ -149,7 +149,7 @@
 }
 
 .homepage-tabs__item.active {
-  color: #fff;
+  color: var(--color-foreground);
   &::before {
     content: "";
     position: absolute;
@@ -331,7 +331,7 @@
 }
 
 .homepage-demo__title:hover {
-  color: #fff;
+  color: var(--color-foreground);
 }
 
 .homepage-demo:hover .homepage-demo__img img {
@@ -346,7 +346,7 @@
   backdrop-filter: blur(10px);
   padding: 40px;
   color: #000;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   width: min(650px, 95vw);
   display: flex;
@@ -371,13 +371,13 @@
 }
 
 .modal-viewnow__title {
-  color: #fff;
-  font-size: 24px;
+  color: var(--color-foreground);
+  font-size: 20px;
   font-weight: 600;
   padding-bottom: 12px;
-  padding-top: 15px;
   line-height: 1.5;
   margin-bottom: unset;
+  margin-top: -20px;
 }
 
 .modal-viewnow__title strong {
@@ -387,7 +387,7 @@
 .modal-viewnow__button {
   border-radius: 50px;
   border: none;
-  color: #fff;
+  color: var(--color-foreground);
   background: linear-gradient(
     309deg,
     rgb(166, 221, 255) 2.25225%,

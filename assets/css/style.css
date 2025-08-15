@@ -109,7 +109,7 @@ p {
 
 .button-primary:hover {
   background-position: right center;
-  color: #fff;
+  color: var(--color-foreground);
   text-decoration: none;
 }
 
@@ -204,7 +204,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex-shrink: 0;
   transform: none;
   opacity: 1;
   flex: none;
@@ -212,7 +211,7 @@ p {
   position: relative;
   white-space: pre;
   width: auto;
-  color: #fff;
+  color: var(--color-foreground);
   line-height: 1.4;
   font-size: 14px;
 }
@@ -381,7 +380,7 @@ p {
 }
 
 .header-nav .active .nav-link {
-  color: #fff;
+  color: var(--color-foreground);
 }
 
 .header-nav .nav-item:hover {
@@ -573,7 +572,7 @@ p {
 }
 
 .banner-content__title h1 {
-  color: #fff;
+  color: var(--color-foreground);
   font-size: 55px;
   font-weight: 700;
   text-align: center;
