@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // testimonial countto 5000 -> 10000
 function animateCounterOnScroll({
   selector = "#counter",
-  start = 10000,
+  start = 15000,
   end = 18000,
   step = 20,
   duration = 2000,

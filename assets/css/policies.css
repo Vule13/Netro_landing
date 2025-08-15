@@ -1,5 +1,8 @@
 .policies {
   padding: 150px 0;
+  @media(max-width: 991px) {
+    padding: 100px 0px;
+  }
 }
 
 .policies__item {
