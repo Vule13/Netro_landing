@@ -145,91 +145,91 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // animation page
 
-// let smoothScrollActive = false;
+let smoothScrollActive = false;
 
-// function initSmoothScroll(options = {}) {
-//   const container = document.querySelector(options.container || ".scroll-container");
-//   if (!container) return;
+function initSmoothScroll(options = {}) {
+  const container = document.querySelector(options.container || ".scroll-container");
+  if (!container) return;
 
-//   let currentScroll = 0;
-//   let delayedScroll = 0;
-//   let targetScroll = 0;
+  let currentScroll = 0;
+  let delayedScroll = 0;
+  let targetScroll = 0;
 
-//   const delayEase = options.delayEase ?? 0.12;   // độ bắt kịp
-//   const inertiaEase = options.inertiaEase ?? 0.1; // độ trượt
+  const delayEase = options.delayEase ?? 0.12;   // độ bắt kịp
+  const inertiaEase = options.inertiaEase ?? 0.1; // độ trượt
 
-//   // Cập nhật chiều cao ảo của body
-//   function setBodyHeight() {
-//     const height = container.scrollHeight;
-//     document.body.style.height = height + "px";
-//   }
+  // Cập nhật chiều cao ảo của body
+  function setBodyHeight() {
+    const height = container.scrollHeight;
+    document.body.style.height = height + "px";
+  }
 
-//   // Quan sát nội dung thay đổi để cập nhật height
-//   const observer = new ResizeObserver(setBodyHeight);
-//   observer.observe(container);
+  // Quan sát nội dung thay đổi để cập nhật height
+  const observer = new ResizeObserver(setBodyHeight);
+  observer.observe(container);
 
-//   // Chạy loop render
-//   function smoothScroll() {
-//     targetScroll = window.scrollY;
-//     delayedScroll += (targetScroll - delayedScroll) * delayEase;
-//     currentScroll += (delayedScroll - currentScroll) * inertiaEase;
+  // Chạy loop render
+  function smoothScroll() {
+    targetScroll = window.scrollY;
+    delayedScroll += (targetScroll - delayedScroll) * delayEase;
+    currentScroll += (delayedScroll - currentScroll) * inertiaEase;
 
-//     container.style.transform = `translate3d(0, -${currentScroll}px, 0)`;
-//     requestAnimationFrame(smoothScroll);
-//   }
+    container.style.transform = `translate3d(0, -${currentScroll}px, 0)`;
+    requestAnimationFrame(smoothScroll);
+  }
 
-//   setBodyHeight();
-//   smoothScroll();
-// }
+  setBodyHeight();
+  smoothScroll();
+}
 
-// // Bật smooth scroll nếu màn hình đủ lớn
-// function startSmoothScroll() {
-//   if (!smoothScrollActive) {
-//     initSmoothScroll({
-//       delayEase: 1,
-//       inertiaEase: 0.06
-//     });
-//     smoothScrollActive = true;
-//   }
-// }
+// Bật smooth scroll nếu màn hình đủ lớn
+function startSmoothScroll() {
+  if (!smoothScrollActive) {
+    initSmoothScroll({
+      delayEase: 1,
+      inertiaEase: 0.06
+    });
+    smoothScrollActive = true;
+  }
+}
 
-// // Tắt smooth scroll (reload trang để trả lại scroll bình thường)
-// function stopSmoothScroll() {
-//   if (smoothScrollActive) {
-//     location.reload();
-//   }
-// }
+// Tắt smooth scroll (reload trang để trả lại scroll bình thường)
+function stopSmoothScroll() {
+  if (smoothScrollActive) {
+    location.reload();
+  }
+}
 
-// // Tự động bật/tắt theo kích thước màn hình
-// function handleSmoothScrollToggle() {
-//   if (window.innerWidth >= 768) {
-//     startSmoothScroll();
-//   } else {
-//     stopSmoothScroll();
-//   }
-// }
+// Tự động bật/tắt theo kích thước màn hình
+function handleSmoothScrollToggle() {
+  if (window.innerWidth >= 768) {
+    startSmoothScroll();
+  } else {
+    stopSmoothScroll();
+  }
+}
 
-// window.addEventListener('resize', handleSmoothScrollToggle);
-// window.addEventListener('load', handleSmoothScrollToggle);
+window.addEventListener('resize', handleSmoothScrollToggle);
+window.addEventListener('load', handleSmoothScrollToggle);
 
-// // --- FIX anchor link jump khi smoothScroll bật ---
-// const HEADER_OFFSET = 0; // chỉnh nếu có header cố định
+// --- FIX anchor link jump khi smoothScroll bật ---
+const HEADER_OFFSET = 0; // chỉnh nếu có header cố định
 
-// document.addEventListener('click', (e) => {
-//   const link = e.target.closest('a[href^="#"]:not([href="#"])');
-//   if (!link) return;
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="#"]:not([href="#"])');
+  if (!link) return;
 
-//   const id = decodeURIComponent(link.getAttribute('href').slice(1));
-//   if (!id) return;
+  const id = decodeURIComponent(link.getAttribute('href').slice(1));
+  if (!id) return;
 
-//   if (smoothScrollActive) {
-//     e.preventDefault();
-//     const target = document.getElementById(id);
-//     if (target) {
-//       const y = window.scrollY + target.getBoundingClientRect().top - HEADER_OFFSET;
-//       window.scrollTo(0, y); // vòng smoothScroll sẽ đọc và dịch container
-//       history.pushState(null, '', '#' + id); // cập nhật URL hash
-//     }
-//   }
-// });
+  if (smoothScrollActive) {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      const y = window.scrollY + target.getBoundingClientRect().top - HEADER_OFFSET;
+      window.scrollTo(0, y); // vòng smoothScroll sẽ đọc và dịch container
+      history.pushState(null, '', '#' + id); // cập nhật URL hash
+    }
+  }
+});
 
