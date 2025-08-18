@@ -13,10 +13,13 @@
   transition: all .3s ease;
   border-radius: 15px;
   overflow: hidden;
+  @media (max-width: 767px) {
+    border-radius: 10px;
+  }
 }
 
 .shop-feature__item img:hover {
-  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 85, 255, 0.2) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .shop-feature__title {
@@ -27,8 +30,8 @@
   padding: 0 15px;
   margin: 0 auto;
   @media(max-width: 991px) {
-    padding-bottom: 20px;
-    br:first-child {
+    padding-bottom: 0px;
+    br {
       display: none
     }
   };
@@ -45,6 +48,9 @@
   text-align: center;
   padding-top: 25px;
   padding-bottom: 10px;
+  @media(max-width: 767px) {
+    padding-top: 10px;
+  };
 }
 
 .shop-feature__item-text a {
@@ -52,6 +58,9 @@
   color: var(--color-foreground);
   transition: .3s ease all;
   text-transform: capitalize;
+  @media(max-width: 767px) {
+    font-size: 14px;
+  };
 }
 
 .shop-feature__item-text a:hover {
@@ -73,6 +82,9 @@
   background-color: rgba(23, 23, 23, .6);
   border: 1px solid rgba(38, 38, 38, .6);
   backdrop-filter: blur(10px);
+  @media(max-width: 767px) {
+    padding: 50px 15px 20px;
+  };
 }
 
 .modal-shop-feature__body-item img {
@@ -80,10 +92,13 @@
   transition: all .3s ease;
   border-radius: 15px;
   overflow: hidden;
+  @media(max-width: 767px) {
+    border-radius: 10px;
+  };
 }
 
 .modal-shop-feature__body-item img:hover {
-  box-shadow: rgba(0, 85, 255, 0.5) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 85, 255, 0.2) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 
@@ -145,6 +160,9 @@
 .marquee-position .feature-saveup__marquee-text {
   position: relative;
   font-size: 500px;
+  @media (max-width: 991px) {
+    font-size: 300px;
+  }
 }
 
 .layout-theme__button {
@@ -223,6 +241,7 @@
 @media (max-width: 480px) {
   .layout-theme__slide {
     flex: 0 0 100%;
+    padding: 15px 34px;
     font-size: 1.2rem;
   }
 }
@@ -234,6 +253,10 @@
   font-weight: 600;
   text-transform: capitalize;
   display: block;
+  @media(max-width: 767px) {
+    font-size: 14px;
+    padding-top: 12px;
+  }
 }
 
 .layout-theme__pagination {
@@ -245,6 +268,9 @@
   position: relative;
   padding-top: 30px;
   margin: 0 -15px;
+  @media(max-width: 767px) {
+    padding-top: 20px;
+  }
 }
 
 .button-prev__arrow1 {

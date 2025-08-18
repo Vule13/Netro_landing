@@ -21,7 +21,7 @@
   max-width: 800px;
   margin: 0px auto;
   @media(max-width: 767px) {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -50,7 +50,7 @@
 
 .carousel-3d__img {
   perspective: 880px;
-  @media (max-width: 567px) {
+  @media (max-width: 575px) {
     perspective: 300px;
     padding-top: 100px;
   }
@@ -62,7 +62,7 @@
   transform-style: preserve-3d;
   animation: spin 60s linear infinite;
   min-height: 300px;
-  @media(max-width: 567px) {
+  @media(max-width: 575px) {
     min-height: 100px;
   }
 }
@@ -80,7 +80,7 @@
   border-radius: 20px;
   transition: opacity 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  @media (max-width: 567px) {
+  @media (max-width: 575px) {
     width: 300px;
     height: 400px;
   }
@@ -93,6 +93,12 @@
 .carousel-3d__description {
   max-width: 800px;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .carousel-3d__description br{
+    display: none;
+  }
 }
 
 .carousel-3d__button {

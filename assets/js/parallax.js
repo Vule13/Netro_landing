@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function parallax(e) {
     document.querySelectorAll(".feature-parallax").forEach(function(move) {
       var moving_value = move.getAttribute("data-value") || 0;
-      var y = (e.clientY * moving_value) / 250; // Giảm mẫu số để hiệu ứng rõ hơn
+      var y = (e.clientY * moving_value) / 250;
       move.style.transform = "translateY(" + y + "px)";
     });
   }
@@ -28,10 +28,7 @@ function handleParallax() {
     C: document.querySelectorAll('.banner-bottom__left-small'),
     D: document.querySelectorAll('.banner-bottom__right-small')
   };
-
   lastScrollPosition = window.scrollY;
-
-  // Tính toán giá trị target cho chuyển động
   const targetOffsets = {
     A: Math.min(lastScrollPosition * 0.2, 100),
     B: Math.min(lastScrollPosition * 0.2, 100),
@@ -39,20 +36,15 @@ function handleParallax() {
     D: Math.min(lastScrollPosition * 0.2, 100),
   };
 
-  // Tăng dần currentOffset về targetOffset với tỷ lệ 0.05
   for (const key in currentOffsets) {
     currentOffsets[key] += (targetOffsets[key] - currentOffsets[key]) * 0.05;
   }
-
-  // Áp dụng transform cho từng nhóm phần tử
   for (const key in parallaxElements) {
     const elements = parallaxElements[key];
 
     if (currentOffsets[key] % 1 !== 0) {
       elements.forEach(el => {
         let transformString;
-
-        // Chọn cách transform dựa trên nhóm
         switch (key) {
           case 'A':
             transformString = `perspective(1200px) translateY(${currentOffsets[key]}px) rotateX(3deg) rotateY(10deg)`;
@@ -67,13 +59,10 @@ function handleParallax() {
             transformString = `perspective(1200px) translateY(${currentOffsets[key]}px) rotate(2deg) rotateX(8deg) rotateY(-11deg)`;
             break;
         }
-
         el.style.transform = transformString;
       });
     }
   }
-
-  // Gọi lại requestAnimationFrame để duy trì hiệu ứng
   requestAnimationFrame(handleParallax);
 }
 
@@ -99,7 +88,6 @@ function handleFeatureParallax() {
   const currentScrollPosition = window.scrollY;
   const isScrollingDown = currentScrollPosition > lastScrollPositionFeature;
   
-  // Tốc độ chuyển động của hiệu ứng
   const scrollSpeed = 0.8;
   const maxOffset = 25;
 
@@ -163,7 +151,6 @@ function handleFeatureParallax2() {
     currentOffsetImage3 += isScrollingDown ? -scrollSpeed : scrollSpeed;
     currentOffsetImage3 = Math.max(-maxOffset, Math.min(maxOffset, currentOffsetImage3));
   } else {
-    // Thay vì reset cứng về 0 → đưa về 0 dần
     currentOffsetImage3 += (0 - currentOffsetImage3) * 0.2; 
   }
 
@@ -191,12 +178,24 @@ function parallax() {
 
   const { top, height } = gallery.getBoundingClientRect();
   const inView = top < window.innerHeight && top + height > 0;
-  const progress = inView ? Math.min(1, Math.max(0, (window.innerHeight - top) / (window.innerHeight + height))) : 0;
+  const progress = inView 
+    ? Math.min(1, Math.max(0, (window.innerHeight - top) / (window.innerHeight + height))) 
+    : 0;
 
   document.querySelectorAll('.gallery-image__box').forEach(img => {
     const scale = 1.6 - progress * 0.6;
     const opacity = 0.4 + progress * 0.6;
-    const translateY = inView ? -300 + progress * 1000 : (window.scrollY > lastScroll ? -700 : 700);
+
+    let translateY;
+    if (window.innerWidth <= 768) {
+      translateY = inView 
+        ? -30 + progress * 130 
+        : (window.scrollY > lastScroll ? -100 : 100);
+    } else {
+      translateY = inView 
+        ? -300 + progress * 1000 
+        : (window.scrollY > lastScroll ? -400 : 400);
+    }
 
     img.style.transform = `scale(${scale}) translateY(${translateY}px)`;
     img.style.opacity = opacity;
@@ -206,4 +205,9 @@ function parallax() {
   ticking = false;
 }
 
-window.addEventListener('scroll', () => !ticking && (requestAnimationFrame(parallax), ticking = true));
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(parallax);
+    ticking = true;
+  }
+});

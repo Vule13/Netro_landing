@@ -1,15 +1,12 @@
 // circle countto feature
 document.addEventListener("DOMContentLoaded", function (event) {
   const circles = document.querySelectorAll(".countto-circle");
-
-  // Function to start the animation
   const startCounter = (progress) => {
     let degree = 0;
     const targetDegree = parseInt(progress.getAttribute("data-degree"));
     const color = progress.getAttribute("data-color");
     const number = progress.querySelector(".countto-circle__num");
 
-    // Clear previous interval if any
     clearInterval(progress.interval);
     progress.interval = setInterval(() => {
       degree += 1;
@@ -22,38 +19,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }, 50);
   };
 
-  // Intersection Observer setup
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          startCounter(entry.target); // Start the animation when visible
+          startCounter(entry.target); 
         } else {
-          entry.target.querySelector(".countto-circle__num").innerHTML = "0"; // Reset number on exit if desired
+          entry.target.querySelector(".countto-circle__num").innerHTML = "0";
         }
       });
     },
-    { threshold: 0.5 } // Adjust threshold as needed
+    { threshold: 0.5 } 
   );
 
-  // Observe each circle element
   circles.forEach((circle) => observer.observe(circle));
 });
 
 // hover button blue
 (function () {
   const buttons = document.querySelectorAll(".button-secondary");
-
   buttons.forEach((button) => {
     const content = button.querySelector(".button-secondary__content");
     if (!content) return;
 
     const settings = {
       outerStart: -34,
-      // outerStart: 7.4,
       outerEnd: 91,
       innerStart: -34,
-      // innerStart: 1.2,
       innerEnd: 98,
       duration: 1000,
     };
@@ -69,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (!startTime) startTime = timestamp;
         const elapsed = timestamp - startTime;
         const progress = Math.min(elapsed / settings.duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const eased = 1 - Math.pow(1 - progress, 3); 
 
         const outer = forward
           ? settings.outerStart +
@@ -117,7 +109,7 @@ function animateCounterOnScroll({
       if (entry.isIntersecting && !hasAnimated) {
         hasAnimated = true;
         animate();
-        observer.disconnect(); // chỉ chạy một lần
+        observer.disconnect(); 
       }
     },
     { threshold: 0.6 }
@@ -145,16 +137,13 @@ animateCounterOnScroll({});
 // marquee
 document.addEventListener("DOMContentLoaded", () => {
   const marqueeTracks = document.querySelectorAll(".marquee-track");
-
   marqueeTracks.forEach((track) => {
-    // Kiểm tra nếu chưa được nhân đôi
     if (track.dataset.cloned !== "true") {
       track.innerHTML += track.innerHTML;
-      track.dataset.cloned = "true"; // tránh nhân đôi lần nữa nếu DOM thay đổi
+      track.dataset.cloned = "true";
     }
   });
 });
-
 
 // tab
 document.addEventListener("DOMContentLoaded", function () {
@@ -187,7 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
           item.style.animationDelay = `${delayIndex * 0.1}s`;
           item.classList.remove("fadeup");
 
-          // Bắt buộc phải reflow lại để trigger animation
           requestAnimationFrame(() => {
             item.classList.add("fadeup");
           });
@@ -201,7 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-  //  Active tab "All" when page loads
   const defaultTab = wrapper.querySelector(".homepage-tabs__item");
   if (defaultTab) defaultTab.click();
 });
@@ -226,8 +213,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navLinks.forEach((link) => {
     link.addEventListener("click", function () {
-      navLinks.forEach((l) => l.classList.remove("active")); // Xoá class active khỏi tất cả
-      this.classList.add("active"); // Thêm class active vào link được click
+      navLinks.forEach((l) => l.classList.remove("active"));
+      this.classList.add("active"); 
     });
   });
 });
@@ -235,19 +222,15 @@ document.addEventListener("DOMContentLoaded", function () {
 // modal lấy link tương ứng
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Lắng nghe tất cả các click vào .homepage-demo__image-box hoặc .homepage-demo__title
   document
     .querySelectorAll(".homepage-demo__image-box, .homepage-demo__title")
     .forEach(function (el) {
       el.addEventListener("click", function (e) {
-        // Tìm .homepage-demo cha gần nhất
         const demo = el.closest(".homepage-demo");
         if (!demo) return;
 
-        // Lấy link từ data-link
         const link = demo.getAttribute("data-link");
 
-        // Gán link vào thẻ <a> trong modal
         const modalLink = document.querySelector(
           "#viewnowModal a.button-secondary"
         );
@@ -262,18 +245,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const rays = document.querySelectorAll(".blur-container__ray");
-  const baseRotations = [5, 14, 9, -11, -18, 18, 18, 7, -15, -18, -18, -5]; // Smaller angles
+  const baseRotations = [5, 14, 9, -11, -18, 18, 18, 7, -15, -18, -18, -5]; 
 
   function animate() {
     rays.forEach((ray, index) => {
-      const time = Date.now() * 0.001 + index * 0.2; // Staggered timing
+      const time = Date.now() * 0.001 + index * 0.2;
       const baseOpacity =
-        index === 0 || index === 11 ? 0.4 : index < 3 || index > 8 ? 0.5 : 0.4; // Central denser, outer fainter
-      const scale = 0.6 + (0.4 * (Math.sin(time) + 1)) / 2; // 0.6 to 1
-      const opacity = (baseOpacity * (Math.sin(time * 2 + index) + 1)) / 2; // 0 to baseOpacity
-      const rotate = baseRotations[index] || 0; // ray1 at 0deg
+        index === 0 || index === 11 ? 0.4 : index < 3 || index > 8 ? 0.5 : 0.4;
+      const scale = 0.6 + (0.4 * (Math.sin(time) + 1)) / 2; 
+      const opacity = (baseOpacity * (Math.sin(time * 2 + index) + 1)) / 2; 
+      const rotate = baseRotations[index] || 0; 
       ray.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
-      ray.style.opacity = opacity; // Allows opacity to reach 0
+      ray.style.opacity = opacity;
     });
 
     requestAnimationFrame(animate);
@@ -447,19 +430,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
 // không inspect vào ảnh trực tiếp được
 document.addEventListener('DOMContentLoaded', function () {
   const elements = document.querySelectorAll('img, video');
 
   elements.forEach(function (el) {
     el.addEventListener('contextmenu', function (e) {
-      e.preventDefault(); // chặn chuột phải
+      e.preventDefault(); 
     });
 
     el.addEventListener('dragstart', function (e) {
-      e.preventDefault(); // chặn kéo ảnh
+      e.preventDefault();
     });
   });
 });
@@ -496,56 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 
-
 // mobile video
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const videos = document.querySelectorAll('.mobile-screen__box-item video');
-
-//   function resetVideo(video) {
-//     video.pause();
-//     video.currentTime = 0;
-
-//     // Reset lại src để buộc load lại và hiển thị poster
-//     const src = video.dataset.src;
-//     const type = video.querySelector('source').type;
-
-//     // Xoá source hiện tại
-//     video.innerHTML = '';
-
-//     // Tạo lại source
-//     const source = document.createElement('source');
-//     source.src = src;
-//     source.type = type;
-//     video.appendChild(source);
-
-//     // Load lại video để hiển thị poster
-//     video.load();
-//   }
-
-//   function playActiveVideo(target) {
-//     videos.forEach(video => {
-//       video.classList.remove('active');
-//       resetVideo(video);
-//     });
-
-//     target.classList.add('active');
-//     target.play().catch(error => console.log("Autoplay failed:", error));
-//   }
-
-//   // Tự phát video đang active mặc định
-//   const defaultActive = document.querySelector('.mobile-screen__box-item video.active');
-//   if (defaultActive) {
-//     defaultActive.play().catch(error => console.log("Autoplay failed:", error));
-//   }
-
-//   // Sự kiện click vào video
-//   videos.forEach(video => {
-//     video.addEventListener('click', () => {
-//       playActiveVideo(video);
-//     });
-//   });
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
   const videos = document.querySelectorAll('.mobile-screen__box-item video');
@@ -565,7 +497,22 @@ document.addEventListener('DOMContentLoaded', function () {
     target.play().catch(error => console.log("Autoplay failed:", error));
   }
 
-  // Tự phát video đang active mặc định
+  // --- NEW: chọn video active mặc định theo kích thước màn hình ---
+  function setDefaultActive() {
+    // bỏ hết active trước
+    videos.forEach(v => v.classList.remove('active'));
+
+    if (window.innerWidth <= 991) {
+      videos[0].classList.add('active'); // mobile / tablet → video 1
+    } else {
+      videos[2].classList.add('active'); // desktop → video 3
+    }
+  }
+
+  // Gọi ngay khi load
+  setDefaultActive();
+
+  // Phát video active mặc định
   const defaultActive = document.querySelector('.mobile-screen__box-item video.active');
   if (defaultActive) {
     defaultActive.play().catch(error => console.log("Autoplay failed:", error));
@@ -577,8 +524,20 @@ document.addEventListener('DOMContentLoaded', function () {
       playActiveVideo(video);
     });
   });
-});
 
+  // --- Nếu cần đổi khi resize ---
+  window.addEventListener('resize', () => {
+    const currentActive = document.querySelector('.mobile-screen__box-item video.active');
+    const shouldBeFirst = window.innerWidth <= 991;
+    const shouldBeThird = window.innerWidth > 991;
+
+    if (shouldBeFirst && currentActive !== videos[0]) {
+      playActiveVideo(videos[0]);
+    } else if (shouldBeThird && currentActive !== videos[2]) {
+      playActiveVideo(videos[2]);
+    }
+  });
+});
 
 // year copyright
 document.addEventListener("DOMContentLoaded", function () {

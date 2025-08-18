@@ -52,7 +52,7 @@
   width: 100%;
   z-index: 5;
   @media (max-width: 767px) {
-    height: 100dvh;
+    height: 600px;
   }
 }
 

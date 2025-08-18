@@ -1,22 +1,18 @@
 // animation text
-
 document.addEventListener('DOMContentLoaded', () => {
   const WORD_DELAY = 120; // ms giữa các từ
   const SELECTOR = '.reveal-word';
 
-  // Tags mà ta KHÔNG muốn phá/animate bên trong chúng
   const SKIP_TAGS = new Set([
     'STRONG','B','CODE','EM','A','BR','IMG','BUTTON','INPUT','TEXTAREA','SVG'
   ]);
 
-  // wrap text nodes into spans, but skip inside SKIP_TAGS or elements with class "reveal-skip"
   function wrapTextNodes(root) {
     const nodes = Array.from(root.childNodes);
     nodes.forEach(node => {
       if (node.nodeType === Node.TEXT_NODE) {
         const text = node.textContent;
         if (!text) return;
-        // giữ khoảng trắng bằng cách split giữ token khoảng trắng
         const tokens = text.split(/(\s+)/);
         const frag = document.createDocumentFragment();
 
@@ -33,19 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         node.replaceWith(frag);
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // nếu element được đánh dấu muốn skip (hoặc tag nằm trong SKIP_TAGS), không đệ quy vào
         if (SKIP_TAGS.has(node.tagName) || node.classList.contains('reveal-skip') || node.hasAttribute('data-reveal-skip')) {
           return;
         }
-        // tránh double-wrapping nếu element là item chúng ta đã tạo
         if (node.classList && node.classList.contains('reveal-word__item')) return;
 
-        wrapTextNodes(node); // đệ quy
+        wrapTextNodes(node); 
       }
     });
   }
 
-  // timeout helpers per element
   function clearRevealTimeouts(el) {
     if (!el._revealTimeouts) return;
     el._revealTimeouts.forEach(id => clearTimeout(id));
@@ -59,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       s.style.transition = 'none';
       s.classList.remove('visible');
     });
-    // force reflow
+
     void el.offsetWidth;
     spans.forEach(s => {
       s.style.transition = s._prevTransition || '';
@@ -67,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize: wrap text nodes once per element
   document.querySelectorAll(SELECTOR).forEach(el => {
     if (!el.dataset.revealInitialized) {
       wrapTextNodes(el);
@@ -76,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // observer trên block để giữ left→right stagger, nhưng SKIP_TAGS không bị bọc nên không animate
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const el = entry.target;
@@ -88,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         spans.forEach((span, i) => {
           const id = setTimeout(() => {
             span.classList.add('visible');
-            // cleanup id
             const idx = el._revealTimeouts.indexOf(id);
             if (idx > -1) el._revealTimeouts.splice(idx, 1);
           }, i * WORD_DELAY);
@@ -107,9 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // animation section scroll
 document.addEventListener("DOMContentLoaded", function () {
-  const ENTER_RATIO = 0.25; // >= 25% vào viewport thì coi là vào
-  const EXIT_RATIO = 0.03;  // <= 3% thì coi là ra hẳn
-  const REMOVE_DELAY = 80;  // ms: delay nhỏ trước khi remove
+  const ENTER_RATIO = 0.25; 
+  const EXIT_RATIO = 0.03;
+  const REMOVE_DELAY = 80; 
 
   const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
 
@@ -142,97 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 });
 
-
 // animation page
-
-// let smoothScrollActive = false;
-
-// function initSmoothScroll(options = {}) {
-//   const container = document.querySelector(options.container || ".scroll-container");
-//   if (!container) return;
-
-//   let currentScroll = 0;
-//   let delayedScroll = 0;
-//   let targetScroll = 0;
-
-//   const delayEase = options.delayEase ?? 0.12;   // độ bắt kịp
-//   const inertiaEase = options.inertiaEase ?? 0.1; // độ trượt
-
-//   // Cập nhật chiều cao ảo của body
-//   function setBodyHeight() {
-//     const height = container.scrollHeight;
-//     document.body.style.height = height + "px";
-//   }
-
-//   // Quan sát nội dung thay đổi để cập nhật height
-//   const observer = new ResizeObserver(setBodyHeight);
-//   observer.observe(container);
-
-//   // Chạy loop render
-//   function smoothScroll() {
-//     targetScroll = window.scrollY;
-//     delayedScroll += (targetScroll - delayedScroll) * delayEase;
-//     currentScroll += (delayedScroll - currentScroll) * inertiaEase;
-
-//     container.style.transform = `translate3d(0, -${currentScroll}px, 0)`;
-//     requestAnimationFrame(smoothScroll);
-//   }
-
-//   setBodyHeight();
-//   smoothScroll();
-// }
-
-// // Bật smooth scroll nếu màn hình đủ lớn
-// function startSmoothScroll() {
-//   if (!smoothScrollActive) {
-//     initSmoothScroll({
-//       delayEase: 1,
-//       inertiaEase: 0.06
-//     });
-//     smoothScrollActive = true;
-//   }
-// }
-
-// // Tắt smooth scroll (reload trang để trả lại scroll bình thường)
-// function stopSmoothScroll() {
-//   if (smoothScrollActive) {
-//     location.reload();
-//   }
-// }
-
-// // Tự động bật/tắt theo kích thước màn hình
-// function handleSmoothScrollToggle() {
-//   if (window.innerWidth >= 768) {
-//     startSmoothScroll();
-//   } else {
-//     stopSmoothScroll();
-//   }
-// }
-
-// window.addEventListener('resize', handleSmoothScrollToggle);
-// window.addEventListener('load', handleSmoothScrollToggle);
-
-// // --- FIX anchor link jump khi smoothScroll bật ---
-// const HEADER_OFFSET = 0; // chỉnh nếu có header cố định
-
-// document.addEventListener('click', (e) => {
-//   const link = e.target.closest('a[href^="#"]:not([href="#"])');
-//   if (!link) return;
-
-//   const id = decodeURIComponent(link.getAttribute('href').slice(1));
-//   if (!id) return;
-
-//   if (smoothScrollActive) {
-//     e.preventDefault();
-//     const target = document.getElementById(id);
-//     if (target) {
-//       const y = window.scrollY + target.getBoundingClientRect().top - HEADER_OFFSET;
-//       window.scrollTo(0, y); // vòng smoothScroll sẽ đọc và dịch container
-//       history.pushState(null, '', '#' + id); // cập nhật URL hash
-//     }
-//   }
-// });
-
 let smoothScrollActive = false;
 let rafId = null;
 let observerResize = null;
@@ -249,14 +150,12 @@ function initSmoothScroll(options = {}) {
   const delayEase = options.delayEase ?? 0.12;
   const inertiaEase = options.inertiaEase ?? 0.1;
 
-  // --- update height theo container ---
   function setBodyHeight() {
     const rect = container.getBoundingClientRect();
     const height = rect.height; 
     document.body.style.height = `${Math.ceil(height)}px`;
   }
 
-  // --- observer mọi thay đổi ---
   observerResize = new ResizeObserver(setBodyHeight);
   observerResize.observe(container);
 
@@ -272,7 +171,6 @@ function initSmoothScroll(options = {}) {
 
     container.style.transform = `translate3d(0, -${currentScroll}px, 0)`;
 
-    // Cập nhật height liên tục để không dư thiếu
     setBodyHeight();
 
     rafId = requestAnimationFrame(smoothScroll);
@@ -294,7 +192,6 @@ function startSmoothScroll() {
 
 function stopSmoothScroll() {
   if (smoothScrollActive) {
-    // hủy loop và trả transform về 0
     cancelAnimationFrame(rafId);
     const container = document.querySelector(".scroll-container");
     if (container) container.style.transform = "translate3d(0,0,0)";
@@ -316,7 +213,6 @@ function handleSmoothScrollToggle() {
 window.addEventListener('resize', handleSmoothScrollToggle);
 window.addEventListener('load', handleSmoothScrollToggle);
 
-// --- anchor link fix ---
 const HEADER_OFFSET = 0;
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[href^="#"]:not([href="#"])');

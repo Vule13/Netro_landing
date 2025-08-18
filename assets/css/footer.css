@@ -88,6 +88,12 @@
   width: calc(100% / 3);
   color: var(--color-foreground);
   font-size: 14px;
+  gap: 20px;
+  @media (max-width: 575px) {
+    font-size: 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .footer__bottom-box {
