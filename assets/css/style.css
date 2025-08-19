@@ -1286,3 +1286,17 @@ p {
 .close-hamburger:hover {
   transform: rotate(360deg);
 }
+
+.image-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .image-desktop {
+    display: none;
+  }
+
+  .image-mobile {
+    display: block;
+  }
+}
