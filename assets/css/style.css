@@ -174,15 +174,12 @@ p {
   --x2: -34%;
   border-radius: 9999px;
   opacity: 1;
+  @media (max-width: 767px) {
+    padding: 10px 16px;
+  }
 }
 
 .button-blue__content {
-  /* background: radial-gradient(
-    59% 170% at var(--x2) 50%,
-    rgb(0, 119, 255) 0%,
-    rgb(0, 0, 0) 57%,
-    rgb(0, 0, 0) 100%
-  ); */
   background: radial-gradient(
     59% 170% at var(--x2) 50%,
     #0d64e4 0%,
@@ -207,7 +204,10 @@ p {
     rgb(208, 208, 208) 57%,
     rgb(208, 208, 208) 100%
   );
-  padding: 13px 24px;
+  padding: 12px 24px;
+  @media (max-width: 767px) {
+    padding: 10px 16px;
+  }
 }
 
 .button-secondary__content span,
@@ -496,6 +496,11 @@ p {
 
 .icon-arrow--style2 svg {
   transform: translateX(-10px);
+  @media (max-width: 767px) {
+    transform: translateX(-18px);
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* code banner */
@@ -561,6 +566,9 @@ p {
     rgb(29 129 255) 48.0785% 48.0785%,
     rgb(1 120 255) 100%
   );
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 }
 
 .banner-content__span[data-text-fill] {
@@ -601,7 +609,7 @@ p {
   font-weight: 700;
   text-align: center;
   @media (max-width: 991px) {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 
@@ -620,8 +628,7 @@ p {
   justify-content: center;
   gap: 30px;
   @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 }
 
@@ -1191,11 +1198,11 @@ p {
   backdrop-filter: blur(10px);
   left: 50%;
   transform: translate(-50%, -30%);
-  border-radius: 30px;
+  border-radius: 40px;
   max-width: 664px;
   width: 96%;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     padding: 8px 4px;
     width: 90%;
   }
@@ -1212,6 +1219,9 @@ p {
   color: var(--color-foreground);
   font-size: 15px;
   padding-right: 86px;
+  @media (max-width: 767px) {
+    max-width: 600px;
+  }
   @media (max-width: 575px) {
     padding-right: 46px;
     padding-left: 20px;
@@ -1239,6 +1249,10 @@ p {
   border-radius: 30px;
   margin: 0;
   overflow: hidden;
+  @media (max-width: 767px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .menu-bottom__button-text {
