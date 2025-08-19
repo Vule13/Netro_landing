@@ -46,7 +46,7 @@
   min-width: 100%;
   animation: scroll 20s infinite linear;
   gap: 50px;
-  justify-content: space-around; 
+  justify-content: space-around;
   @media (max-width: 767px) {
     gap: 30px;
   }
@@ -137,7 +137,7 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  @media (max-width: 767px){
+  @media (max-width: 767px) {
     font-size: 20px;
   }
 }
@@ -284,7 +284,7 @@
   width: 380px;
   gap: 15px;
   height: fit-content;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     max-width: 320px;
     width: 100%;
   }
@@ -351,15 +351,23 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: radial-gradient(52% 50% at 50% 50%, rgb(2 57 187 / 60%) 0%, rgb(0, 0, 0));
+  background: radial-gradient(
+    52% 50% at 50% 50%,
+    rgb(2 57 187 / 60%) 0%,
+    rgb(0, 0, 0)
+  );
   gap: 24px;
 }
 
 .testimonial-review__left-line {
-  background: linear-gradient(90deg, rgba(84, 84, 84, 0) 0%,  rgb(255, 255, 255) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(84, 84, 84, 0) 0%,
+    rgb(255, 255, 255) 100%
+  );
   flex: none;
   height: 1px;
-  opacity: .5;
+  opacity: 0.5;
   overflow: hidden;
   position: relative;
   width: 69px;
@@ -390,11 +398,7 @@
 .testimonial-review__right-title {
   color: var(--color-foreground);
   font-size: 44px;
-  max-width: 70%;
-  @media(max-width: 991px) {
-    max-width: 100%;
-  }
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 30px;
   }
 }
@@ -402,7 +406,7 @@
 .testimonial-review__right-desc {
   max-width: 65%;
   padding-bottom: 30px;
-  @media(max-width: 991px) {
+  @media (max-width: 1199px) {
     max-width: 100%;
   }
 }
@@ -413,6 +417,11 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(309deg, rgb(120 172 255) 40.25225%, rgb(120, 177, 248) 58.0785%, rgb(1 120 255) 100%);
+  background-image: linear-gradient(
+    309deg,
+    rgb(120 172 255) 40.25225%,
+    rgb(120, 177, 248) 58.0785%,
+    rgb(1 120 255) 100%
+  );
   font-weight: 500;
 }

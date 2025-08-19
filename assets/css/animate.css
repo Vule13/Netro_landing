@@ -102,11 +102,14 @@
   }
 }
 
-
 /* rotate */
 @keyframes spin360 {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* animation text */
@@ -117,7 +120,8 @@
   filter: blur(10px);
   transform: translateY(20px);
   will-change: transform, opacity, filter;
-  transition: opacity 0.7s ease, filter 0.7s ease, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.7s ease, filter 0.7s ease,
+    transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .reveal-word span.visible {
@@ -139,7 +143,6 @@
   transform: translateY(0);
 }
 
-
 .scroll-container {
   position: static;
   transform: none;
@@ -152,4 +155,3 @@
     will-change: transform;
   }
 }
-

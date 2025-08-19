@@ -9,7 +9,7 @@
   gap: 48px;
   padding: 250px 0;
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding: 150px 0;
   }
 }
@@ -20,13 +20,18 @@
   padding-bottom: 15px;
   max-width: 800px;
   margin: 0px auto;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 30px;
   }
 }
 
 .carousel-3d__subtitle {
-  background-image: linear-gradient(309deg, #7cdc31 2.25225%, #4ea23b 40.0785%, #048b3a 100%);
+  background-image: linear-gradient(
+    309deg,
+    #7cdc31 2.25225%,
+    #4ea23b 40.0785%,
+    #048b3a 100%
+  );
   padding-bottom: 10px;
   text-transform: capitalize;
   font-weight: 500;
@@ -36,10 +41,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-top: 50px;
+  @media (max-width: 575px) {
+    max-width: 250px;
+  }
 }
 
 .carousel-3d__title strong {
-  background-image: linear-gradient(309deg, #7cdc31 2.25225%, #4ea23b 40.0785%, #297246 100%);
+  background-image: linear-gradient(
+    309deg,
+    #7cdc31 2.25225%,
+    #4ea23b 40.0785%,
+    #297246 100%
+  );
   padding-bottom: 5px;
   display: inline-block;
   background-clip: text;
@@ -62,7 +75,7 @@
   transform-style: preserve-3d;
   animation: spin 60s linear infinite;
   min-height: 300px;
-  @media(max-width: 575px) {
+  @media (max-width: 575px) {
     min-height: 100px;
   }
 }
@@ -96,7 +109,7 @@
 }
 
 @media (max-width: 767px) {
-  .carousel-3d__description br{
+  .carousel-3d__description br {
     display: none;
   }
 }
@@ -117,10 +130,10 @@
 
 .carousel-3d__img-rotate img {
   animation: spin360 12s linear infinite;
-  display: inline-block; 
-  transform-origin: center center; 
+  display: inline-block;
+  transform-origin: center center;
   will-change: transform;
-  backface-visibility: hidden; 
+  backface-visibility: hidden;
 }
 
 .carousel-3d__img-box {

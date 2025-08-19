@@ -11,7 +11,12 @@
 }
 
 .footer__title strong {
-  background-image: linear-gradient(309deg, rgb(120 172 255) 2.25225%, rgb(29 129 255) 48.0785% 48.0785%, rgb(1 120 255) 100%);
+  background-image: linear-gradient(
+    309deg,
+    rgb(120 172 255) 2.25225%,
+    rgb(29 129 255) 48.0785% 48.0785%,
+    rgb(1 120 255) 100%
+  );
   padding-bottom: 5px;
   display: inline-block;
   background-clip: text;
@@ -44,7 +49,9 @@
   line-height: 1;
   text-transform: uppercase;
   color: var(--color-foreground);
-  box-shadow: rgb(255 0 0 / 35%) 0px 3px 8px 2px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
+  box-shadow: rgb(255 0 0 / 35%) 0px 3px 8px 2px,
+    rgba(255, 255, 255, 0) 0px 0px 10px 1px inset,
+    rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .footer__subtitle-text {
@@ -111,14 +118,18 @@
 
 .footer__bottom-item a {
   color: var(--color-foreground);
-  transition: .3s ease all;
+  transition: 0.3s ease all;
+  opacity: 0.6;
+}
+
+.footer__bottom-item span {
+  opacity: 0.6;
 }
 
 .footer__bottom-item a:hover {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .footer__bottom-item img {
   width: 60px;
 }
-

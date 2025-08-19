@@ -187,7 +187,7 @@ function parallax() {
     const opacity = 0.4 + progress * 0.6;
 
     let translateY;
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 991) {
       translateY = inView 
         ? -30 + progress * 130 
         : (window.scrollY > lastScroll ? -100 : 100);

@@ -3,14 +3,14 @@
   padding-bottom: 100px;
   position: relative;
   overflow: hidden;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding: 100px 0;
   }
 }
 
 .shop-feature__item img {
   width: 100%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   border-radius: 15px;
   overflow: hidden;
   @media (max-width: 767px) {
@@ -19,7 +19,9 @@
 }
 
 .shop-feature__item img:hover {
-  box-shadow: rgba(0, 85, 255, 0.2) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 85, 255, 0.2) 0px 8px 40px 0px,
+    rgba(255, 255, 255, 0) 0px 0px 10px 1px inset,
+    rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
 
 .shop-feature__title {
@@ -29,15 +31,15 @@
   max-width: 800px;
   padding: 0 15px;
   margin: 0 auto;
-  @media(max-width: 991px) {
+  @media (max-width: 991px) {
     padding-bottom: 0px;
     br {
-      display: none
+      display: none;
     }
-  };
-  @media(max-width: 767px) {
+  }
+  @media (max-width: 767px) {
     font-size: 30px;
-  };
+  }
 }
 
 .shop-feature__title--pb {
@@ -48,19 +50,19 @@
   text-align: center;
   padding-top: 25px;
   padding-bottom: 10px;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding-top: 10px;
-  };
+  }
 }
 
 .shop-feature__item-text a {
   font-size: 16px;
   color: var(--color-foreground);
-  transition: .3s ease all;
+  transition: 0.3s ease all;
   text-transform: capitalize;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 14px;
-  };
+  }
 }
 
 .shop-feature__item-text a:hover {
@@ -79,28 +81,29 @@
   justify-content: center;
   text-align: center;
   position: relative;
-  background-color: rgba(23, 23, 23, .6);
-  border: 1px solid rgba(38, 38, 38, .6);
+  background-color: rgba(23, 23, 23, 0.6);
+  border: 1px solid rgba(38, 38, 38, 0.6);
   backdrop-filter: blur(10px);
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding: 50px 15px 20px;
-  };
+  }
 }
 
 .modal-shop-feature__body-item img {
   width: 100%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   border-radius: 15px;
   overflow: hidden;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     border-radius: 10px;
-  };
+  }
 }
 
 .modal-shop-feature__body-item img:hover {
-  box-shadow: rgba(0, 85, 255, 0.2) 0px 8px 40px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 85, 255, 0.2) 0px 8px 40px 0px,
+    rgba(255, 255, 255, 0) 0px 0px 10px 1px inset,
+    rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
-
 
 /* css layout-theme */
 
@@ -108,7 +111,7 @@
   overflow: hidden;
   position: relative;
   padding: 100px 0;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .layout-theme__box {
@@ -198,15 +201,15 @@
   background-color: #0874ffab;
 }
 
-.layout-theme__button--prev { 
-  left: -20px; 
-  @media(max-width: 767px) {
+.layout-theme__button--prev {
+  left: -20px;
+  @media (max-width: 767px) {
     left: 0;
   }
 }
-.layout-theme__button--next { 
-  right: -20px; 
-  @media(max-width: 767px) {
+.layout-theme__button--next {
+  right: -20px;
+  @media (max-width: 767px) {
     right: 0;
   }
 }
@@ -253,7 +256,7 @@
   font-weight: 600;
   text-transform: capitalize;
   display: block;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 14px;
     padding-top: 12px;
   }
@@ -268,13 +271,13 @@
   position: relative;
   padding-top: 30px;
   margin: 0 -15px;
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding-top: 20px;
   }
 }
 
 .button-prev__arrow1 {
-  transition: .3s ease all;
+  transition: 0.3s ease all;
   transform: translateX(5px);
 }
 
@@ -283,7 +286,7 @@
 }
 
 .button-prev__arrow2 {
-  transition: .3s ease all;
+  transition: 0.3s ease all;
   transform: translateX(50px);
 }
 
@@ -292,7 +295,7 @@
 }
 
 .button-next__arrow1 {
-  transition: .4s ease all;
+  transition: 0.4s ease all;
   transform: translateX(5px);
 }
 
@@ -301,7 +304,7 @@
 }
 
 .button-next__arrow2 {
-  transition: .4s ease all;
+  transition: 0.4s ease all;
   transform: translateX(-50px);
 }
 
