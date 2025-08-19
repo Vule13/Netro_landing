@@ -73,9 +73,9 @@
   height: auto;
   position: relative;
   width: auto;
-  margin-bottom: -32px;
+  margin-bottom: -50px;
   @media (max-width: 992px) {
-    margin-bottom: -20px;
+    margin-bottom: -40px;
   }
 }
 
