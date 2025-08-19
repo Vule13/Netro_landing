@@ -230,3 +230,22 @@ document.addEventListener('click', (e) => {
     }
   }
 });
+
+// background footer
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.footer');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Nếu muốn chỉ chạy 1 lần thì bỏ quan sát luôn
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 }); // xuất hiện 10% đã kích hoạt
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
