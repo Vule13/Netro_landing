@@ -20,6 +20,9 @@
   opacity: 0;                       
   transition: opacity 2s ease;      
   z-index: -1; 
+  @media (max-width: 767px) {
+    background-image: url(../images/footer_bg_mobile.jpg);
+  } 
 }
 
 .footer.visible::before {
