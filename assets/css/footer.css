@@ -1,12 +1,5 @@
 .footer {
-  /* background-image: url(../images/footer_bg.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  @media (max-width: 767px) {
-    background-image: url(../images/footer_bg_mobile.jpg);
-  } */
-   position: relative;
+  position: relative;
 }
 
 .footer::before {
