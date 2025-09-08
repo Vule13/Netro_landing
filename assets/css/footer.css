@@ -119,18 +119,21 @@
   gap: 20px;
   @media (max-width: 575px) {
     font-size: 12px;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
+    justify-content: center;
   }
 }
 
 .footer__bottom-box {
   display: flex;
   align-items: center;
-}
-
-.footer__bottom-item:last-child {
-  text-align: right;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+  }
 }
 
 .footer__bottom-item:nth-child(2) {
@@ -153,4 +156,13 @@
 
 .footer__bottom-item img {
   width: 60px;
+}
+
+.footer__bottom-item--right {
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
 }
