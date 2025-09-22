@@ -256,10 +256,15 @@
   font-weight: 600;
   text-transform: capitalize;
   display: block;
+  transition: 0.3s ease all;
   @media (max-width: 767px) {
     font-size: 14px;
     padding-top: 12px;
   }
+}
+
+.layout-theme__slide-text:hover {
+  opacity: 0.6;
 }
 
 .layout-theme__pagination {
