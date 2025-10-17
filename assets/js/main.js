@@ -162,24 +162,27 @@ document.addEventListener("DOMContentLoaded", function () {
       let delayIndex = 0;
 
       items.forEach((item) => {
-        const category = item.getAttribute("data-category") || "";
-        const status = item.getAttribute("data-status") || "";
-
+        const categories = (item.getAttribute("data-category") || "")
+          .split(",")
+          .map(c => c.trim());
+      
+        const status = (item.getAttribute("data-status") || "").toLowerCase();
+      
         const show =
           selected === "All Demos" ||
-          selected === category ||
-          (selected === "New Demos" && status.toLowerCase() === "new") ||
-          (selected === "Popular" && status.toLowerCase() === "popular");
-
+          categories.includes(selected) ||
+          (selected === "New Demos" && status === "new") ||
+          (selected === "Popular" && status === "popular");
+      
         if (show) {
           item.classList.add("show");
           item.style.animationDelay = `${delayIndex * 0.1}s`;
           item.classList.remove("fadeup");
-
+      
           requestAnimationFrame(() => {
             item.classList.add("fadeup");
           });
-
+      
           delayIndex++;
         } else {
           item.classList.remove("fadeup");
@@ -187,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
           item.style.animationDelay = "0s";
         }
       });
+      
     });
   });
   const defaultTab = wrapper.querySelector(".homepage-tabs__item");
