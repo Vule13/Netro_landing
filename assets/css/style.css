@@ -246,7 +246,7 @@ p {
 /* back to top */
 .backtotop {
   position: fixed;
-  bottom: 40px;
+  bottom: 100px;
   right: 30px;
   z-index: 999;
   background-color: rgba(23, 23, 23, 0.6);
@@ -1313,4 +1313,118 @@ p {
   .image-mobile {
     display: block;
   }
+}
+
+/* button traffic */
+.button-traffic {
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: none;
+}
+
+.button-traffic__content{
+  position: relative;
+  z-index: 11111;
+  border-radius: 40px 0 0 40px; 
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(255, 115, 27,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  padding-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .button-traffic__content .text-gradient {
+      display: none;
+  }
+}
+
+.offcanvas-traffic {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-left: none;
+  backdrop-filter: none;
+  background-color: unset;
+  bottom: 20px;
+  @media (max-width: 767px) {
+    right: 0;
+    bottom: 0;
+    justify-content: center;           
+  }
+}
+
+.button-traffic.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(50%) translateX(0);
+}
+
+.offcanvas-traffic__close {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex            ;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(46, 46, 46, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.offcanvas-traffic__close:hover {
+  transform: rotate(360deg);
+  opacity: 1;
+}
+
+.offcanvas-body__box {
+  padding: 20px;
+  display: block;
+}
+
+.offcanvas-traffic.show {
+  transform: translateX(0);
+  right: 0;
+}
+
+.offcanvas-traffic {
+  position: fixed;
+  bottom: 20px;
+  right: -20px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1050;
+}
+
+.text-gradient[data-text-fill] {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}   
+
+.text-gradient {
+  background: linear-gradient(270deg, #ec5331 30.25225%, #ff7b1e 80.0785%, #ff7b1e 100%);
+  text-shadow: 2px 2px 5px rgba(247, 68, 68, 0.4);
+  width: 100%;
+  z-index: 5;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
 }

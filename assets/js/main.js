@@ -547,3 +547,31 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("year").textContent = new Date().getFullYear();
 });
+
+// popup traffic
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonTraffic = document.getElementById('buttonTraffic');
+  const offcanvas = document.getElementById('offcanvasScrolling');
+  const closeButton = document.querySelector('.offcanvas-traffic__close');
+
+  let hasTriggered = false;
+  
+  window.addEventListener('scroll', function showOnScroll() {
+      if (window.scrollY >= 200 && !hasTriggered) {
+          buttonTraffic.style.display = 'none';
+          offcanvas.classList.add('show');
+          hasTriggered = true;
+      }
+  });
+
+  buttonTraffic.addEventListener('click', (e) => {
+      e.preventDefault();
+      offcanvas.classList.toggle('show');
+      buttonTraffic.style.display = offcanvas.classList.contains('show') ? 'none' : 'block';
+  });
+
+  closeButton.addEventListener('click', () => {
+      offcanvas.classList.remove('show');
+      buttonTraffic.style.display = 'block';
+  });
+});
